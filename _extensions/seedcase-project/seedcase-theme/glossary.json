@@ -1,0 +1,18 @@
+[
+  {
+    "item": "data",
+    "description": "Data can mean any piece of information that someone would like to use to answer questions. What is considered data (and metadata) is highly dependent on people and what they intend to do with information that is collected. In the context of Seedcase Sprout, data is any information collected for the purposes of doing analyses on them to answer questions. An example might be data collected from people participating in a study on health and disease."
+  },
+  {
+    "item": "data package",
+    "description": "A \"container\" for data that describes a coherent collection of data. It consists of two parts: data resources and properties."
+  },
+  {
+    "item": "data resource",
+    "description": "A single piece of data, such as a table or data file, and its properties, included in a data package. It contains the actual data, documented following the Data Package standard."
+  },
+  {
+    "item": "properties",
+    "description": "Metadata that describes the entire data package and each of the data resources within it. At the package level, the properties include the package name and description, contributors, licenses, and more. At the resource level, they describe attributes such as the resource name, description, schema, and data fields. All properties are stored in `datapackage.json` in the root directory of the package."
+  }
+]
