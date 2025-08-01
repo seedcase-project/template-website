@@ -1,5 +1,5 @@
 ---
-title: {{< meta titles.full >}}
+title: "{{< meta titles.full >}}"
 ---
 
 {{< include /docs/includes/_badges.qmd >}}
@@ -17,6 +17,9 @@ We would love your feedback or contributions! Head over to our [GitHub
 repository](https://github.com/seedcase-project/{{< meta gh.repo >}}) to
 share your ideas or contribute code. Your input makes us better!
 
+::: content-hidden
+<!-- TODO: Unhide after more contributors -->
 ### Contributors
 
 {{< include /_contributors.qmd.tmp >}}
+:::
