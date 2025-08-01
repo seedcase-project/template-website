@@ -1,0 +1,16 @@
+---
+title: "Template Website: An opinionated setup to building and developing Quarto-based websites"
+---
+
+This is a template for creating a new repository for building Quarto-based websites.
+Use this template to quickly get
+started with making a website as well as having infrastructure configuration to make
+developing and building the website easier.
+
+## Features
+
+## Want to contribute?
+
+We would love your feedback or contributions! Head over to our [GitHub
+repository](https://github.com/seedcase-project/{{< meta repo >}}) to
+share your ideas or contribute code. Your input makes us better!

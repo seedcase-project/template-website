@@ -1,0 +1,142 @@
+meta:
+  name:
+    full: Seedcase Project
+    short: Seedcase
+  link:
+    github: https://github.com/seedcase-project
+
+color:
+  palette:
+    logo-green: "#024639"
+    dark-green: "#196440"
+    vibrant-green: "#48DC76"
+    light-grey: "#F8F9FA"
+  primary: dark-green
+  tertiary: vibrant-green
+  light: light-grey
+
+typography:
+  fonts:
+    - family: noto sans
+      source: "bunny"
+      # other weights are used inexplicitly for e.g., bold and table headers
+      weight: [300, 500, 600]
+    - family: poppins
+      source: "bunny"
+      weight: 400
+    - family: roboto mono
+      source: "bunny"
+  base:
+    family: noto sans
+    weight: 300
+  headings:
+    family: poppins
+    weight: 400
+  monospace: roboto mono
+
+defaults:
+  bootstrap:
+    defaults:
+      mermaid-edge-color: "#8B8B8B"
+    rules: |
+      .cell-output pre code {
+        white-space: pre-wrap;
+      }
+
+      .navbar {
+          border-bottom: rgba($toc-active-border, 0.3) 1px solid;
+      }
+
+      svg {
+          display: block;
+          max-width: 100%;
+          margin: 0 auto;
+          height: auto !important;
+          width: auto !important;
+      }
+
+      li {
+          margin: 5px 0;
+      }
+
+      figcaption {
+          text-align: center;
+      }
+
+      .about-link {
+          border: 2px solid $tertiary !important;
+          border-radius: 50px !important;
+          color: $primary !important;
+          font-size: 20px !important;
+          font-weight: bold;
+          padding: 5px 15px !important;
+      }
+
+      .about-link:hover {
+          background-color: $tertiary !important;
+          color: white !important;
+      }
+
+      .about-links {
+          justify-content: left !important;
+          padding: 10px 0px 0px 0px !important;
+      }
+
+      .landing-page-block {
+          padding-top: 10px;
+          padding-bottom: 10px;
+          margin-left: 30px;
+          margin-right: 30px;
+      }
+
+      @media(min-width: 900px) {
+          .landing-page-block {
+              margin-left: 50px;
+              margin-right: 50px;
+          }
+      }
+
+      @media (min-width: 1200px) {
+          .landing-page-block {
+              max-width: 900px;
+              margin-left: auto;
+              margin-right: auto;
+          }
+      }
+
+      .hero-banner {
+          position: relative;
+          background: $light;
+          display: flex;
+          justify-content: center;
+          padding-bottom: 30px;
+      }
+
+      .hero-banner .landing-page-block {
+          display: flex;
+          flex-direction: row;
+      }
+
+      .hero-text>h2,
+      .landing-page-block>h2 {
+          margin-top: 0.5rem;
+          border-bottom: none;
+      }
+
+      .landing-page-card {
+          border-radius: 12px;
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+          background-color: rgba($light, 0.3);
+          border: none;
+          padding: 5px 20px 10px 20px;
+          margin-bottom: 40px;
+          justify-content: start !important;
+      }
+
+      .navbar-logo {
+          max-height: 38px;
+      }
+
+      .callout-body {
+          font-weight: 300 !important;
+      }
