@@ -44,11 +44,6 @@ Please note that this project is released with a [Contributor Code of
 Conduct](https://github.com/seedcase-project/.github/blob/main/CODE_OF_CONDUCT.md).
 By participating in this project you agree to abide by its terms.
 
-### Contributors
-
-{“message”:“Not
-Found”,“documentation_url”:“https://docs.github.com/rest/repos/repos#list-repository-contributors”,“status”:“404”}
-
 ## Licensing
 
 This project is licensed under the [MIT
