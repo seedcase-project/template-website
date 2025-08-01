@@ -1,0 +1,11 @@
+---
+title: "You’ve entered the garden of missing pages"
+---
+
+Let's get you back to greener grounds.
+
+👉 Go to [homepage](/index.qmd).
+
+![](/_extensions/seedcase-project/seedcase-theme/images/404.svg){fig-alt="An illustration of the number 404 surrounded by trees and mountains"}
+
+## Illustration by [Storyset](https://storyset.com/web) {.appendix}
