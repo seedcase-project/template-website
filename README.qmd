@@ -1,0 +1,67 @@
+---
+format: gfm
+execute:
+  echo: false
+jupyter: python3
+metadata-files:
+  - _metadata.yml
+---
+
+# {{< meta titles.full >}}
+
+{{< include /docs/includes/_badges.qmd >}}
+
+This repository contains a [copier](https://copier.readthedocs.io/)
+template for setting up a new repository for building Quarto-based
+websites. Along with the infrastructure for Quarto, this template also
+includes configurations and support files for developing and managing
+the website.
+
+Check out our
+[website](https://{{< meta gh.repo >}}.{{< meta gh.org >}}.org/) for
+more information, such as the features it provides and a
+[guide](https://{{< meta gh.repo >}}.{{< meta gh.org >}}.org/docs/guide/)
+to using the template. For a list of changes, see our
+[changelog](https://{{< meta gh.repo >}}.{{< meta gh.org >}}.org/docs/releases/)
+page.
+
+## Contributing
+
+Check out our [contributing
+page](https://{{< meta gh.repo >}}.{{< meta gh.org >}}.org/contributing/)
+for information on how to contribute to the project, including how to
+set up your development environment.
+
+Please note that this project is released with a [Contributor Code of
+Conduct](https://github.com/{{< meta gh.org >}}/.github/blob/main/CODE_OF_CONDUCT.md).
+By participating in this project you agree to abide by its terms.
+
+::: content-hidden
+<!-- TODO: Unhide after more contributors -->
+### Contributors
+
+{{< include /_contributors.qmd.tmp >}}
+:::
+
+## Licensing
+
+This project is licensed under the [MIT
+License](https://github.com/{{< meta gh.org >}}/{{< meta gh.repo >}}/blob/main/LICENSE.md).
+
+## Citing
+
+This project is part of the Seedcase Project, which is a collaborative
+effort to create a framework for data management and analysis in
+research. If you use this project in your work, please cite it as
+follows:
+
+```{python}
+#| output: asis
+!uvx --quiet cffconvert --format apalike
+```
+
+Or as a BibTeX entry:
+
+```{python}
+!uvx --quiet cffconvert --format bibtex
+```
