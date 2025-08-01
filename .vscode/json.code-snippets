@@ -1,0 +1,50 @@
+{
+  "Insert TODO formatting": {
+    "scope": "quarto,markdown",
+    "prefix": "TODO",
+    "body": [
+      "<!-- TODO: ${0:Write text here} -->"
+    ],
+    "description": "Insert TODO formatting"
+  },
+  "Insert bash formatted text": {
+    "scope": "quarto,markdown",
+    "prefix": "bash",
+    "body": [
+      "``` bash",
+      "${0:Write text here}",
+      "```"
+    ],
+    "description": "Insert bash formatted text"
+  },
+  "Insert a hidden comment section": {
+    "scope": "quarto,markdown",
+    "prefix": "hidden",
+    "body": [
+      "::: content-hidden",
+      "${0:Write comments here}",
+      ":::"
+    ],
+    "description": "Insert a hidden content section"
+  },
+  "Insert a 2 col table": {
+    "scope": "quarto,markdown",
+    "prefix": "tbl2",
+    "body": [
+      "|${1:title} |${0:title} |",
+      "| --- | --- |",
+      "|   |   |"
+    ],
+    "description": "Insert a 2 col table"
+  },
+  "Insert a 3 col table": {
+    "scope": "quarto,markdown",
+    "prefix": "tbl3",
+    "body": [
+      "|${1:title} |${2:title} |${0:title} |",
+      "| --- | --- | --- |",
+      "|   |   |   |"
+    ],
+    "description": "Insert a 3 col table"
+  }
+}
