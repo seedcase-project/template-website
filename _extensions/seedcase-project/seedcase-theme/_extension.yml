@@ -1,0 +1,49 @@
+title: seedcase-theme
+author: Luke W. Johnston
+version: 1.0.1
+quarto-required: ">=1.2.0"
+contributes:
+  formats:
+    common:
+      shortcodes:
+        - quarto-ext/fontawesome
+    html:
+      from: markdown+emoji
+      toc: true
+      toc-location: right
+      toc-depth: 3
+
+  project:
+    project:
+      type: website
+      execute-dir: project
+
+    website:
+      page-navigation: true
+      favicon: favicon/favicon.ico
+      repo-branch: main
+      repo-actions: [edit, issue, source]
+      search:
+        location: navbar
+        type: textbox
+      navbar:
+        background: light
+        logo: logos/navbar-logo-seedcase-project.svg
+        logo-alt: "Seedcase Project logo: Main page"
+      page-footer:
+        border: true
+        center:
+          - text: "License: CC-BY 4.0"
+            href: https://seedcase-project.org/license
+          - text: "Code of Conduct"
+            href: "https://github.com/seedcase-project/.github/blob/main/CODE_OF_CONDUCT.md"
+          - text: "Contributing"
+            href: "https://guidebook.seedcase-project.org/"
+          - text: "Funded by the Novo Nordisk Foundation"
+            href: https://seedcase-project.org/#acknowledgements
+
+    csl: vancouver.csl
+
+    format: seedcase-theme-html
+
+    brand: _brand.yml

@@ -1,0 +1,55 @@
+project:
+  type: seedcase-theme
+  render:
+    # Don't render anything in the template directory.
+    - "!template/"
+    - "*.qmd"
+    - "*.md"
+
+website:
+  title: "Template Website"
+  site-url: "https://template-website.seedcase-project.org"
+  repo-url: "https://github.com/seedcase-project/template-website"
+  page-navigation: true
+  navbar:
+    logo: _extensions/seedcase-project/seedcase-theme/logos/seedcase-logo.svg
+    logo-alt: "Seedcase Project logo: Main page"
+    pinned: true
+    left:
+      - text: "Overview"
+        menu:
+          - text: "Welcome"
+            href: index.qmd
+      #     - text: "Releases"
+      #       href: docs/releases.qmd
+          - text: "Contributing"
+            href: CONTRIBUTING.md
+      # - text: "Guide"
+      #   href: docs/guide.qmd
+    tools:
+      - icon: github
+        href: "https://github.com/seedcase-project/template-website"
+        aria-label: "GitHub icon: Source code"
+      - icon: house
+        href: https://seedcase-project.org
+        aria-label: "House icon: Seedcase Project home page"
+
+format:
+  seedcase-theme-html:
+    theme:
+      - brand
+    include-before-body:
+    - "docs/includes/site-counter.html"
+
+editor:
+  markdown:
+    wrap: 72
+    canonical: true
+
+execute:
+  echo: false
+
+# Metadata for the website
+gh:
+  org: "seedcase-project"
+  repo: "template-website"
