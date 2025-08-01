@@ -1,12 +1,12 @@
 ---
-title: "Template Website: An opinionated setup to building and developing Quarto-based websites"
+title: {{< meta titles.full >}}
 ---
 
 {{< include /docs/includes/_badges.qmd >}}
 
-This is a template for creating a new repository for building Quarto-based websites.
-Use this template to quickly get
-started with making a website as well as having infrastructure configuration to make
+This is a template for creating a new repository for building
+Quarto-based websites. Use this template to quickly get started with
+making a website as well as having infrastructure configuration to make
 developing and building the website easier.
 
 ## Features
