@@ -26,7 +26,7 @@ developing and building the website easier.
     Commits](https://decisions.seedcase-project.org/why-conventional-commits).
 -   Uses a [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/)
     license for the website content.
--   Run checks with with [pre-commit](https://pre-commit.com/) hooks to
+-   Run checks with [pre-commit](https://pre-commit.com/) hooks to
     ensure consistent formatting and style across the project. It
     includes checks for credentials, typos, and file formatting.
 -   Optionally uses the
@@ -46,7 +46,7 @@ developing and building the website easier.
 -   [VS Code](https://code.visualstudio.com/) settings commonly used by
     contributors working in VS Code.
 -   [`.zenodo.json`](https://help.zenodo.org/docs/github/describe-software/zenodo-json/)
-    file for citation information, that provides Zenodo with the
+    file for citation information that provides Zenodo with the
     necessary metadata to create a DOI for the website.
 
 ## Want to contribute?
