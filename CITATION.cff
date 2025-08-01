@@ -1,4 +1,4 @@
-title: "Template Website: An opinionated setup to building and developing Quarto-based websites"
+title: "Template Website: An opinionated setup for building and developing Quarto-based websites"
 abstract: "A template for making a Git repository that follows strongly opinionated practices for building, developing, and managing a Quarto-based website. See the website (<https://template-website.seedcase-project.org>) for more details."
 authors:
   - family-names: Johnston
