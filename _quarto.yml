@@ -22,8 +22,8 @@ website:
             href: index.qmd
           - text: "Releases"
             href: docs/releases.qmd
-      #     - text: "Contributing"
-      #       href: CONTRIBUTING.md
+          - text: "Contributing"
+            href: CONTRIBUTING.md
       # - text: "Guide"
       #   href: docs/guide.qmd
     tools:
