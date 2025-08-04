@@ -1,0 +1,64 @@
+@_default:
+    just --list --unsorted
+
+@_checks: check-spelling check-commits
+@_builds: build-contributors build-website
+
+{% if is_seedcase_website %}
+# Run all necessary build commands
+run-all: update-quarto-theme _checks _builds
+{% else %}
+# Run all necessary build commands
+run-all: _checks _builds
+{% endif %}
+
+# List all TODO items in the repository
+list-todos:
+  grep -R -n --exclude="*.code-snippets" "TODO" *
+
+{% if is_seedcase_website %}
+# Update the Quarto seedcase-theme extension
+update-quarto-theme:
+  quarto add seedcase-project/seedcase-theme --no-prompt
+{% endif %}
+
+# Install the pre-commit hooks
+install-precommit:
+  # Install pre-commit hooks
+  uvx pre-commit install
+  # Run pre-commit hooks on all files
+  uvx pre-commit run --all-files
+  # Update versions of pre-commit hooks
+  uvx pre-commit autoupdate
+
+# Check spelling
+check-spelling:
+  uvx typos
+
+# Run checks on all commits made on the current branch up to the main branch
+check-commits:
+  #!/bin/zsh
+  branch_name=$(git rev-parse --abbrev-ref HEAD)
+  number_of_commits=$(git rev-list --count HEAD ^main)
+  if [[ ${branch_name} != "main" && ${number_of_commits} -gt 0 ]]
+  then
+    uvx --from commitizen cz check --rev-range main..HEAD
+  else
+    echo "Can't either be on ${branch_name} or have more than ${number_of_commits}."
+  fi
+
+# Build the website using Quarto
+build-website:
+  quarto render
+
+# Generate a Quarto include file with the contributors
+build-contributors:
+  sh ./tools/get-contributors.sh {{ website_github_repo }}
+
+# Check for and apply updates from the template
+update-from-template:
+  uvx copier update --trust --defaults
+
+# Reset repo changes to match the template
+reset-from-template:
+  uvx copier recopy --trust --defaults
