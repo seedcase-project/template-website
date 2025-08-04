@@ -1,0 +1,40 @@
+_subdirectory: template
+
+# Post-copy commands:
+_tasks:
+  # Only run these commands when copying the template
+  - command: "git init -b main"
+    when: "{{ _copier_operation == 'copy' }}"
+
+# Message to show after generating or regenerating the project successfully
+_message_after_copy: |
+
+  Your project "{{ website_abbrev }}" has been created successfully!
+
+  Next steps:
+
+  1. Change directory to the project root:
+
+    $ cd {{ _copier_conf.dst_path }}
+
+  2. Install the pre-commit hooks and add (called "update" here) the Quarto extension:
+
+    $ just install-precommit
+    $ just update-quarto-theme
+
+  3. Install [`spaid`](https://github.com/seedcase-project/spaid) and run these setup steps:
+
+    $ spaid_gh_create_repo_from_local -h
+    $ spaid_gh_set_repo_settings -h
+    $ spaid_gh_ruleset_basic_protect_main -h
+
+  4. Configure GitHub following this
+    [guide](https://guidebook.seedcase-project.org/operations/security#using-github-apps-to-generate-tokens):
+
+    - Install the [auto-release-token](https://github.com/apps/auto-release-token) GitHub App
+    - Create an `UPDATE_VERSION_TOKEN` secret for the GitHub App
+    - Create an `UPDATE_VERSION_APP_ID` variable of the GitHub App's ID
+
+  5. List and complete all TODO items in the repository:
+
+    $ just list-todos
