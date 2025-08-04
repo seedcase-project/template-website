@@ -1,0 +1,8 @@
+# Metadata for the website
+gh:
+  org: "seedcase-project"
+  repo: "template-website"
+
+titles:
+  full: "Template Website: An opinionated setup for building and developing Quarto-based websites"
+  short: "Template Website"
