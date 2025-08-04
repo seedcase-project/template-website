@@ -1,5 +1,11 @@
 _subdirectory: template
 
+# Post-copy commands:
+_tasks:
+  # Only run these commands when copying the template
+  - command: "git init -b main"
+    when: "{{ _copier_operation == 'copy' }}"
+
 # Message to show after generating or regenerating the project successfully
 _message_after_copy: |
 
@@ -11,9 +17,10 @@ _message_after_copy: |
 
     $ cd {{ _copier_conf.dst_path }}
 
-  2. Install the pre-commit hooks:
+  2. Install the pre-commit hooks and add (called "update" here) the Quarto extension:
 
     $ just install-precommit
+    $ just update-quarto-theme
 
   3. Install [`spaid`](https://github.com/seedcase-project/spaid) and run these setup steps:
 
@@ -25,9 +32,9 @@ _message_after_copy: |
     [guide](https://guidebook.seedcase-project.org/operations/security#using-github-apps-to-generate-tokens):
 
     - Install the [auto-release-token](https://github.com/apps/auto-release-token)
-      and [add-to-board-token](https://github.com/apps/add-to-board-token) GitHub App
-    - Create an `UPDATE_VERSION_TOKEN` and `ADD_TO_BOARD_TOKEN` secret
-    - Create an `UPDATE_VERSION_APP_ID` and `ADD_TO_BOARD_APP_ID` variable
+      and [add-to-board-token](https://github.com/apps/add-to-board-token) GitHub Apps
+    - Create an `UPDATE_VERSION_TOKEN` and `ADD_TO_BOARD_TOKEN` secret for the GitHub Apps
+    - Create an `UPDATE_VERSION_APP_ID` and `ADD_TO_BOARD_APP_ID` variable of the GitHub Apps' IDs
 
   5. List and complete all TODO items in the repository:
 

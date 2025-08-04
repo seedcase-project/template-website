@@ -5,7 +5,7 @@
 @_builds: build-contributors build-website build-readme
 
 # Run all build-related recipes in the justfile
-run-all: update-quarto-theme _checks test _builds
+run-all: update-quarto-theme update-template _checks test _builds
 
 # Install the pre-commit hooks
 install-precommit:
@@ -19,6 +19,14 @@ install-precommit:
 # Update the Quarto seedcase-theme extension
 update-quarto-theme:
   quarto add seedcase-project/seedcase-theme --no-prompt
+
+# Update files in the template from the copier parent folder
+update-template:
+  cp .pre-commit-config.yaml .gitignore .typos.toml .editorconfig template/
+  mkdir -p template/tools
+  cp tools/get-contributors.sh template/tools/
+  cp .github/dependabot.yml .github/pull_request_template.md template/.github/
+  cp .github/workflows/build-website.yml template/.github/workflows/
 
 # Check the commit messages on the current branch that are not on the main branch
 check-commits:
