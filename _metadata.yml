@@ -4,5 +4,5 @@ gh:
   repo: "template-website"
 
 titles:
-  full: "Template Website: An opinionated setup to building and developing Quarto-based websites"
+  full: "Template Website: An opinionated setup for building and developing Quarto-based websites"
   short: "Template Website"
