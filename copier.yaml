@@ -38,3 +38,12 @@ _message_after_copy: |
   5. List and complete all TODO items in the repository:
 
     $ just list-todos
+
+# Questions:
+author_given_name:
+  type: str
+  help: "What is your first/given name?"
+
+author_family_name:
+  type: str
+  help: "What is your last/family name?"

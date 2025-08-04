@@ -56,6 +56,8 @@ test:
   uvx copier copy $template_dir $test_dir \
     --vcs-ref=$commit \
     --defaults \
+    --data author_given_name="First" \
+    --data author_family_name="Last" \
     --trust
   # Run checks in the generated test data package
   cd $test_dir
@@ -82,6 +84,8 @@ test:
     $template_dir $test_dir \
     --vcs-ref=$commit \
     --defaults \
+    --data author_given_name="First" \
+    --data author_family_name="Last" \
     --trust \
     --overwrite
 
