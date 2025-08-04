@@ -10,7 +10,7 @@ website:
   title: ""
   {% if hosting_provider == "gh-pages" %}
   site-url: "https://{{ github_org }}.github.io/{{ github_repo }}/"
-  {% else if hosting_provider == "netlify" %}
+  {% elif hosting_provider == "netlify" %}
   # TODO: Set the Netlify custom domain URL
   site-url: ""
   {% endif %}

@@ -21,6 +21,6 @@ jobs:
     secrets:
       {% if hosting_provider == 'gh-pages' %}
       github-token: {{ '${{ secrets.GITHUB_TOKEN }}' }}
-      {% else if hosting_provider == 'netlify' %}
+      {% elif hosting_provider == 'netlify' %}
       netlify-token: {{ '${{ secrets.NETLIFY_AUTH_TOKEN }}' }}
       {% endif %}
