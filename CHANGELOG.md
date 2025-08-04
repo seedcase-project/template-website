@@ -1,3 +1,10 @@
+## 0.3.0 (2025-08-04)
+
+### Feat
+
+- :sparkles: sync basic development files to template (#17)
+- :sparkles: initial setup of template, with empty README (#15)
+
 ## 0.2.0 (2025-08-04)
 
 ### Feat
