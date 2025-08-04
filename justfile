@@ -56,6 +56,7 @@ test:
   uvx copier copy $template_dir $test_dir \
     --vcs-ref=$commit \
     --defaults \
+    --data review_team="@fake/team" \
     --trust
   # Run checks in the generated test data package
   cd $test_dir
@@ -82,6 +83,7 @@ test:
     $template_dir $test_dir \
     --vcs-ref=$commit \
     --defaults \
+    --data review_team="@fake/team" \
     --trust \
     --overwrite
 

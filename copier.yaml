@@ -38,3 +38,10 @@ _message_after_copy: |
   5. List and complete all TODO items in the repository:
 
     $ just list-todos
+
+# Questions
+review_team:
+  type: str
+  help: What GitHub team is responsible for reviewing pull requests?
+  default: >-
+    {{ "@%s/developers" % website_github_repo.split('/')[0] if website_github_repo else "" }}
