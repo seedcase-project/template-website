@@ -1,0 +1,67 @@
+project:
+  {% if is_seedcase_website %}
+  type: seedcase-theme
+  {% else %}
+  type: website
+  {% endif %}
+
+website:
+  # TODO: Set the title of the website
+  title: ""
+  {% if hosting_provider == "gh-pages" %}
+  site-url: "https://{{ github_org }}.github.io/{{ github_repo }}/"
+  {% else if hosting_provider == "netlify" %}
+  # TODO: Set the Netlify custom domain URL
+  site-url: ""
+  {% endif %}
+  repo-url: "https://github.com/{{ website_github_repo }}"
+  navbar:
+    {% if is_seedcase_website %}
+    logo: "_extensions/seedcase-project/seedcase-theme/logos/logo.svg"
+    logo-alt: "Seedcase Project logo: Main page"
+    {% else %}
+    # TODO: Add logo and logo-alt
+    logo: ""
+    logo-alt: ""
+    {% endif %}
+    pinned: true
+    left:
+      - text: "Welcome"
+        href: index.qmd
+    tools:
+      - icon: github
+        href: "https://github.com/{{ website_github_repo }}"
+        aria-label: "GitHub icon: Source repository"
+      {% if is_seedcase_website %}
+      - icon: house
+        href: "https://seedcase-project.org"
+        aria-label: "House icon: Main website for the Seedcase Project"
+  sidebar:
+    contents:
+      - index.qmd
+
+format:
+  {% if is_seedcase_website %}
+  seedcase-theme-html:
+    theme:
+      - brand
+      - custom-styles.scss
+  {% else %}
+  # TODO: Use Quarto extension if available
+  html:
+    theme:
+      # TODO: Choose a different theme if desired
+      - litera
+      - custom-styles.scss
+  {% endif %}
+    # TODO: Uncomment if using the goatcounter website visitor counter
+    # include-before-body:
+      # - "includes/site-counter.html"
+
+editor:
+  markdown:
+    wrap: 72
+    canonical: true
+
+execute:
+  echo: false

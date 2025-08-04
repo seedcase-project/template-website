@@ -1,0 +1,26 @@
+name: Build website
+
+on:
+  push:
+    branches:
+      - main
+
+# Limit token permissions for security
+permissions: read-all
+
+jobs:
+  build-website:
+    uses: seedcase-project/.github/.github/workflows/reusable-build-docs.yml@main
+    {% if hosting_provider == 'gh-pages' %}
+    with:
+      hosting-provider: gh-pages
+    permissions:
+      contents: write
+      pages: write
+    {% endif %}
+    secrets:
+      {% if hosting_provider == 'gh-pages' %}
+      github-token: ${{ secrets.GITHUB_TOKEN }}
+      {% else if hosting_provider == 'netlify' %}
+      netlify-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+      {% endif %}

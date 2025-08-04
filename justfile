@@ -2,10 +2,11 @@
     just --list --unsorted
 
 @_checks: check-spelling check-commits
+@_tests: (test hosting_provider="netlify") (test hosting_provider="gh-pages")
 @_builds: build-contributors build-website build-readme
 
 # Run all build-related recipes in the justfile
-run-all: update-quarto-theme update-template _checks test _builds
+run-all: update-quarto-theme update-template _checks _tests _builds
 
 # Install the pre-commit hooks
 install-precommit:
@@ -44,10 +45,10 @@ check-commits:
 check-spelling:
   uvx typos
 
-# Test and check that a data package can be created from the template
-test:
+# Test that a website can be created from the template, with parameters for: `hosting_provider` (either "gh-pages" or "netlify")
+test hosting_provider="netlify":
   #!/bin/zsh
-  test_name="test-website"
+  test_name="test-website-{{ hosting_provider }}"
   test_dir="$(pwd)/_temp/$test_name"
   template_dir="$(pwd)"
   commit=$(git rev-parse HEAD)
@@ -56,8 +57,9 @@ test:
   uvx copier copy $template_dir $test_dir \
     --vcs-ref=$commit \
     --defaults \
+    --data hosting_provider={{ hosting_provider }} \
     --trust
-  # Run checks in the generated test data package
+  # Run checks in the generated test website
   cd $test_dir
   git add .
   git commit -m "test: initial copy"
@@ -73,15 +75,16 @@ test:
     --defaults \
     --overwrite \
     --trust
-  # Check that copying onto an existing data package works
-  echo "Using the template in an existing package command -----------"
+  # Check that copying onto an existing website works
+  echo "Using the template in an existing website command -----------"
   rm .cz.toml .copier-answers.yml
   git add .
-  git commit -m "test: preparing to copy onto an existing package"
+  git commit -m "test: preparing to copy onto an existing website"
   uvx copier copy \
     $template_dir $test_dir \
     --vcs-ref=$commit \
     --defaults \
+    --data hosting_provider={{ hosting_provider }} \
     --trust \
     --overwrite
 

@@ -38,3 +38,36 @@ _message_after_copy: |
   5. List and complete all TODO items in the repository:
 
     $ just list-todos
+
+# Questions:
+website_abbrev:
+  type: str
+  help: "What is the abbreviated name of the website? This could be the name of your GitHub repository and should be a short, lowercase name without spaces or special characters. For example, 'new-website'."
+  default: "{{ _copier_conf.dst_path | basename }}"
+
+website_github_repo:
+  type: str
+  help: "What is or will be the GitHub repository spec for the website?"
+  placeholder: "user/repo"
+  validator: |
+    {% if website_github_repo and not (website_github_repo | regex_search('^[\w.-]+\/[\w.-]+$')) %}
+    Must be in the format `user/repo` and contain only alphanumeric characters and `_`, `-`, or `.`.
+    {% endif %}
+
+hosting_provider:
+  type: str
+  help: "What hosting provider will you use for the website?"
+  choices:
+    - netlify
+    - gh-pages
+
+# Configurations not asked
+github_org:
+  type: str
+  default: "{{ website_github_repo.split('/')[0] if website_github_repo else '' }}"
+  when: false
+
+github_repo:
+  type: str
+  default: "{{ website_github_repo.split('/')[1] if website_github_repo else '' }}"
+  when: false
