@@ -2,7 +2,7 @@
     just --list --unsorted
 
 @_checks: check-spelling check-commits
-@_tests: (test hosting_provider="netlify") (test hosting_provider="gh-pages")
+@_tests: (test "netlify") (test "gh-pages")
 @_builds: build-contributors build-website build-readme
 
 # Run all build-related recipes in the justfile
@@ -58,6 +58,7 @@ test hosting_provider="netlify":
     --vcs-ref=$commit \
     --defaults \
     --data hosting_provider={{ hosting_provider }} \
+    --data website_github_repo="fake/repo" \
     --trust
   # Run checks in the generated test website
   cd $test_dir
@@ -85,6 +86,7 @@ test hosting_provider="netlify":
     --vcs-ref=$commit \
     --defaults \
     --data hosting_provider={{ hosting_provider }} \
+    --data website_github_repo="fake/repo" \
     --trust \
     --overwrite
 
