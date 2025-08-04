@@ -1,0 +1,43 @@
+_subdirectory: template
+
+# Message to show after generating or regenerating the project successfully
+_message_after_copy: |
+
+  Your project "{{ website_abbrev }}" has been created successfully!
+
+  Next steps:
+
+  1. Change directory to the project root:
+
+    $ cd {{ _copier_conf.dst_path }}
+
+  2. Install the pre-commit hooks:
+
+    $ just install-precommit
+
+  3. Install [`spaid`](https://github.com/seedcase-project/spaid) and run these setup steps:
+
+    $ spaid_gh_create_repo_from_local -h
+    $ spaid_gh_set_repo_settings -h
+    $ spaid_gh_ruleset_basic_protect_main -h
+
+  4. Configure GitHub following this
+    [guide](https://guidebook.seedcase-project.org/operations/security#using-github-apps-to-generate-tokens):
+
+    - Install the [auto-release-token](https://github.com/apps/auto-release-token)
+      and [add-to-board-token](https://github.com/apps/add-to-board-token) GitHub App
+    - Create an `UPDATE_VERSION_TOKEN` and `ADD_TO_BOARD_TOKEN` secret
+    - Create an `UPDATE_VERSION_APP_ID` and `ADD_TO_BOARD_APP_ID` variable
+
+  5. List and complete all TODO items in the repository:
+
+    $ just list-todos
+
+# Questions:
+github_board_number:
+  type: str
+  help: "What is the GitHub project board number to add issues and pull requests to?"
+  validator: |
+    {% if github_board_number and not github_board_number.isdigit() %}
+    The board number must be an integer.
+    {% endif %}
