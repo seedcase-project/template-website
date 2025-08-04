@@ -24,8 +24,8 @@ website:
             href: docs/releases.qmd
           - text: "Contributing"
             href: CONTRIBUTING.md
-      # - text: "Guide"
-      #   href: docs/guide.qmd
+      - text: "Guide"
+        href: docs/guide.qmd
     tools:
       - icon: github
         href: "https://github.com/seedcase-project/template-website"
