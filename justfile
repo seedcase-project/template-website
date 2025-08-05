@@ -2,10 +2,11 @@
     just --list --unsorted
 
 @_checks: check-spelling check-commits
+@_tests: test
 @_builds: build-contributors build-website build-readme
 
 # Run all build-related recipes in the justfile
-run-all: update-quarto-theme update-template _checks test _builds
+run-all: update-quarto-theme update-template _checks _tests _builds
 
 # Install the pre-commit hooks
 install-precommit:
