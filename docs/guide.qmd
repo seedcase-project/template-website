@@ -34,7 +34,7 @@ pipx install copier uv rust-just
 
 ## Creating a new website
 
-You can use this template to create a new website a standard set of
+You can use this template to create a new website with a standard set of
 files and folders, as well as all the features and configurations to
 make it easier to build your website smoothly and effectively. First,
 open a Terminal and move into the directory where you want to create the
@@ -168,4 +168,4 @@ additional setup are:
 -   The workflow `.github/workflows/add-to-project.yml` requires the
     [add-to-board-token](https://github.com/apps/add-to-board-token)
     GitHub App, along with the `ADD_TO_BOARD_TOKEN` secret and the
-    `ADD_TO_BOARD_APP_ID` variable of the GitHub Apps' ID.
+    `ADD_TO_BOARD_APP_ID` variable of the GitHub App's ID.
