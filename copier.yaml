@@ -40,7 +40,7 @@ _message_after_copy: |
 
     $ just list-todos
 
-# Questions:
+# Questions
 seedcase_website:
   type: bool
   default: false
@@ -61,3 +61,9 @@ github_board_number:
     {% if github_board_number and not github_board_number.isdigit() %}
     The board number must be an integer.
     {% endif %}
+
+review_team:
+  type: str
+  help: What GitHub team is responsible for reviewing pull requests?
+  default: >-
+    {{ "@%s/developers" % website_github_repo.split('/')[0] if website_github_repo else "" }}

@@ -61,6 +61,7 @@ test is_seedcase_website:
     --vcs-ref=$commit \
     --defaults \
     --data seedcase_website={{ is_seedcase_website }} \
+    --data review_team="@fake/team" \
     --data author_given_name="First" \
     --data author_family_name="Last" \
     --data github_board_number="14" \
@@ -91,6 +92,7 @@ test is_seedcase_website:
     --vcs-ref=$commit \
     --defaults \
     --data seedcase_website={{ is_seedcase_website }} \
+    --data review_team="@fake/team" \
     --data author_given_name="First" \
     --data author_family_name="Last" \
     --data github_board_number="14" \
