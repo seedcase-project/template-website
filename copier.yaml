@@ -6,7 +6,7 @@ _tasks:
   - command: "git init -b main"
     when: "{{ _copier_operation == 'copy'}}"
   # Run if the project is a Seedcase website
-  - command: "quarto add seedcase-project/seedcase-theme"
+  - command: "quarto add seedcase-project/seedcase-theme --no-prompt"
     when: "{{ seedcase_website }}"
 
 # Message to show after generating or regenerating the project successfully
