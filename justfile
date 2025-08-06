@@ -60,6 +60,7 @@ test is_seedcase_website:
   uvx copier copy $template_dir $test_dir \
     --vcs-ref=$commit \
     --defaults \
+    --data review_team="@fake/team" \
     --data author_given_name="First" \
     --data author_family_name="Last" \
     --data seedcase_website={{ is_seedcase_website }} \
@@ -90,6 +91,7 @@ test is_seedcase_website:
     $template_dir $test_dir \
     --vcs-ref=$commit \
     --defaults \
+    --data review_team="@fake/team" \
     --data author_given_name="First" \
     --data author_family_name="Last" \
     --data seedcase_website={{ is_seedcase_website }} \
