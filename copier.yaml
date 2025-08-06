@@ -5,9 +5,6 @@ _tasks:
   # Only run these commands when copying the template
   - command: "git init -b main"
     when: "{{ _copier_operation == 'copy'}}"
-  # Run if the project is a Seedcase website
-  - command: "quarto add seedcase-project/seedcase-theme"
-    when: "{{ seedcase_website }}"
 
 # Message to show after generating or regenerating the project successfully
 _message_after_copy: |
@@ -47,3 +44,11 @@ seedcase_website:
   type: bool
   default: false
   help: "Is this website part of the Seedcase Project? If not, the theme will not be applied."
+
+author_given_name:
+  type: str
+  help: "What is your first/given name?"
+
+author_family_name:
+  type: str
+  help: "What is your last/family name?"

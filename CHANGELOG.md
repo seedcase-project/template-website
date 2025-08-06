@@ -1,3 +1,21 @@
+## 0.8.0 (2025-08-06)
+
+### Feat
+
+- :sparkles: add `.zenodo.json` to link metadata to Zenodo (#27)
+
+## 0.7.1 (2025-08-06)
+
+### Refactor
+
+- :fire: remove `quarto add` task, so no dependency on it (#39)
+
+## 0.7.0 (2025-08-06)
+
+### Feat
+
+- :sparkles: add justfile to template (#35)
+
 ## 0.6.0 (2025-08-06)
 
 ### Feat
