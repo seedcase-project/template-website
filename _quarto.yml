@@ -1,5 +1,7 @@
 project:
   type: seedcase-theme
+  pre-render:
+    - sh ./tools/get-contributors.sh seedcase-project/template-website
   render:
     # Don't render anything in the template directory.
     - "!template/"
