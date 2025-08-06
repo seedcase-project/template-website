@@ -38,6 +38,7 @@ check-commits:
   number_of_commits=$(git rev-list --count HEAD ^main)
   if [[ ${branch_name} != "main" && ${number_of_commits} -gt 0 ]]
   then
+    # If issue happens, try `uv tool update-shell`
     uvx --from commitizen cz check --rev-range main..HEAD
   else
     echo "On 'main' or current branch doesn't have any commits."
