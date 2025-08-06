@@ -21,8 +21,8 @@ jobs:
         with:
           enable-cache: true
 
-      - name: Install justfile and zsh
-        run: sudo apt install -y just zsh
+      - name: Install justfile
+        run: sudo apt install -y just
 
       - name: Set Git user
         run: |
