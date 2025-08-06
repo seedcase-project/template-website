@@ -1,0 +1,16 @@
+{
+  "recommendations": [
+    "eamodio.gitlens",
+    "github.vscode-github-actions",
+    "redhat.vscode-yaml",
+    "donjayamanne.githistory",
+    "felipecaputo.git-project-manager",
+    "GitHub.vscode-pull-request-github",
+    "vivaxy.vscode-conventional-commits",
+    "quarto.quarto",
+    "pshaddel.conventional-branch",
+    "EditorConfig.EditorConfig",
+    "tekumara.typos-vscode",
+  ],
+  "unwantedRecommendations": []
+}

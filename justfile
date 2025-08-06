@@ -2,8 +2,9 @@
     just --list --unsorted
 
 @_checks: check-spelling check-commits
-@_tests: (test "netlify") (test "gh-pages")
 @_builds: build-contributors build-website build-readme
+# Test if it is or isn't a Seedcase website and uses netlify or gh-pages
+@_tests: (test "true" "netlify") (test "false" "netlify") (test "true" "gh-pages") (test "false" "gh-pages")
 
 # Run all build-related recipes in the justfile
 run-all: update-quarto-theme update-template _checks _tests _builds
@@ -28,6 +29,7 @@ update-template:
   cp tools/get-contributors.sh template/tools/
   cp .github/dependabot.yml .github/pull_request_template.md template/.github/
   cp .github/workflows/build-website.yml template/.github/workflows/
+  cp .github/workflows/release-project.yml template/.github/workflows/
 
 # Check the commit messages on the current branch that are not on the main branch
 check-commits:
@@ -45,11 +47,11 @@ check-commits:
 check-spelling:
   uvx typos
 
-# Test that a website can be created from the template, with parameters for: `hosting_provider` (either "gh-pages" or "netlify")
-test hosting_provider="netlify":
+# Test that a website can be created from the template, with parameters for: `is_seedcase_website` (true or false) and `hosting_provider` (either "gh-pages" or "netlify")
+test is_seedcase_website="true" hosting_provider="netlify":
   #!/bin/zsh
   test_name="test-website-{{ hosting_provider }}"
-  test_dir="$(pwd)/_temp/$test_name"
+  test_dir="$(pwd)/_temp/{{ is_seedcase_website }}/$test_name"
   template_dir="$(pwd)"
   commit=$(git rev-parse HEAD)
   rm -rf $test_dir
@@ -59,6 +61,9 @@ test hosting_provider="netlify":
     --defaults \
     --data hosting_provider={{ hosting_provider }} \
     --data website_github_repo="fake/repo" \
+    --data author_given_name="First" \
+    --data author_family_name="Last" \
+    --data seedcase_website={{ is_seedcase_website }} \
     --trust
   # Run checks in the generated test website
   cd $test_dir
@@ -75,6 +80,7 @@ test hosting_provider="netlify":
     --vcs-ref=$commit \
     --defaults \
     --overwrite \
+    --data seedcase_website={{ is_seedcase_website }} \
     --trust
   # Check that copying onto an existing website works
   echo "Using the template in an existing website command -----------"
@@ -87,6 +93,9 @@ test hosting_provider="netlify":
     --defaults \
     --data hosting_provider={{ hosting_provider }} \
     --data website_github_repo="fake/repo" \
+    --data author_given_name="First" \
+    --data author_family_name="Last" \
+    --data seedcase_website={{ is_seedcase_website }} \
     --trust \
     --overwrite
 

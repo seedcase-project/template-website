@@ -4,7 +4,7 @@ _subdirectory: template
 _tasks:
   # Only run these commands when copying the template
   - command: "git init -b main"
-    when: "{{ _copier_operation == 'copy' }}"
+    when: "{{ _copier_operation == 'copy'}}"
 
 # Message to show after generating or regenerating the project successfully
 _message_after_copy: |
@@ -40,6 +40,19 @@ _message_after_copy: |
     $ just list-todos
 
 # Questions:
+seedcase_website:
+  type: bool
+  default: false
+  help: "Is this website part of the Seedcase Project? If not, the theme will not be applied."
+
+author_given_name:
+  type: str
+  help: "What is your first/given name?"
+
+author_family_name:
+  type: str
+  help: "What is your last/family name?"
+
 website_abbrev:
   type: str
   help: "What is the abbreviated name of the website? This could be the name of your GitHub repository and should be a short, lowercase name without spaces or special characters. For example, 'new-website'."
