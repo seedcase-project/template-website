@@ -9,12 +9,12 @@ issue on our GitHub repository.
 
 ## Adding or modifying content :pencil2:
 
-{% if is_seedcase_website %}
+{% if seedcase_website -%}
 If you would like to contribute content, please check out our
 [guidebook](https://guidebook.seedcase-project.org/) for more specific
 details on how we work and develop. It is a regularly evolving document,
 so is at various states of completion.
-{% endif %}
+{%- endif %}
 
 To contribute to `{{ website_abbrev }}`, you first need to install
 [uv](https://docs.astral.sh/uv/) and
@@ -40,8 +40,8 @@ just
 ```
 
 As you contribute, make sure your changes will pass our tests by opening
-a terminal so that the working directory is the root of this project
-(`{{ website_abbrev }}/`) and running:
+a terminal so that the working directory is the root of this project's
+repository and running:
 
 ``` bash
 just run-all
