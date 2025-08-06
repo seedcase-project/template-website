@@ -4,7 +4,10 @@ _subdirectory: template
 _tasks:
   # Only run these commands when copying the template
   - command: "git init -b main"
-    when: "{{ _copier_operation == 'copy' }}"
+    when: "{{ _copier_operation == 'copy'}}"
+  # Run if the project is a Seedcase website
+  - command: "quarto add seedcase-project/seedcase-theme"
+    when: "{{ seedcase_website }}"
 
 # Message to show after generating or regenerating the project successfully
 _message_after_copy: |
@@ -40,6 +43,11 @@ _message_after_copy: |
     $ just list-todos
 
 # Questions
+seedcase_website:
+  type: bool
+  default: false
+  help: "Is this website part of the Seedcase Project? If not, the theme will not be applied."
+ 
 review_team:
   type: str
   help: What GitHub team is responsible for reviewing pull requests?

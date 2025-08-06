@@ -1,3 +1,22 @@
+## 0.6.0 (2025-08-06)
+
+### Feat
+
+- :sparkles: add VS Code settings and extension recommend files (#24)
+- :sparkles: add auto-release workflow to template (#26)
+
+## 0.5.0 (2025-08-06)
+
+### Feat
+
+- :sparkles: workflow to check updates from template (#28)
+
+## 0.4.0 (2025-08-05)
+
+### Feat
+
+- :sparkles: add the 404 page, either as a Seedcase website or not (#19)
+
 ## 0.3.0 (2025-08-04)
 
 ### Feat

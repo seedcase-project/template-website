@@ -3,9 +3,11 @@
 
 @_checks: check-spelling check-commits
 @_builds: build-contributors build-website build-readme
+# Test if it is or isn't a Seedcase website
+@_tests: (test "true") (test "false")
 
 # Run all build-related recipes in the justfile
-run-all: update-quarto-theme update-template _checks test _builds
+run-all: update-quarto-theme update-template _checks _tests _builds
 
 # Install the pre-commit hooks
 install-precommit:
@@ -27,6 +29,7 @@ update-template:
   cp tools/get-contributors.sh template/tools/
   cp .github/dependabot.yml .github/pull_request_template.md template/.github/
   cp .github/workflows/build-website.yml template/.github/workflows/
+  cp .github/workflows/release-project.yml template/.github/workflows/
 
 # Check the commit messages on the current branch that are not on the main branch
 check-commits:
@@ -45,10 +48,10 @@ check-spelling:
   uvx typos
 
 # Test and check that a data package can be created from the template
-test:
+test is_seedcase_website:
   #!/bin/zsh
   test_name="test-website"
-  test_dir="$(pwd)/_temp/$test_name"
+  test_dir="$(pwd)/_temp/{{ is_seedcase_website }}/$test_name"
   template_dir="$(pwd)"
   commit=$(git rev-parse HEAD)
   rm -rf $test_dir
@@ -57,6 +60,7 @@ test:
     --vcs-ref=$commit \
     --defaults \
     --data review_team="@fake/team" \
+    --data seedcase_website={{ is_seedcase_website }} \
     --trust
   # Run checks in the generated test data package
   cd $test_dir
@@ -73,6 +77,7 @@ test:
     --vcs-ref=$commit \
     --defaults \
     --overwrite \
+    --data seedcase_website={{ is_seedcase_website }} \
     --trust
   # Check that copying onto an existing data package works
   echo "Using the template in an existing package command -----------"
@@ -84,6 +89,7 @@ test:
     --vcs-ref=$commit \
     --defaults \
     --data review_team="@fake/team" \
+    --data seedcase_website={{ is_seedcase_website }} \
     --trust \
     --overwrite
 
