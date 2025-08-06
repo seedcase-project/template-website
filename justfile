@@ -110,4 +110,4 @@ build-readme:
 
 # Generate a Quarto include file with the contributors
 build-contributors:
-  sh ./tools/get-contributors.sh seedcase-project/template-workshop
+  sh ./tools/get-contributors.sh seedcase-project/template-website
