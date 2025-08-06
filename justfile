@@ -59,6 +59,8 @@ test is_seedcase_website:
   uvx copier copy $template_dir $test_dir \
     --vcs-ref=$commit \
     --defaults \
+    --data author_given_name="First" \
+    --data author_family_name="Last" \
     --data seedcase_website={{ is_seedcase_website }} \
     --trust
   # Run checks in the generated test data package
@@ -87,6 +89,8 @@ test is_seedcase_website:
     $template_dir $test_dir \
     --vcs-ref=$commit \
     --defaults \
+    --data author_given_name="First" \
+    --data author_family_name="Last" \
     --data seedcase_website={{ is_seedcase_website }} \
     --trust \
     --overwrite
