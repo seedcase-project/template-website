@@ -60,9 +60,10 @@ test is_seedcase_website:
   uvx copier copy $template_dir $test_dir \
     --vcs-ref=$commit \
     --defaults \
+    --data seedcase_website={{ is_seedcase_website }} \
     --data author_given_name="First" \
     --data author_family_name="Last" \
-    --data seedcase_website={{ is_seedcase_website }} \
+    --data github_board_number="14" \
     --trust
   # Run checks in the generated test data package
   cd $test_dir
@@ -79,7 +80,6 @@ test is_seedcase_website:
     --vcs-ref=$commit \
     --defaults \
     --overwrite \
-    --data seedcase_website={{ is_seedcase_website }} \
     --trust
   # Check that copying onto an existing data package works
   echo "Using the template in an existing package command -----------"
@@ -90,9 +90,10 @@ test is_seedcase_website:
     $template_dir $test_dir \
     --vcs-ref=$commit \
     --defaults \
+    --data seedcase_website={{ is_seedcase_website }} \
     --data author_given_name="First" \
     --data author_family_name="Last" \
-    --data seedcase_website={{ is_seedcase_website }} \
+    --data github_board_number="14" \
     --trust \
     --overwrite
 
