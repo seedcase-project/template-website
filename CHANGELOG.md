@@ -1,3 +1,9 @@
+## 0.9.0 (2025-08-06)
+
+### Feat
+
+- :sparkles: add `CODEOWNERS` to template (#30)
+
 ## 0.8.0 (2025-08-06)
 
 ### Feat

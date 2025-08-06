@@ -33,14 +33,15 @@ update-template:
 
 # Check the commit messages on the current branch that are not on the main branch
 check-commits:
-  #!/bin/zsh
+  #!/usr/bin/env bash
   branch_name=$(git rev-parse --abbrev-ref HEAD)
   number_of_commits=$(git rev-list --count HEAD ^main)
   if [[ ${branch_name} != "main" && ${number_of_commits} -gt 0 ]]
   then
+    # If issue happens, try `uv tool update-shell`
     uvx --from commitizen cz check --rev-range main..HEAD
   else
-    echo "On `main` or current branch doesn't have any commits."
+    echo "On 'main' or current branch doesn't have any commits."
   fi
 
 # Check for spelling errors in files
@@ -49,7 +50,7 @@ check-spelling:
 
 # Test and check that a data package can be created from the template
 test is_seedcase_website:
-  #!/bin/zsh
+  #!/usr/bin/env bash
   test_name="test-website"
   test_dir="$(pwd)/_temp/{{ is_seedcase_website }}/$test_name"
   template_dir="$(pwd)"
@@ -59,6 +60,7 @@ test is_seedcase_website:
   uvx copier copy $template_dir $test_dir \
     --vcs-ref=$commit \
     --defaults \
+    --data review_team="@fake/team" \
     --data author_given_name="First" \
     --data author_family_name="Last" \
     --data seedcase_website={{ is_seedcase_website }} \
@@ -89,6 +91,7 @@ test is_seedcase_website:
     $template_dir $test_dir \
     --vcs-ref=$commit \
     --defaults \
+    --data review_team="@fake/team" \
     --data author_given_name="First" \
     --data author_family_name="Last" \
     --data seedcase_website={{ is_seedcase_website }} \
@@ -97,7 +100,6 @@ test is_seedcase_website:
 
 # Clean up any leftover and temporary build files
 cleanup:
-  #!/bin/zsh
   rm -rf _temp
 
 # Build the website using Quarto
@@ -110,4 +112,4 @@ build-readme:
 
 # Generate a Quarto include file with the contributors
 build-contributors:
-  sh ./tools/get-contributors.sh seedcase-project/template-workshop
+  sh ./tools/get-contributors.sh seedcase-project/template-website
