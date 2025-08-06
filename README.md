@@ -1,6 +1,6 @@
 
 
-# Template Website: An opinionated setup to building and developing Quarto-based websites
+# Template Website: An opinionated setup for building and developing Quarto-based websites
 
 <!-- TODO: Include DOI after uploading -->
 
@@ -56,8 +56,14 @@ effort to create a framework for data management and analysis in
 research. If you use this project in your work, please cite it as
 follows:
 
-FileNotFoundError: \[Errno 2\] No such file or directory: ‘CITATION.cff’
+Johnston L.W., Brødbæk S.K., Beicher K., Vago M. Template Website: An
+opinionated setup for building and developing Quarto-based websites URL:
+https://template-website.seedcase-project.org
 
 Or as a BibTeX entry:
 
-    FileNotFoundError: [Errno 2] No such file or directory: 'CITATION.cff'
+    @misc{YourReferenceHere,
+    author = {Johnston, Luke William and Brødbæk, Signe Kirk and Beicher, Kristiane and Vago, Marton},
+    title = {Template Website: An opinionated setup for building and developing Quarto-based websites},
+    url = {https://template-website.seedcase-project.org}
+    }

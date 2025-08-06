@@ -1,3 +1,15 @@
+## 0.5.0 (2025-08-06)
+
+### Feat
+
+- :sparkles: workflow to check updates from template (#28)
+
+## 0.4.0 (2025-08-05)
+
+### Feat
+
+- :sparkles: add the 404 page, either as a Seedcase website or not (#19)
+
 ## 0.3.0 (2025-08-04)
 
 ### Feat
