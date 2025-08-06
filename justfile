@@ -2,7 +2,6 @@
     just --list --unsorted
 
 @_checks: check-spelling check-commits
-@_tests: test
 @_builds: build-contributors build-website build-readme
 # Test if it is or isn't a Seedcase website
 @_tests: (test "true") (test "false")
