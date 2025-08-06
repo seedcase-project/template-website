@@ -44,3 +44,11 @@ seedcase_website:
   type: bool
   default: false
   help: "Is this website part of the Seedcase Project? If not, the theme will not be applied."
+
+author_given_name:
+  type: str
+  help: "What is your first/given name?"
+
+author_family_name:
+  type: str
+  help: "What is your last/family name?"
