@@ -60,11 +60,12 @@ test is_seedcase_website="true" hosting_provider="netlify":
   uvx copier copy $template_dir $test_dir \
     --vcs-ref=$commit \
     --defaults \
+    --data seedcase_website={{ is_seedcase_website }} \
     --data hosting_provider={{ hosting_provider }} \
     --data website_github_repo="fake/repo" \
+    --data review_team="@fake/team" \
     --data author_given_name="First" \
     --data author_family_name="Last" \
-    --data seedcase_website={{ is_seedcase_website }} \
     --trust
   # Run checks in the generated test website
   cd $test_dir
@@ -81,7 +82,6 @@ test is_seedcase_website="true" hosting_provider="netlify":
     --vcs-ref=$commit \
     --defaults \
     --overwrite \
-    --data seedcase_website={{ is_seedcase_website }} \
     --trust
   # Check that copying onto an existing website works
   echo "Using the template in an existing website command -----------"
@@ -92,11 +92,12 @@ test is_seedcase_website="true" hosting_provider="netlify":
     $template_dir $test_dir \
     --vcs-ref=$commit \
     --defaults \
+    --data seedcase_website={{ is_seedcase_website }} \
     --data hosting_provider={{ hosting_provider }} \
     --data website_github_repo="fake/repo" \
+    --data review_team="@fake/team" \
     --data author_given_name="First" \
     --data author_family_name="Last" \
-    --data seedcase_website={{ is_seedcase_website }} \
     --trust \
     --overwrite
 
@@ -114,4 +115,4 @@ build-readme:
 
 # Generate a Quarto include file with the contributors
 build-contributors:
-  sh ./tools/get-contributors.sh seedcase-project/template-workshop
+  sh ./tools/get-contributors.sh seedcase-project/template-website

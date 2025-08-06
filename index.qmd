@@ -61,5 +61,5 @@ share your ideas or contribute code. Your input makes us better!
 <!-- TODO: Unhide after more contributors -->
 ### Contributors
 
-{{< include /_contributors.qmd.tmp >}}
+{{< include /_contributors.qmd >}}
 :::

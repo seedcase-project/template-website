@@ -39,7 +39,7 @@ _message_after_copy: |
 
     $ just list-todos
 
-# Questions:
+# Questions
 seedcase_website:
   type: bool
   default: false
@@ -73,6 +73,12 @@ hosting_provider:
   choices:
     - netlify
     - gh-pages
+
+review_team:
+  type: str
+  help: What GitHub team is responsible for reviewing pull requests?
+  default: >-
+    {{ "@%s/developers" % website_github_repo.split('/')[0] if website_github_repo else "" }}
 
 # Configurations not asked
 github_org:
