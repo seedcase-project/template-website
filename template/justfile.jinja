@@ -2,7 +2,7 @@
     just --list --unsorted
 
 @_checks: check-spelling check-commits
-@_builds: build-contributors build-website
+@_builds: build-contributors build-readme build-website
 
 {% if is_seedcase_website %}
 # Run all necessary build commands
@@ -50,6 +50,10 @@ check-commits:
 # Build the website using Quarto
 build-website:
   quarto render
+
+# Re-build the README file from the Quarto version
+build-readme:
+  uvx --from quarto quarto render README.qmd --to gfm
 
 # Generate a Quarto include file with the contributors
 build-contributors:
