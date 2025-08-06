@@ -1,3 +1,9 @@
+## 0.5.0 (2025-08-06)
+
+### Feat
+
+- :sparkles: workflow to check updates from template (#28)
+
 ## 0.4.0 (2025-08-05)
 
 ### Feat
