@@ -2,7 +2,13 @@ meta:
   name:
     full: Seedcase Project
     short: Seedcase
+  description: |
+    The Seedcase Project is an organisation dedicated to making an
+    effective and open framework for building modern infrastructures
+    for structured, standardised, and FAIR (findable, accessible,
+    interoperable, and reusable) research data.
   link:
+    home: https://seedcase-project.org
     github: https://github.com/seedcase-project
 
 color:
@@ -19,7 +25,7 @@ typography:
   fonts:
     - family: noto sans
       source: "bunny"
-      # other weights are used inexplicitly for e.g., bold and table headers
+      # other weights are used for e.g., bold and table headers
       weight: [300, 500, 600]
     - family: poppins
       source: "bunny"
@@ -138,5 +144,10 @@ defaults:
       }
 
       .callout-body {
+          font-weight: 300 !important;
+      }
+
+      /* Dropdown items on navbar default to 400 weight, but we want them to be lighter. */
+      .dropdown-item {
           font-weight: 300 !important;
       }
