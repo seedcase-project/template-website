@@ -47,7 +47,7 @@ seedcase_website:
   type: bool
   default: false
   help: "Is this website part of the Seedcase Project? If not, the theme will not be applied."
- 
+
 review_team:
   type: str
   help: What GitHub team is responsible for reviewing pull requests?
