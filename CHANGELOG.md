@@ -1,3 +1,9 @@
+## 0.8.0 (2025-08-06)
+
+### Feat
+
+- :sparkles: add `.zenodo.json` to link metadata to Zenodo (#27)
+
 ## 0.7.1 (2025-08-06)
 
 ### Refactor
