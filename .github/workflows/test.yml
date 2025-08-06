@@ -1,0 +1,33 @@
+name: Test template creation
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+# Least privilege permissions
+permissions: read-all
+
+jobs:
+  test-copier:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@bd01e18f51369d5a26f1651c3cb451d3417e3bba
+        with:
+          enable-cache: true
+
+      - name: Install justfile and zsh
+        run: sudo apt install -y just zsh
+
+      - name: Set Git user
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "fake@example.com"
+
+      - name: Test and check template creation
+        run: just _tests
