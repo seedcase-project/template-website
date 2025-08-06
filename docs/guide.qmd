@@ -1,0 +1,171 @@
+---
+title: "Guide"
+---
+
+This guide provides an overview of how to use this template for creating
+a new website. It includes instructions for using the template and
+post-creation tasks.
+
+## Installing
+
+In order to use this template, you need to install a few programs:
+
+-   [Python](https://www.python.org/): Required by the template tool
+    itself (copier).
+-   [Git](https://git-scm.com/): For version control and setting up Git
+    to track the newly created data package.
+-   [copier](https://copier.readthedocs.io/en/stable/#quick-start): A
+    template tool for making new projects in a standardised and
+    structured way.
+-   [uv](https://docs.astral.sh/uv/): A tool for managing Python
+    environments and running commands. Some post-copy steps of this
+    template use uv.
+-   [just](https://just.systems/man/en/): A build management tool that
+    helps with running common build and check tasks.
+
+You will need to install Python and Git yourself, but the other tools
+can be installed using
+[`pipx`](https://pipxproject.github.io/pipx/)---which we strongly
+recommend---with the following command:
+
+``` bash
+pipx install copier uv rust-just
+```
+
+## Creating a new website
+
+You can use this template to create a new website with a standard set of
+files and folders, as well as all the features and configurations to
+make it easier to build your website smoothly and effectively. First,
+open a Terminal and move into the directory where you want to create the
+new website. Then run the following command:
+
+``` bash
+# Copy into the current directory, which is the "."
+uvx copier copy --trust gh:seedcase-project/template-website .
+```
+
+::: callout-caution
+This template runs some post-copy commands using your terminal. In order
+to run them, you need to use the `--trust` option. Review the
+[`copier.yml`](https://github.com/seedcase-project/template-website/blob/main/copier.yaml)
+file, under the `_tasks` key to see what commands will be run after
+copying the template, so you can know and trust what the commands are
+doing. Unfortunately, this template can't be used without the `--trust`
+option.
+:::
+
+## Applying the template to an existing website
+
+If you want to use this template on an existing website, you can use the
+`copy` command of `copier` just like above to apply the template to the
+existing website. This will add all the template's files and
+configurations to the existing website.
+
+``` bash
+uvx copier copy --trust gh:seedcase-project/template-website .
+```
+
+It will go through a series of prompts, as in the case of creating a new
+website, including asking if you want to overwrite existing files.
+
+::: callout-note
+To use the `copy` command, the website needs to be tracked by Git and in
+a clean state (no changes).
+:::
+
+## Applying the latest template changes
+
+There are two ways to update an existing website with the latest changes
+from the template: `update` and `recopy`.
+
+Use `update` to apply template updates to your project without
+overwriting local changes. `update` will compare the version of the
+template you used when you first copied the template with the current
+version of the template, and then apply the changes that are different.
+This also means it won't overwrite any changes you made to files in your
+current website, for example, if you deleted a file that was in the
+template, it won't be copied back.
+
+Use `recopy` if you want to reapply the template from scratch, which
+will overwrite any changes you made to the files that were copied from
+the template. This is useful if you want to reset the website to the
+state of the template. For example, if you deleted a file but want it
+back from the template or are simply curious to see if there are any new
+changes that you might want to use.
+
+In both cases, the commands are very similar and also use many of the
+same options as the `copy` command. If you want to use the same answers
+as given when you first copied the template, you can use the
+`--defaults` option. Then it will only prompt you for the questions that
+have changed since the last time you copied the template.
+
+``` bash
+uvx copier update --trust --defaults
+# Or
+uvx copier recopy --trust --defaults
+```
+
+As with the `copy` command, the website needs to be tracked by Git and
+must be in a clean state (no changes) for the `update` and `recopy`
+commands to work.
+
+## Post-creation setup
+
+These steps are mainly for us in the Seedcase Project to set up the
+repository with the settings we use, but you can follow them if you want
+to set up your website in a similar way. They are also included in a
+message after you've copied the template.
+
+After copying the template, while in the directory of the new website,
+run the following:
+
+``` bash
+just install-precommit
+```
+
+This sets up the pre-commit hooks to run standard checks on your
+repository whenever you commit files to the history.
+
+If you are using the template to create a website for the Seedcase
+Project, run:
+
+``` bash
+just update-quarto-theme
+```
+
+This adds the `seedcase-theme` Quarto theme to the website, which
+provides a consistent look and feel across all Seedcase Project
+websites. It's called `update-quarto-theme` here since you can use this
+command to keep the theme updated.
+
+Next, install [`spaid`](https://github.com/seedcase-project/spaid) and
+use the following commands to run the next setup steps:
+
+``` bash
+spaid_gh_create_repo_from_local -h
+spaid_gh_set_repo_settings -h
+spaid_gh_ruleset_basic_protect_main -h
+```
+
+Some configuration is needed after copying this template to a new
+repository, including configuration external to the repository. Some
+GitHub workflows require installing GitHub Apps, for greater security
+purposes and easier administration when managing multiple repositories.
+The [security
+section](https://guidebook.seedcase-project.org/operations/security#using-github-apps-to-generate-tokens)
+in our [Guidebook](https://guidebook.seedcase-project.org/) provides
+instructions on how to set up GitHub Apps, secrets, and variables.
+Ideally the secrets and variables should be set up in the organization
+settings. The specific workflows in this template that require this
+additional setup are:
+
+-   The workflow `.github/workflows/release-package.yml` requires the
+    [auto-release-token](https://github.com/apps/auto-release-token)
+    GitHub App as well as a creating a GitHub secret called
+    `UPDATE_VERSION_TOKEN` and a variable called `UPDATE_VERSION_APP_ID`
+    that has the App ID.
+-   The workflow `.github/workflows/add-to-project.yml` requires the
+    [add-to-board-token](https://github.com/apps/add-to-board-token)
+    GitHub App, along with the `ADD_TO_BOARD_TOKEN` secret and the
+    `ADD_TO_BOARD_APP_ID` variable of the GitHub App's ID.
