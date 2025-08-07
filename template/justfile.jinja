@@ -7,7 +7,7 @@
 {% if seedcase_website -%}
 # Run all necessary build commands
 run-all: update-quarto-theme _checks _builds
-{% else -%}
+{%- else -%}
 # Run all necessary build commands
 run-all: _checks _builds
 {%- endif %}
@@ -35,16 +35,17 @@ install-precommit:
 check-spelling:
   uvx typos
 
-# Run checks on all commits made on the current branch up to the main branch
+# Check the commit messages on the current branch that are not on the main branch
 check-commits:
-  #!/bin/zsh
+  #!/usr/bin/env bash
   branch_name=$(git rev-parse --abbrev-ref HEAD)
   number_of_commits=$(git rev-list --count HEAD ^main)
   if [[ ${branch_name} != "main" && ${number_of_commits} -gt 0 ]]
   then
+    # If issue happens, try `uv tool update-shell`
     uvx --from commitizen cz check --rev-range main..HEAD
   else
-    echo "Can't either be on ${branch_name} or have more than ${number_of_commits}."
+    echo "On 'main' or current branch doesn't have any commits."
   fi
 
 # Build the website using Quarto

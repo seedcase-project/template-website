@@ -1,3 +1,51 @@
+## 0.15.5 (2025-08-07)
+
+### Fix
+
+- :pencil2: used the wrong echo text for the `check-commits` recipe (#53)
+
+## 0.15.4 (2025-08-07)
+
+### Fix
+
+- :pencil2: forgot to include commas at end of JSON items (#54)
+
+## 0.15.3 (2025-08-07)
+
+### Fix
+
+- :lock: use `read-all` permissions for workflow at top level (#52)
+
+## 0.15.2 (2025-08-07)
+
+### Refactor
+
+- :art: use code blocks in post-copy messages, not `$` (#55)
+
+## 0.15.1 (2025-08-07)
+
+### Fix
+
+- :art: remove empty jinja lines (#51)
+
+## 0.15.0 (2025-08-07)
+
+### Feat
+
+- :sparkles: add GoatCounter includes file (#50)
+
+## 0.14.1 (2025-08-07)
+
+### Fix
+
+- :bug: seedcase logo was wrong path (#48)
+
+## 0.14.0 (2025-08-07)
+
+### Feat
+
+- :sparkles: add CONTRIBUTING guide to template (#29)
+
 ## 0.13.0 (2025-08-07)
 
 ### Feat

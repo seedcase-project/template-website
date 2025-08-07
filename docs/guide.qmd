@@ -151,6 +151,18 @@ provides a consistent look and feel across all Seedcase Project
 websites. It's called `update-quarto-theme` here since you can use this
 command to keep the theme updated.
 
+Then to use the theme, you need to update the `_quarto.yml` file to use the
+theme by adding the following line to the `project` and `format` sections:
+
+``` yaml
+project:
+  type: seedcase-theme
+
+# ...
+
+format: seedcase-theme-html
+```
+
 ### Setting up a GitHub repository
 
 Next, install [`spaid`](https://github.com/seedcase-project/spaid) and
@@ -212,3 +224,14 @@ for your website. Connecting GitHub to Zenodo is very easy, check out
 Zenodo's
 [guide](https://help.zenodo.org/docs/github/archive-software/github-upload/)
 on it.
+
+### Setting up GoatCounter
+
+If you want to use GoatCounter for website visitor tracking, you need to
+create a GoatCounter account and set up a new site for your website.
+Adding a new site is very easy. Go into the "Settings" after logging
+into your account. Under "Sites", click "Add new site" and fill in the
+form with your website's unique name. You can use the auto-filled name
+in the `includes/site-counter.html` file, which has the format of
+"orgname-reponame". For example, it would be
+`seedcase-project-template-website` for this repository.
