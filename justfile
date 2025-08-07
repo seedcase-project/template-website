@@ -49,65 +49,7 @@ check-spelling:
 
 # Test that a website can be created from the template, with parameters for: `is_seedcase_website` (true or false) and `hosting_provider` (either "gh-pages" or "netlify")
 test is_seedcase_website="true" hosting_provider="netlify":
-  #!/usr/bin/env bash
-  test_name="test-website-{{ hosting_provider }}"
-  test_dir="$(pwd)/_temp/{{ is_seedcase_website }}/$test_name"
-  template_dir="$(pwd)"
-  commit=$(git rev-parse HEAD)
-  rm -rf $test_dir
-  mkdir -p $test_dir
-  copy () {
-    # vcs-ref means the current commit/head, not a tag.
-    uvx copier copy $1 $2 \
-      --vcs-ref=$3 \
-      --defaults \
-      --data seedcase_website={{ is_seedcase_website }} \
-      --data hosting_provider={{ hosting_provider }} \
-      --data website_github_repo="fake/repo" \
-      --data review_team="@fake/team" \
-      --data author_given_name="First" \
-      --data author_family_name="Last" \
-      --data github_board_number="14" \
-      --skip-tasks \
-      --trust
-  }
-  # Check initial creation
-  echo "Testing copy for new projects when: 'is_seedcase_website'='{{ is_seedcase_website }}', 'hosting_provider'='{{ hosting_provider }}' -----------"
-  (
-    cd $test_dir &&
-      copy $template_dir $test_dir $commit &&
-      git init -b main &&
-      git add . &&
-      git commit --quiet -m "test: initial copy"
-  )
-  # TODO: Find some way to test the `update` command
-  # Check that recopy works
-  echo "Testing recopy when: 'is_seedcase_website'='{{ is_seedcase_website }}', 'hosting_provider'='{{ hosting_provider }}' -----------"
-  (
-    cd $test_dir &&
-      rm .cz.toml &&
-      git add . &&
-      git commit --quiet -m "test: preparing to recopy from the template" &&
-      uvx copier recopy \
-        --vcs-ref=$commit \
-        --defaults \
-        --overwrite \
-        --trust
-  )
-  # Check that copying onto an existing website works
-  echo "Testing copy in existing projects when: 'is_seedcase_website'='{{ is_seedcase_website }}', 'hosting_provider'='{{ hosting_provider }}' -----------"
-  (
-    cd $test_dir &&
-      rm .cz.toml .copier-answers.yml &&
-      git add . &&
-      git commit --quiet -m "test: preparing to copy onto an existing website" &&
-      copy $template_dir $test_dir $commit
-  )
-  # Checks and builds
-  (
-    cd $test_dir &&
-      just run-all
-  )
+  sh ./test-template.sh {{ is_seedcase_website }} {{ hosting_provider }}
 
 # Clean up any leftover and temporary build files
 cleanup:
