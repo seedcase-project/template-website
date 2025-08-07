@@ -19,13 +19,7 @@ website:
     pinned: true
     left:
       - text: "Overview"
-        menu:
-          - text: "Welcome"
-            href: index.qmd
-          - text: "Releases"
-            href: docs/releases.qmd
-          - text: "Contributing"
-            href: CONTRIBUTING.md
+        href: index.qmd
       - text: "Guide"
         href: docs/guide.qmd
     tools:
@@ -35,6 +29,17 @@ website:
       - icon: house
         href: https://seedcase-project.org
         aria-label: "House icon: Seedcase Project home page"
+  sidebar:
+    - id: overview
+      pinned: true
+      style: "floating"
+      contents:
+        - text: "Welcome"
+          href: index.qmd
+        - text: "Releases"
+          href: docs/releases.qmd
+        - text: "Contributing"
+          href: CONTRIBUTING.md
 
 format:
   seedcase-theme-html:
