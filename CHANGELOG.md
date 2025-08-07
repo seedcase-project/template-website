@@ -1,3 +1,25 @@
+## 0.12.0 (2025-08-07)
+
+### Feat
+
+- :sparkles: add Contributor Code of Conduct to template (#44)
+
+## 0.11.0 (2025-08-07)
+
+### Feat
+
+- :sparkles: fill in README of template (#34)
+
+### Fix
+
+- :bug: `get-contributors.sh` should not output with `.tmp` ending (#43)
+
+## 0.10.0 (2025-08-07)
+
+### Feat
+
+- :sparkles: add `add-to-project` workflow, along with copier question (#18)
+
 ## 0.9.0 (2025-08-06)
 
 ### Feat

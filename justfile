@@ -24,7 +24,7 @@ update-quarto-theme:
 
 # Update files in the template from the copier parent folder
 update-template:
-  cp .pre-commit-config.yaml .gitignore .typos.toml .editorconfig template/
+  cp CODE_OF_CONDUCT.md .pre-commit-config.yaml .gitignore .typos.toml .editorconfig template/
   mkdir -p template/tools
   cp tools/get-contributors.sh template/tools/
   cp .github/dependabot.yml .github/pull_request_template.md template/.github/
@@ -65,6 +65,7 @@ test is_seedcase_website="true" hosting_provider="netlify":
     --data review_team="@fake/team" \
     --data author_given_name="First" \
     --data author_family_name="Last" \
+    --data github_board_number="14" \
     --trust
   # Run checks in the generated test website
   cd $test_dir
@@ -97,6 +98,7 @@ test is_seedcase_website="true" hosting_provider="netlify":
     --data review_team="@fake/team" \
     --data author_given_name="First" \
     --data author_family_name="Last" \
+    --data github_board_number="14" \
     --trust \
     --overwrite
 
