@@ -55,9 +55,9 @@ effort to create a framework for data management and analysis in
 research. If you use this project in your work, please cite it as
 follows:
 
-Johnston L.W., Brødbæk S.K., Beicher K., Vago M. Template Website: An
-opinionated setup for building and developing Quarto-based websites DOI:
-10.5281/zenodo.16762059 URL:
+Johnston L.W., Brødbæk S.K., Beicher K., Vago M. (2025). Template
+Website: An opinionated setup for building and developing Quarto-based
+websites DOI: 10.5281/zenodo.16762059 URL:
 https://template-website.seedcase-project.org
 
 Or as a BibTeX entry:
@@ -65,6 +65,8 @@ Or as a BibTeX entry:
     @misc{YourReferenceHere,
     author = {Johnston, Luke William and Brødbæk, Signe Kirk and Beicher, Kristiane and Vago, Marton},
     doi = {10.5281/zenodo.16762059},
+    month = {8},
     title = {Template Website: An opinionated setup for building and developing Quarto-based websites},
-    url = {https://template-website.seedcase-project.org}
+    url = {https://template-website.seedcase-project.org},
+    year = {2025}
     }
