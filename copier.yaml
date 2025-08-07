@@ -11,7 +11,8 @@ _message_after_copy: |
 
   Your project "{{ website_abbrev }}" has been created successfully!
 
-  Next steps:
+  See the [guide](https://template-website.seedcase-project.org/docs/guide) for more detail
+  on the next steps. Briefly:
 
   1. Change directory to the project root:
 
