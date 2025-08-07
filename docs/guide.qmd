@@ -151,8 +151,8 @@ provides a consistent look and feel across all Seedcase Project
 websites. It's called `update-quarto-theme` here since you can use this
 command to keep the theme updated.
 
-Then to use the theme, you need to update the `_quarto.yml` file to use the
-theme by adding the following line to the `project` and `format` sections:
+Then to use the theme, you need to update the `_quarto.yml` file
+by adding the following lines to the `project` and `format` sections:
 
 ``` yaml
 project:
