@@ -1,3 +1,9 @@
+## 0.15.3 (2025-08-07)
+
+### Fix
+
+- :lock: use `read-all` permissions for workflow at top level (#52)
+
 ## 0.15.2 (2025-08-07)
 
 ### Refactor
