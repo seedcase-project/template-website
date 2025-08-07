@@ -53,6 +53,9 @@ developing and building the website easier.
 -   [`.zenodo.json`](https://help.zenodo.org/docs/github/describe-software/zenodo-json/)
     file for citation information that provides Zenodo with the
     necessary metadata to create a DOI for the website.
+-   Includes a [GoatCounter](https://www.goatcounter.com/) file for website visitor
+    tracking, which is privacy-friendly and does not use cookies. That means
+    it doesn't need a GDPR notice as no personal data is collected.
 
 ## Want to contribute?
 
