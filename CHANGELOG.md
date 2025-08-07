@@ -1,3 +1,9 @@
+## 0.10.0 (2025-08-07)
+
+### Feat
+
+- :sparkles: add `add-to-project` workflow, along with copier question (#18)
+
 ## 0.9.0 (2025-08-06)
 
 ### Feat
