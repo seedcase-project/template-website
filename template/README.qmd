@@ -1,3 +1,9 @@
+---
+format: gfm
+metadata-files:
+  - _metadata.yml
+---
+
 # {{< meta gh.repo >}}: TODO add more to title
 
 {{< include /includes/_badges.qmd >}}
