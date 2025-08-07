@@ -117,6 +117,8 @@ repository with the settings we use, but you can follow them if you want
 to set up your website in a similar way. They are also included in a
 message after you've copied the template.
 
+### Setting up pre-commit hooks
+
 After copying the template, while in the directory of the new website,
 run the following:
 
@@ -125,7 +127,17 @@ just install-precommit
 ```
 
 This sets up the pre-commit hooks to run standard checks on your
-repository whenever you commit files to the history.
+repository whenever you commit files to the history. Using pre-commit
+hooks as part of your workflow is even better if you connect the
+continuous integration service to your repository. Go to the
+[pre-commit.ci](https://pre-commit.ci/) website and follow the
+instructions there to connect your repository to the service. This will
+run the pre-commit hooks on every commit you push to the repository,
+including pull requests, which will ensure that the code is checked for
+basic issues. It will also keep the pre-commit hooks updated by creating
+a pull request whenever newer versions of the hooks are available.
+
+### Adding the Quarto theme (if applicable)
 
 If you are using the template to create a website for the Seedcase
 Project, run:
@@ -138,6 +150,20 @@ This adds the `seedcase-theme` Quarto theme to the website, which
 provides a consistent look and feel across all Seedcase Project
 websites. It's called `update-quarto-theme` here since you can use this
 command to keep the theme updated.
+
+Then to use the theme, you need to update the `_quarto.yml` file
+by adding the following lines to the `project` and `format` sections:
+
+``` yaml
+project:
+  type: seedcase-theme
+
+# ...
+
+format: seedcase-theme-html
+```
+
+### Setting up a GitHub repository
 
 Next, install [`spaid`](https://github.com/seedcase-project/spaid) and
 use the following commands to run the next setup steps:
@@ -169,6 +195,35 @@ additional setup are:
     [add-to-board-token](https://github.com/apps/add-to-board-token)
     GitHub App, along with the `ADD_TO_BOARD_TOKEN` secret and the
     `ADD_TO_BOARD_APP_ID` variable of the GitHub App's ID.
+
+### Connecting to hosting services
+
+If you use this template to make a website hosted on
+[Netlify](https://www.netlify.com/), you need to connect the GitHub
+repository to Netlify. The Quarto documentation has an [excellent
+guide](https://quarto.org/docs/publishing/netlify.html) on how to do
+this. It includes configuring Netlify to host the website and adding the
+[`NETLIFY_AUTH_TOKEN`](https://quarto.org/docs/publishing/netlify.html#netlify-credentials)
+secret to the GitHub repository (or ideally at the organization level).
+
+For hosting on [GitHub Pages](https://pages.github.com/), it's a bit
+easier to set up than Netlify. The Quarto documentation again has a
+[guide](https://quarto.org/docs/publishing/github-pages.html) on how to
+do this.
+
+### Auto-releasing to Zenodo
+
+GitHub and Zenodo have an integration that, when set up, will
+automatically create a [Zenodo
+record](https://help.zenodo.org/docs/deposit/about-records/) from a
+[GitHub
+release](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases).
+This is useful if you want to create a DOI for your website, which will
+allow you to cite it in academic work as well as provide more exposure
+for your website. Connecting GitHub to Zenodo is very easy, check out
+Zenodo's
+[guide](https://help.zenodo.org/docs/github/archive-software/github-upload/)
+on it.
 
 ### Setting up GoatCounter
 
