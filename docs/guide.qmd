@@ -169,3 +169,14 @@ additional setup are:
     [add-to-board-token](https://github.com/apps/add-to-board-token)
     GitHub App, along with the `ADD_TO_BOARD_TOKEN` secret and the
     `ADD_TO_BOARD_APP_ID` variable of the GitHub App's ID.
+
+### Setting up GoatCounter
+
+If you want to use GoatCounter for website visitor tracking, you need to
+create a GoatCounter account and set up a new site for your website.
+Adding a new site is very easy. Go into the "Settings" after logging
+into your account. Under "Sites", click "Add new site" and fill in the
+form with your website's unique name. You can use the auto-filled name
+in the `includes/site-counter.html` file, which has the format of
+"orgname-reponame". For example, it would be
+`seedcase-project-template-website` for this repository.
