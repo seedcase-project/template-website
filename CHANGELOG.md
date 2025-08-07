@@ -1,3 +1,9 @@
+## 0.15.5 (2025-08-07)
+
+### Fix
+
+- :pencil2: used the wrong echo text for the `check-commits` recipe (#53)
+
 ## 0.15.4 (2025-08-07)
 
 ### Fix
