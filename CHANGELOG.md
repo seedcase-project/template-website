@@ -1,3 +1,13 @@
+## 0.11.0 (2025-08-07)
+
+### Feat
+
+- :sparkles: fill in README of template (#34)
+
+### Fix
+
+- :bug: `get-contributors.sh` should not output with `.tmp` ending (#43)
+
 ## 0.10.0 (2025-08-07)
 
 ### Feat
