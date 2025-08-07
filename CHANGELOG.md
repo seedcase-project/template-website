@@ -1,3 +1,9 @@
+## 0.13.0 (2025-08-07)
+
+### Feat
+
+- :sparkles: add Quarto config files to template (#22)
+
 ## 0.12.0 (2025-08-07)
 
 ### Feat
