@@ -1,3 +1,9 @@
+## 0.15.2 (2025-08-07)
+
+### Refactor
+
+- :art: use code blocks in post-copy messages, not `$` (#55)
+
 ## 0.15.1 (2025-08-07)
 
 ### Fix
