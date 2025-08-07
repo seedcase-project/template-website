@@ -1,3 +1,9 @@
+## 0.15.4 (2025-08-07)
+
+### Fix
+
+- :pencil2: forgot to include commas at end of JSON items (#54)
+
 ## 0.15.3 (2025-08-07)
 
 ### Fix
