@@ -15,18 +15,24 @@ _message_after_copy: |
 
   1. Change directory to the project root:
 
-    $ cd {{ _copier_conf.dst_path }}
+    ``` bash
+    cd {{ _copier_conf.dst_path }}
+    ```
 
-  2. Install the pre-commit hooks and add (called "update" here) the Quarto extension:
+  2. Install the pre-commit hooks, add (called "update" here) the Quarto extension,
+     and build the README:
 
-    $ just install-precommit
-    $ just update-quarto-theme
+    ``` bash
+    just install-precommit update-quarto-theme build-readme
+    ```
 
   3. Install [`spaid`](https://github.com/seedcase-project/spaid) and run these setup steps:
 
-    $ spaid_gh_create_repo_from_local -h
-    $ spaid_gh_set_repo_settings -h
-    $ spaid_gh_ruleset_basic_protect_main -h
+    ``` bash
+    spaid_gh_create_repo_from_local -h
+    spaid_gh_set_repo_settings -h
+    spaid_gh_ruleset_basic_protect_main -h
+    ```
 
   4. Configure GitHub following this
     [guide](https://guidebook.seedcase-project.org/operations/security#using-github-apps-to-generate-tokens):
