@@ -31,9 +31,10 @@ _message_after_copy: |
   4. Configure GitHub following this
     [guide](https://guidebook.seedcase-project.org/operations/security#using-github-apps-to-generate-tokens):
 
-    - Install the [auto-release-token](https://github.com/apps/auto-release-token) GitHub App
-    - Create an `UPDATE_VERSION_TOKEN` secret for the GitHub App
-    - Create an `UPDATE_VERSION_APP_ID` variable of the GitHub App's ID
+    - Install the [auto-release-token](https://github.com/apps/auto-release-token)
+      and [add-to-board-token](https://github.com/apps/add-to-board-token) GitHub Apps
+    - Create an `UPDATE_VERSION_TOKEN` and `ADD_TO_BOARD_TOKEN` secret for the GitHub Apps
+    - Create an `UPDATE_VERSION_APP_ID` and `ADD_TO_BOARD_APP_ID` variable of the GitHub Apps' IDs
 
   5. List and complete all TODO items in the repository:
 
@@ -52,6 +53,14 @@ author_given_name:
 author_family_name:
   type: str
   help: "What is your last/family name?"
+
+github_board_number:
+  type: str
+  help: "What is the GitHub project board number to add issues and pull requests to?"
+  validator: |
+    {% if github_board_number and not github_board_number.isdigit() %}
+    The board number must be an integer.
+    {% endif %}
 
 review_team:
   type: str
