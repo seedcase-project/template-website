@@ -17,7 +17,8 @@ authors:
     given-names: Marton
     affiliation: "Steno Diabetes Center Aarhus"
 cff-version: 1.2.0
-#doi: ""
+doi: "10.5281/zenodo.16762059"
+date-released: 2025-08-07
 keywords:
   - "copier template"
   - "template"
