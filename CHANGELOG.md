@@ -1,3 +1,9 @@
+## 0.15.6 (2025-08-07)
+
+### Refactor
+
+- :memo: add link to guide in post-copy message (#57)
+
 ## 0.15.5 (2025-08-07)
 
 ### Fix
