@@ -1,3 +1,9 @@
+## 0.14.0 (2025-08-07)
+
+### Feat
+
+- :sparkles: add CONTRIBUTING guide to template (#29)
+
 ## 0.13.0 (2025-08-07)
 
 ### Feat
