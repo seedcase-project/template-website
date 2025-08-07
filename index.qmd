@@ -37,7 +37,10 @@ developing and building the website easier.
 -   Includes [GitHub Actions](https://docs.github.com/en/actions) for
     continuous integration, testing, and delivery for running checks,
     formatting, releasing, and building the website.
--   Uses [Netlify](https://www.netlify.com/) for hosting the website.
+-   Choose between [Netlify](https://www.netlify.com/) or [GitHub
+    Pages](https://pages.github.com/) for hosting the website. For
+    dealing with custom domain names, Netlify is the better choice, as
+    the configuration is very easy to set up.
 -   Includes an [EditorConfig](https://editorconfig.org/) file to ensure
     consistent formatting across different editors.
 -   High level, system and program management with
@@ -59,6 +62,7 @@ share your ideas or contribute code. Your input makes us better!
 
 ::: content-hidden
 <!-- TODO: Unhide after more contributors -->
+
 ### Contributors
 
 {{< include /_contributors.qmd >}}
