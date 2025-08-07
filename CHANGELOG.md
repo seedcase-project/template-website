@@ -1,3 +1,9 @@
+## 0.14.1 (2025-08-07)
+
+### Fix
+
+- :bug: seedcase logo was wrong path (#48)
+
 ## 0.14.0 (2025-08-07)
 
 ### Feat
