@@ -49,58 +49,7 @@ check-spelling:
 
 # Test that a website can be created from the template, with parameters for: `is_seedcase_website` (true or false) and `hosting_provider` (either "gh-pages" or "netlify")
 test is_seedcase_website="true" hosting_provider="netlify":
-  #!/usr/bin/env bash
-  test_name="test-website-{{ hosting_provider }}"
-  test_dir="$(pwd)/_temp/{{ is_seedcase_website }}/$test_name"
-  template_dir="$(pwd)"
-  commit=$(git rev-parse HEAD)
-  rm -rf $test_dir
-  # vcs-ref means the current commit/head, not a tag.
-  uvx copier copy $template_dir $test_dir \
-    --vcs-ref=$commit \
-    --defaults \
-    --data seedcase_website={{ is_seedcase_website }} \
-    --data hosting_provider={{ hosting_provider }} \
-    --data website_github_repo="fake/repo" \
-    --data review_team="@fake/team" \
-    --data author_given_name="First" \
-    --data author_family_name="Last" \
-    --data github_board_number="14" \
-    --trust
-  # Run checks in the generated test website
-  cd $test_dir
-  git add .
-  git commit -m "test: initial copy"
-  just check-spelling
-  # TODO: Find some way to test the `update` command
-  # Check that recopy works
-  echo "Testing recopy command -----------"
-  rm .cz.toml
-  git add .
-  git commit -m "test: preparing to recopy from the template"
-  uvx copier recopy \
-    --vcs-ref=$commit \
-    --defaults \
-    --overwrite \
-    --trust
-  # Check that copying onto an existing website works
-  echo "Using the template in an existing website command -----------"
-  rm .cz.toml .copier-answers.yml
-  git add .
-  git commit -m "test: preparing to copy onto an existing website"
-  uvx copier copy \
-    $template_dir $test_dir \
-    --vcs-ref=$commit \
-    --defaults \
-    --data seedcase_website={{ is_seedcase_website }} \
-    --data hosting_provider={{ hosting_provider }} \
-    --data website_github_repo="fake/repo" \
-    --data review_team="@fake/team" \
-    --data author_given_name="First" \
-    --data author_family_name="Last" \
-    --data github_board_number="14" \
-    --trust \
-    --overwrite
+  sh ./test-template.sh {{ is_seedcase_website }} {{ hosting_provider }}
 
 # Clean up any leftover and temporary build files
 cleanup:
