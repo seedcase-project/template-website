@@ -1,3 +1,9 @@
+## 0.12.0 (2025-08-07)
+
+### Feat
+
+- :sparkles: add Contributor Code of Conduct to template (#44)
+
 ## 0.11.0 (2025-08-07)
 
 ### Feat
