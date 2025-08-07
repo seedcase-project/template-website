@@ -3,8 +3,8 @@
 
 @_checks: check-spelling check-commits
 @_builds: build-contributors build-website build-readme
-# Test if it is or isn't a Seedcase website
-@_tests: (test "true") (test "false")
+# Test if it is or isn't a Seedcase website and uses netlify or gh-pages
+@_tests: (test "true" "netlify") (test "false" "netlify") (test "true" "gh-pages") (test "false" "gh-pages")
 
 # Run all build-related recipes in the justfile
 run-all: update-quarto-theme update-template _checks _tests _builds
@@ -24,11 +24,10 @@ update-quarto-theme:
 
 # Update files in the template from the copier parent folder
 update-template:
-  cp .pre-commit-config.yaml .gitignore .typos.toml .editorconfig template/
+  cp CODE_OF_CONDUCT.md .pre-commit-config.yaml .gitignore .typos.toml .editorconfig template/
   mkdir -p template/tools
   cp tools/get-contributors.sh template/tools/
   cp .github/dependabot.yml .github/pull_request_template.md template/.github/
-  cp .github/workflows/build-website.yml template/.github/workflows/
   cp .github/workflows/release-project.yml template/.github/workflows/
 
 # Check the commit messages on the current branch that are not on the main branch
@@ -48,10 +47,10 @@ check-commits:
 check-spelling:
   uvx typos
 
-# Test and check that a data package can be created from the template
-test is_seedcase_website:
+# Test that a website can be created from the template, with parameters for: `is_seedcase_website` (true or false) and `hosting_provider` (either "gh-pages" or "netlify")
+test is_seedcase_website="true" hosting_provider="netlify":
   #!/usr/bin/env bash
-  test_name="test-website"
+  test_name="test-website-{{ hosting_provider }}"
   test_dir="$(pwd)/_temp/{{ is_seedcase_website }}/$test_name"
   template_dir="$(pwd)"
   commit=$(git rev-parse HEAD)
@@ -60,12 +59,15 @@ test is_seedcase_website:
   uvx copier copy $template_dir $test_dir \
     --vcs-ref=$commit \
     --defaults \
+    --data seedcase_website={{ is_seedcase_website }} \
+    --data hosting_provider={{ hosting_provider }} \
+    --data website_github_repo="fake/repo" \
     --data review_team="@fake/team" \
     --data author_given_name="First" \
     --data author_family_name="Last" \
-    --data seedcase_website={{ is_seedcase_website }} \
+    --data github_board_number="14" \
     --trust
-  # Run checks in the generated test data package
+  # Run checks in the generated test website
   cd $test_dir
   git add .
   git commit -m "test: initial copy"
@@ -80,21 +82,23 @@ test is_seedcase_website:
     --vcs-ref=$commit \
     --defaults \
     --overwrite \
-    --data seedcase_website={{ is_seedcase_website }} \
     --trust
-  # Check that copying onto an existing data package works
-  echo "Using the template in an existing package command -----------"
+  # Check that copying onto an existing website works
+  echo "Using the template in an existing website command -----------"
   rm .cz.toml .copier-answers.yml
   git add .
-  git commit -m "test: preparing to copy onto an existing package"
+  git commit -m "test: preparing to copy onto an existing website"
   uvx copier copy \
     $template_dir $test_dir \
     --vcs-ref=$commit \
     --defaults \
+    --data seedcase_website={{ is_seedcase_website }} \
+    --data hosting_provider={{ hosting_provider }} \
+    --data website_github_repo="fake/repo" \
     --data review_team="@fake/team" \
     --data author_given_name="First" \
     --data author_family_name="Last" \
-    --data seedcase_website={{ is_seedcase_website }} \
+    --data github_board_number="14" \
     --trust \
     --overwrite
 

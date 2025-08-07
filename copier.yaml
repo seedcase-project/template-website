@@ -31,9 +31,10 @@ _message_after_copy: |
   4. Configure GitHub following this
     [guide](https://guidebook.seedcase-project.org/operations/security#using-github-apps-to-generate-tokens):
 
-    - Install the [auto-release-token](https://github.com/apps/auto-release-token) GitHub App
-    - Create an `UPDATE_VERSION_TOKEN` secret for the GitHub App
-    - Create an `UPDATE_VERSION_APP_ID` variable of the GitHub App's ID
+    - Install the [auto-release-token](https://github.com/apps/auto-release-token)
+      and [add-to-board-token](https://github.com/apps/add-to-board-token) GitHub Apps
+    - Create an `UPDATE_VERSION_TOKEN` and `ADD_TO_BOARD_TOKEN` secret for the GitHub Apps
+    - Create an `UPDATE_VERSION_APP_ID` and `ADD_TO_BOARD_APP_ID` variable of the GitHub Apps' IDs
 
   5. List and complete all TODO items in the repository:
 
@@ -45,6 +46,27 @@ seedcase_website:
   default: false
   help: "Is this website part of the Seedcase Project? If not, the theme will not be applied."
 
+website_abbrev:
+  type: str
+  help: "What is the abbreviated name of the website? This could be the name of your GitHub repository and should be a short, lowercase name without spaces or special characters. For example, 'new-website'."
+  default: "{{ _copier_conf.dst_path | basename }}"
+
+website_github_repo:
+  type: str
+  help: "What is or will be the GitHub repository spec for the website?"
+  placeholder: "user/repo"
+  validator: |
+    {% if website_github_repo and not (website_github_repo | regex_search('^[\w.-]+\/[\w.-]+$')) %}
+    Must be in the format `user/repo` and contain only alphanumeric characters and `_`, `-`, or `.`.
+    {% endif %}
+
+hosting_provider:
+  type: str
+  help: "What hosting provider will you use for the website?"
+  choices:
+    - netlify
+    - gh-pages
+
 author_given_name:
   type: str
   help: "What is your first/given name?"
@@ -53,8 +75,27 @@ author_family_name:
   type: str
   help: "What is your last/family name?"
 
+github_board_number:
+  type: str
+  help: "What is the GitHub project board number to add issues and pull requests to?"
+  validator: |
+    {% if github_board_number and not github_board_number.isdigit() %}
+    The board number must be an integer.
+    {% endif %}
+
 review_team:
   type: str
   help: What GitHub team is responsible for reviewing pull requests?
   default: >-
     {{ "@%s/developers" % website_github_repo.split('/')[0] if website_github_repo else "" }}
+
+# Configurations not asked
+github_org:
+  type: str
+  default: "{{ website_github_repo.split('/')[0] if website_github_repo else '' }}"
+  when: false
+
+github_repo:
+  type: str
+  default: "{{ website_github_repo.split('/')[1] if website_github_repo else '' }}"
+  when: false
