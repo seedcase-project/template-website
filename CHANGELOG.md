@@ -1,3 +1,9 @@
+## 0.15.0 (2025-08-07)
+
+### Feat
+
+- :sparkles: add GoatCounter includes file (#50)
+
 ## 0.14.1 (2025-08-07)
 
 ### Fix
