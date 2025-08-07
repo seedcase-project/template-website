@@ -7,7 +7,7 @@
 {% if seedcase_website -%}
 # Run all necessary build commands
 run-all: update-quarto-theme _checks _builds
-{% else -%}
+{%- else -%}
 # Run all necessary build commands
 run-all: _checks _builds
 {%- endif %}

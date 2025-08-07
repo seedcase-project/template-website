@@ -7,7 +7,7 @@ website:
   title: ""
   {% if hosting_provider == "gh-pages" -%}
   site-url: "https://{{ github_org }}.github.io/{{ github_repo }}/"
-  {% elif hosting_provider == "netlify" -%}
+  {%- elif hosting_provider == "netlify" -%}
   # TODO: Set the Netlify custom domain URL
   site-url: ""
   {%- endif %}
@@ -44,7 +44,7 @@ format:
     theme:
       - brand
       - custom-styles.scss
-  {% else -%}
+  {%- else -%}
   # TODO: Use Quarto extension if available
   html:
     theme:
