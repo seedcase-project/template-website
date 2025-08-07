@@ -1,7 +1,7 @@
 title: seedcase-theme
 author: Luke W. Johnston
-version: 0.1.0
-quarto-required: ">=1.2.0"
+version: 0.4.1
+quarto-required: ">=1.7.0"
 contributes:
   formats:
     common:
@@ -27,6 +27,7 @@ contributes:
         location: navbar
         type: textbox
       navbar:
+        pinned: true
         background: light
         logo: logos/navbar-logo-seedcase-project.svg
         logo-alt: "Seedcase Project logo: Main page"
@@ -43,7 +44,5 @@ contributes:
             href: https://seedcase-project.org/#acknowledgements
 
     csl: vancouver.csl
-
     format: seedcase-theme-html
-
     brand: _brand.yml
