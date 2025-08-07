@@ -198,3 +198,17 @@ For hosting on [GitHub Pages](https://pages.github.com/), it's a bit
 easier to set up than Netlify. The Quarto documentation again has a
 [guide](https://quarto.org/docs/publishing/github-pages.html) on how to
 do this.
+
+### Auto-releasing to Zenodo
+
+GitHub and Zenodo have an integration that, when set up, will
+automatically create a [Zenodo
+record](https://help.zenodo.org/docs/deposit/about-records/) from a
+[GitHub
+release](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases).
+This is useful if you want to create a DOI for your website, which will
+allow you to cite it in academic work as well as provide more exposure
+for your website. Connecting GitHub to Zenodo is very easy, check out
+Zenodo's
+[guide](https://help.zenodo.org/docs/github/archive-software/github-upload/)
+on it.
