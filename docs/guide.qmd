@@ -41,7 +41,6 @@ open a Terminal and move into the directory where you want to create the
 new website. Then run the following command:
 
 ``` bash
-# Copy into the current directory, which is the "."
 uvx copier copy --trust gh:seedcase-project/template-website new-website
 ```
 
@@ -73,7 +72,7 @@ uvx copier copy --trust gh:seedcase-project/template-website new-website
 ```
 
 See the comment above in the "creating a new website" section about naming
-of the new website folder. It will go through a series of prompts, as in
+the new website folder. It will go through a series of prompts, as in
 the case of creating a new website, including asking if you want to
 overwrite existing files.
 
