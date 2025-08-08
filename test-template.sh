@@ -39,6 +39,7 @@ copy () {
     --data author_given_name="First" \
     --data author_family_name="Last" \
     --data github_board_number="14" \
+    --overwrite \
     --skip-tasks \
     --trust
 }
@@ -49,21 +50,17 @@ rm -rf $test_dir
 mkdir -p $test_dir
 
 # Check initial creation -----
-echo "Testing copy for new projects when: 'is_seedcase_website'='{{ is_seedcase_website }}', 'hosting_provider'='{{ hosting_provider }}' -----------"
+# TODO: Find some way to test the `update` command
+# Any step that fails will exit the script with an error and not continue
+echo "Testing copy for new projects when: 'is_seedcase_website'='$is_seedcase_website', 'hosting_provider'='$hosting_provider' -----------"
 (
   cd $test_dir &&
     copy $template_dir $test_dir $commit &&
     git init -b main &&
     git add . &&
-    git commit --quiet -m "test: initial copy"
-)
-
-# TODO: Find some way to test the `update` command
-
-# Check that recopy works -----
-echo "Testing recopy when: 'is_seedcase_website'='{{ is_seedcase_website }}', 'hosting_provider'='{{ hosting_provider }}' -----------"
-(
-  cd $test_dir &&
+    git commit --quiet -m "test: initial copy" &&
+    # Check that recopy works -----
+    echo "Testing recopy when: 'is_seedcase_website'='$$is_seedcase_website', 'hosting_provider'='$hosting_provider' -----------" &&
     rm .cz.toml &&
     git add . &&
     git commit --quiet -m "test: preparing to recopy from the template" &&
@@ -72,21 +69,13 @@ echo "Testing recopy when: 'is_seedcase_website'='{{ is_seedcase_website }}', 'h
       --defaults \
       --overwrite \
       --skip-tasks \
-      --trust
-)
-
-# Check that copying onto an existing website works -----
-echo "Testing copy in existing projects when: 'is_seedcase_website'='{{ is_seedcase_website }}', 'hosting_provider'='{{ hosting_provider }}' -----------"
-(
-  cd $test_dir &&
+      --trust &&
+    # Check that copying onto an existing website works -----
+    echo "Testing copy in existing projects when: 'is_seedcase_website'='$is_seedcase_website', 'hosting_provider'='$hosting_provider' -----------" &&
     rm .cz.toml .copier-answers.yml &&
     git add . &&
     git commit --quiet -m "test: preparing to copy onto an existing website" &&
-    copy $template_dir $test_dir $commit
-)
-
-# Checks and builds -----
-(
-  cd $test_dir &&
+    copy $template_dir $test_dir $commit &&
+    # Checks and builds -----
     just run-all
 )
