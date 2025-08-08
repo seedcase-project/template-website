@@ -41,7 +41,6 @@ copy () {
     --data github_board_number="14" \
     --overwrite \
     --skip-tasks \
-    --overwrite \
     --trust
 }
 
