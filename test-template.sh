@@ -40,6 +40,7 @@ copy () {
     --data author_family_name="Last" \
     --data github_board_number="14" \
     --skip-tasks \
+    --overwrite \
     --trust
 }
 
