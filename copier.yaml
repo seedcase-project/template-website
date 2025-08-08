@@ -9,7 +9,7 @@ _tasks:
 # Message to show after generating or regenerating the project successfully
 _message_after_copy: |
 
-  Your project "{{ website_abbrev }}" has been created successfully!
+  Your project "{{ github_repo }}" has been created successfully!
 
   See the [guide](https://template-website.seedcase-project.org/docs/guide) for more detail
   on the next steps. Briefly:
@@ -17,7 +17,7 @@ _message_after_copy: |
   1. Change directory to the project root:
 
     ``` bash
-    cd {{ _copier_conf.dst_path }}
+    cd {{ _copier_conf.dst_path | realpath }}
     ```
 
   2. Install the pre-commit hooks, add (called "update" here) the Quarto extension,
@@ -53,19 +53,9 @@ is_seedcase_website:
   default: false
   help: "Is this website part of the Seedcase Project? If not, the theme will not be applied."
 
-website_abbrev:
+github_user:
   type: str
-  help: "What is the abbreviated name of the website? This could be the name of your GitHub repository and should be a short, lowercase name without spaces or special characters. For example, 'new-website'."
-  default: "{{ _copier_conf.dst_path | basename }}"
-
-website_github_repo:
-  type: str
-  help: "What is or will be the GitHub repository spec for the website?"
-  placeholder: "user/repo"
-  validator: |
-    {% if website_github_repo and not (website_github_repo | regex_search('^[\w.-]+\/[\w.-]+$')) %}
-    Must be in the format `user/repo` and contain only alphanumeric characters and `_`, `-`, or `.`.
-    {% endif %}
+  help: "What is the name of the GitHub user or organization where the website repository will be or is stored?"
 
 hosting_provider:
   type: str
@@ -94,15 +84,16 @@ review_team:
   type: str
   help: What GitHub team is responsible for reviewing pull requests?
   default: >-
-    {{ "@%s/developers" % website_github_repo.split('/')[0] if website_github_repo else "" }}
+    {{ "@%s/developers" % github_user if github_user else "" }}
 
 # Configurations not asked
-github_org:
-  type: str
-  default: "{{ website_github_repo.split('/')[0] if website_github_repo else '' }}"
-  when: false
 
 github_repo:
   type: str
-  default: "{{ website_github_repo.split('/')[1] if website_github_repo else '' }}"
+  default: "{{ _copier_conf.dst_path | realpath | basename }}"
+  when: false
+
+github_repo_spec:
+  type: str
+  default: "{{ github_user }}/{{ github_repo }}"
   when: false

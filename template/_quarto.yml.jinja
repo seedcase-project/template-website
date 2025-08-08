@@ -6,12 +6,12 @@ website:
   # TODO: Set the title of the website
   title: ""
   {% if hosting_provider == "gh-pages" -%}
-  site-url: "https://{{ github_org }}.github.io/{{ github_repo }}/"
+  site-url: "https://{{ github_user }}.github.io/{{ github_repo }}/"
   {%- elif hosting_provider == "netlify" -%}
   # TODO: Set the Netlify custom domain URL
   site-url: ""
   {%- endif %}
-  repo-url: "https://github.com/{{ website_github_repo }}"
+  repo-url: "https://github.com/{{ github_repo_spec }}"
   navbar:
     {% if is_seedcase_website -%}
     logo: "_extensions/seedcase-project/seedcase-theme/logos/seedcase-logo.svg"
@@ -27,7 +27,7 @@ website:
         href: index.qmd
     tools:
       - icon: github
-        href: "https://github.com/{{ website_github_repo }}"
+        href: "https://github.com/{{ github_repo_spec }}"
         aria-label: "GitHub icon: Source repository"
       {% if is_seedcase_website -%}
       - icon: house
