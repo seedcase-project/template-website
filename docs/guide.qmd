@@ -42,8 +42,14 @@ new website. Then run the following command:
 
 ``` bash
 # Copy into the current directory, which is the "."
-uvx copier copy --trust gh:seedcase-project/template-website .
+uvx copier copy --trust gh:seedcase-project/template-website new-website
 ```
+
+Where `new-website` the name of the new folder you will create from the
+template. The template assumes that the name of your new folder will
+also be the name of the GitHub repository for the website. So the new
+folder name should be short, lowercase name without spaces or special
+characters.
 
 ::: callout-caution
 This template runs some post-copy commands using your terminal. In order
@@ -63,11 +69,13 @@ existing website. This will add all the template's files and
 configurations to the existing website.
 
 ``` bash
-uvx copier copy --trust gh:seedcase-project/template-website .
+uvx copier copy --trust gh:seedcase-project/template-website new-website
 ```
 
-It will go through a series of prompts, as in the case of creating a new
-website, including asking if you want to overwrite existing files.
+See the comment above in the "creating a new website" section about naming
+of the new website folder. It will go through a series of prompts, as in
+the case of creating a new website, including asking if you want to
+overwrite existing files.
 
 ::: callout-note
 To use the `copy` command, the website needs to be tracked by Git and in
@@ -151,8 +159,8 @@ provides a consistent look and feel across all Seedcase Project
 websites. It's called `update-quarto-theme` here since you can use this
 command to keep the theme updated.
 
-Then to use the theme, you need to update the `_quarto.yml` file
-by adding the following lines to the `project` and `format` sections:
+Then to use the theme, you need to update the `_quarto.yml` file by
+adding the following lines to the `project` and `format` sections:
 
 ``` yaml
 project:
