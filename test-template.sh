@@ -32,7 +32,7 @@ copy () {
   uvx copier copy $1 $2 \
     --vcs-ref=$3 \
     --defaults \
-    --data seedcase_website=$is_seedcase_website \
+    --data is_seedcase_website=$is_seedcase_website \
     --data hosting_provider=$hosting_provider \
     --data website_github_repo="fake/repo" \
     --data review_team="@fake/team" \

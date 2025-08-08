@@ -4,7 +4,7 @@
 @_checks: check-spelling check-commits
 @_builds: build-contributors build-readme build-website
 
-{% if seedcase_website -%}
+{% if is_seedcase_website -%}
 # Run all necessary build commands
 run-all: update-quarto-theme _checks _builds
 {%- else -%}
@@ -16,7 +16,7 @@ run-all: _checks _builds
 list-todos:
   grep -R -n --exclude="*.code-snippets" "TODO" *
 
-{% if seedcase_website -%}
+{% if is_seedcase_website -%}
 # Update the Quarto seedcase-theme extension
 update-quarto-theme:
   quarto add seedcase-project/seedcase-theme --no-prompt
