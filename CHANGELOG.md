@@ -1,3 +1,9 @@
+## 0.15.7 (2025-08-07)
+
+### Fix
+
+- :bug: need the `metadata-files` in `README.qmd` (#59)
+
 ## 0.15.6 (2025-08-07)
 
 ### Refactor
