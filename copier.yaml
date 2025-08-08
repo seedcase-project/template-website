@@ -9,7 +9,7 @@ _tasks:
 # Message to show after generating or regenerating the project successfully
 _message_after_copy: |
 
-  Your project "{{ website_abbrev }}" has been created successfully!
+  Your project "{{ github_repo }}" has been created successfully!
 
   See the [guide](https://template-website.seedcase-project.org/docs/guide) for more detail
   on the next steps. Briefly:
@@ -87,12 +87,13 @@ review_team:
     {{ "@%s/developers" % github_user if github_user else "" }}
 
 # Configurations not asked
-github_org:
-  type: str
-  default: "{{ website_github_repo.split('/')[0] if website_github_repo else '' }}"
-  when: false
 
 github_repo:
   type: str
-  default: "{{ website_github_repo.split('/')[1] if website_github_repo else '' }}"
+  default: "{{ _copier_conf.dst_path | basename }}"
+  when: false
+
+github_repo_spec:
+  type: str
+  default: "{{ github_user }}/{{ github_repo }}"
   when: false

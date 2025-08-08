@@ -11,7 +11,7 @@ website:
   # TODO: Set the Netlify custom domain URL
   site-url: ""
   {%- endif %}
-  repo-url: "https://github.com/{{ website_github_repo }}"
+  repo-url: "https://github.com/{{ github_repo_spec }}"
   navbar:
     {% if seedcase_website -%}
     logo: "_extensions/seedcase-project/seedcase-theme/logos/seedcase-logo.svg"
@@ -27,7 +27,7 @@ website:
         href: index.qmd
     tools:
       - icon: github
-        href: "https://github.com/{{ website_github_repo }}"
+        href: "https://github.com/{{ github_repo_spec }}"
         aria-label: "GitHub icon: Source repository"
       {% if seedcase_website -%}
       - icon: house
