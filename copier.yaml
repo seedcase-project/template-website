@@ -17,7 +17,7 @@ _message_after_copy: |
   1. Change directory to the project root:
 
     ``` bash
-    cd {{ _copier_conf.dst_path }}
+    cd {{ _copier_conf.dst_path | realpath }}
     ```
 
   2. Install the pre-commit hooks, add (called "update" here) the Quarto extension,
@@ -90,7 +90,7 @@ review_team:
 
 github_repo:
   type: str
-  default: "{{ _copier_conf.dst_path.append('/') | dirname | basename }}"
+  default: "{{ _copier_conf.dst_path | realpath | dirname }}"
   when: false
 
 github_repo_spec:
