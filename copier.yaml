@@ -58,7 +58,7 @@ website_abbrev:
   help: "What is the abbreviated name of the website? This could be the name of your GitHub repository and should be a short, lowercase name without spaces or special characters. For example, 'new-website'."
   default: "{{ _copier_conf.dst_path | basename }}"
   validator: |
-    {% if not (website_abbrev | regex_search('^[\w.-_]+$')) %}
+    {% if website_abbrev and not (website_abbrev | regex_search('^[\w.-_]+$')) %}
     The abbreviation must only contain alphanumeric characters and `_`, `-`, or `.`.
     {% endif %}
 
