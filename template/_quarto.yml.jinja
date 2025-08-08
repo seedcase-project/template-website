@@ -13,7 +13,7 @@ website:
   {%- endif %}
   repo-url: "https://github.com/{{ github_repo_spec }}"
   navbar:
-    {% if seedcase_website -%}
+    {% if is_seedcase_website -%}
     logo: "_extensions/seedcase-project/seedcase-theme/logos/seedcase-logo.svg"
     logo-alt: "Seedcase Project logo: Main page"
     {% else -%}
@@ -29,7 +29,7 @@ website:
       - icon: github
         href: "https://github.com/{{ github_repo_spec }}"
         aria-label: "GitHub icon: Source repository"
-      {% if seedcase_website -%}
+      {% if is_seedcase_website -%}
       - icon: house
         href: "https://seedcase-project.org"
         aria-label: "House icon: Main website for the Seedcase Project"
@@ -39,7 +39,7 @@ website:
       - index.qmd
 
 format:
-  {% if seedcase_website -%}
+  {% if is_seedcase_website -%}
   seedcase-theme-html:
     theme:
       - brand

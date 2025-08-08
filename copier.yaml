@@ -48,7 +48,7 @@ _message_after_copy: |
     $ just list-todos
 
 # Questions
-seedcase_website:
+is_seedcase_website:
   type: bool
   default: false
   help: "Is this website part of the Seedcase Project? If not, the theme will not be applied."
