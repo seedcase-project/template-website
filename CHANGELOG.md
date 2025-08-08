@@ -1,3 +1,9 @@
+## 0.15.9 (2025-08-08)
+
+### Refactor
+
+- :recycle: revise so `github_repo` is name of folder (#60)
+
 ## 0.15.8 (2025-08-08)
 
 ### Refactor
