@@ -2,8 +2,7 @@
 
 # Template Website: An opinionated setup for building and developing Quarto-based websites
 
-<!-- TODO: Include DOI after uploading -->
-
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16762059.svg)](https://doi.org/10.5281/zenodo.16762059)
 [![Copier](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/copier-org/copier/master/img/badge/badge-grayscale-inverted-border-teal.json?raw=true)](https://github.com/copier-org/copier)
 [![GitHub
 License](https://img.shields.io/github/license/seedcase-project/template-website.svg)](https://github.com/seedcase-project/template-website/blob/main/LICENSE.md)
@@ -56,14 +55,18 @@ effort to create a framework for data management and analysis in
 research. If you use this project in your work, please cite it as
 follows:
 
-Johnston L.W., Brødbæk S.K., Beicher K., Vago M. Template Website: An
-opinionated setup for building and developing Quarto-based websites URL:
+Johnston L.W., Brødbæk S.K., Beicher K., Vago M. (2025). Template
+Website: An opinionated setup for building and developing Quarto-based
+websites DOI: 10.5281/zenodo.16762059 URL:
 https://template-website.seedcase-project.org
 
 Or as a BibTeX entry:
 
     @misc{YourReferenceHere,
     author = {Johnston, Luke William and Brødbæk, Signe Kirk and Beicher, Kristiane and Vago, Marton},
+    doi = {10.5281/zenodo.16762059},
+    month = {8},
     title = {Template Website: An opinionated setup for building and developing Quarto-based websites},
-    url = {https://template-website.seedcase-project.org}
+    url = {https://template-website.seedcase-project.org},
+    year = {2025}
     }
