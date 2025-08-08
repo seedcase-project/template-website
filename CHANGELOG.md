@@ -1,3 +1,9 @@
+## 0.15.8 (2025-08-08)
+
+### Refactor
+
+- :recycle: rename to `is_seedcase_website` (#64)
+
 ## 0.15.7 (2025-08-07)
 
 ### Fix
