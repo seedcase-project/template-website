@@ -34,7 +34,7 @@ copy () {
     --defaults \
     --data seedcase_website=$is_seedcase_website \
     --data hosting_provider=$hosting_provider \
-    --data website_github_repo="fake/repo" \
+    --data github_user="fake" \
     --data review_team="@fake/team" \
     --data author_given_name="First" \
     --data author_family_name="Last" \
