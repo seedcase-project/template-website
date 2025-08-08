@@ -39,6 +39,7 @@ copy () {
     --data author_given_name="First" \
     --data author_family_name="Last" \
     --data github_board_number="14" \
+    --overwrite \
     --skip-tasks \
     --trust
 }
@@ -51,7 +52,7 @@ mkdir -p $test_dir
 # Check initial creation -----
 # TODO: Find some way to test the `update` command
 # Any step that fails will exit the script with an error and not continue
-echo "Testing copy for new projects when: 'is_seedcase_website'='{{ is_seedcase_website }}', 'hosting_provider'='{{ hosting_provider }}' -----------"
+echo "Testing copy for new projects when: 'is_seedcase_website'='$is_seedcase_website', 'hosting_provider'='$hosting_provider' -----------"
 (
   cd $test_dir &&
     copy $template_dir $test_dir $commit &&
@@ -59,7 +60,7 @@ echo "Testing copy for new projects when: 'is_seedcase_website'='{{ is_seedcase_
     git add . &&
     git commit --quiet -m "test: initial copy" &&
     # Check that recopy works -----
-    echo "Testing recopy when: 'is_seedcase_website'='{{ is_seedcase_website }}', 'hosting_provider'='{{ hosting_provider }}' -----------" &&
+    echo "Testing recopy when: 'is_seedcase_website'='$$is_seedcase_website', 'hosting_provider'='$hosting_provider' -----------" &&
     rm .cz.toml &&
     git add . &&
     git commit --quiet -m "test: preparing to recopy from the template" &&
@@ -70,7 +71,7 @@ echo "Testing copy for new projects when: 'is_seedcase_website'='{{ is_seedcase_
       --skip-tasks \
       --trust &&
     # Check that copying onto an existing website works -----
-    echo "Testing copy in existing projects when: 'is_seedcase_website'='{{ is_seedcase_website }}', 'hosting_provider'='{{ hosting_provider }}' -----------" &&
+    echo "Testing copy in existing projects when: 'is_seedcase_website'='$is_seedcase_website', 'hosting_provider'='$hosting_provider' -----------" &&
     rm .cz.toml .copier-answers.yml &&
     git add . &&
     git commit --quiet -m "test: preparing to copy onto an existing website" &&
