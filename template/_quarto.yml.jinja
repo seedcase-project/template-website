@@ -6,7 +6,7 @@ website:
   # TODO: Set the title of the website
   title: ""
   {% if hosting_provider == "gh-pages" -%}
-  site-url: "https://{{ github_org }}.github.io/{{ github_repo }}/"
+  site-url: "https://{{ github_user }}.github.io/{{ github_repo }}/"
   {%- elif hosting_provider == "netlify" -%}
   # TODO: Set the Netlify custom domain URL
   site-url: ""

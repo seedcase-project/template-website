@@ -53,23 +53,9 @@ seedcase_website:
   default: false
   help: "Is this website part of the Seedcase Project? If not, the theme will not be applied."
 
-website_abbrev:
+github_user:
   type: str
-  help: "What is the abbreviated name of the website? This could be the name of your GitHub repository and should be a short, lowercase name without spaces or special characters. For example, 'new-website'."
-  default: "{{ _copier_conf.dst_path | basename }}"
-  validator: |
-    {% if website_abbrev and not (website_abbrev | regex_search('^[\w.-_]+$')) %}
-    The abbreviation must only contain alphanumeric characters and `_`, `-`, or `.`.
-    {% endif %}
-
-website_github_repo:
-  type: str
-  help: "What is or will be the GitHub repository spec for the website?"
-  placeholder: "user/repo"
-  validator: |
-    {% if website_github_repo and not (website_github_repo | regex_search('^[\w.-]+\/[\w.-]+$')) %}
-    Must be in the format `user/repo` and contain only alphanumeric characters and `_`, `-`, or `.`.
-    {% endif %}
+  help: "What is the name of the GitHub user or organization where the website repository will be or is stored?"
 
 hosting_provider:
   type: str
@@ -98,7 +84,7 @@ review_team:
   type: str
   help: What GitHub team is responsible for reviewing pull requests?
   default: >-
-    {{ "@%s/developers" % website_github_repo.split('/')[0] if website_github_repo else "" }}
+    {{ "@%s/developers" % github_user if github_user else "" }}
 
 # Configurations not asked
 github_org:
