@@ -90,7 +90,7 @@ review_team:
 
 github_repo:
   type: str
-  default: "{{ _copier_conf.dst_path.split('/') | last }}"
+  default: "{{ _copier_conf.dst_path.parts[-1] }}"
   when: false
 
 github_repo_spec:
