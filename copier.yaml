@@ -45,7 +45,9 @@ _message_after_copy: |
 
   5. List and complete all TODO items in the repository:
 
-    $ just list-todos
+    ``` bash
+    just list-todos
+    ```
 
 # Questions
 is_seedcase_website:
