@@ -70,3 +70,7 @@ share your ideas or contribute code. Your input makes us better!
 
 {{< include /_contributors.qmd >}}
 :::
+
+## Licensing
+
+This project is licensed under the [MIT License](/LICENSE.md).
