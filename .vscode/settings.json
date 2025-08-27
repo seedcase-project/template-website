@@ -16,16 +16,20 @@
     "refactor",
     "style",
     "test",
-    "chore"
+    "chore",
+    "revert",
+    "perf"
   ],
   "conventional-branch.format": "{Type}/{Branch}",
   "[quarto][qmd][jinja]": {
     "editor.formatOnSave": false
   },
   "files.associations": {
+    "justfile.jinja": "plaintext",
     "*.yml.jinja": "jinja-yaml",
     "*.cff.jinja": "jinja-yaml",
-    "*.toml.jinja": "jinja-toml"
+    "*.toml.jinja": "jinja-toml",
+    "*.qmd.jinja": "jinja-md"
   },
   "files.insertFinalNewline": true
 }
