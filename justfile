@@ -28,7 +28,7 @@ update-template:
   mkdir -p template/tools
   cp tools/get-contributors.sh template/tools/
   cp .github/dependabot.yml .github/pull_request_template.md template/.github/
-  cp .github/workflows/release-project.yml template/.github/workflows/
+  cp .github/workflows/release-project.yml .github/workflows/dependency-review.yml template/.github/workflows/
 
 # Check the commit messages on the current branch that are not on the main branch
 check-commits:
