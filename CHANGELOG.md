@@ -10,6 +10,12 @@ a day. It also means any individual release will not have many changes
 within it. Below is a list of releases along with what was changed
 within it.
 
+## 0.16.1 (2025-09-01)
+
+### Refactor
+
+- :memo: use bash code chunk style for post-copy message (#75)
+
 ## 0.16.0 (2025-09-01)
 
 ### Feat
