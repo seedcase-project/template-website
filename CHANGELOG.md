@@ -10,6 +10,12 @@ a day. It also means any individual release will not have many changes
 within it. Below is a list of releases along with what was changed
 within it.
 
+## 0.16.2 (2025-09-01)
+
+### Refactor
+
+- :recycle: store `github_repo` into copier answer file (#84)
+
 ## 0.16.1 (2025-09-01)
 
 ### Refactor
