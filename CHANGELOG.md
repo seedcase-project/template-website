@@ -10,6 +10,12 @@ a day. It also means any individual release will not have many changes
 within it. Below is a list of releases along with what was changed
 within it.
 
+## 0.16.5 (2025-09-01)
+
+### Refactor
+
+- :pushpin: update pre-commit hook versions (#79)
+
 ## 0.16.4 (2025-09-01)
 
 ### Refactor
