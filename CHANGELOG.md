@@ -10,6 +10,12 @@ a day. It also means any individual release will not have many changes
 within it. Below is a list of releases along with what was changed
 within it.
 
+## 0.16.10 (2025-09-04)
+
+### Fix
+
+- :bug: `github_repo` needs to be a question to store properly (#92)
+
 ## 0.16.9 (2025-09-04)
 
 ### Refactor
