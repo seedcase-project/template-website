@@ -51,6 +51,11 @@ check-spelling:
 test is_seedcase_website="true" hosting_provider="netlify":
   sh ./test-template.sh {{ is_seedcase_website }} {{ hosting_provider }}
 
+# Test template creation through use of the question approach
+test-manual:
+  mkdir -p _temp/manual
+  uvx copier copy -r HEAD --trust . _temp/manual/test-template
+
 # Clean up any leftover and temporary build files
 cleanup:
   rm -rf _temp
