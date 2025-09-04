@@ -17,4 +17,4 @@ contributors=$(gh api \
   sed -e 's/,$/\n/'
 )
 
-echo "These are the people who have contributed by submitting changes through pull requests :tada:\n\n${contributors}"
+echo "These are the people who contributed by submitting pull requests :tada:\n\n${contributors}"
