@@ -14,7 +14,12 @@ run-all: _checks _builds
 
 # List all TODO items in the repository
 list-todos:
-  grep -R -n --exclude="*.code-snippets" "TODO" *
+  grep -R -n \
+    --exclude="*.code-snippets" \
+    --exclude-dir=.quarto \
+    --exclude=justfile \
+    --exclude=_site \
+    "TODO" *
 
 {% if is_seedcase_website -%}
 # Update the Quarto seedcase-theme extension
