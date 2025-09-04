@@ -59,6 +59,11 @@ github_user:
   type: str
   help: "What is the name of the GitHub user or organization where the website repository will be or is stored?"
 
+github_repo:
+  type: str
+  help: "What is the name of the GitHub repository where the website will be or is stored? We strongly recommend using the default given."
+  default: "{{ _folder_name }}"
+
 hosting_provider:
   type: str
   help: "What hosting provider will you use for the website?"
@@ -89,12 +94,6 @@ review_team:
     {{ "@%s/developers" % github_user if github_user else "" }}
 
 # Configurations not asked
-
-github_repo:
-  type: str
-  default: "{{ _copier_conf.dst_path | realpath | basename }}"
-  when: false
-
 github_repo_spec:
   type: str
   default: "{{ github_user }}/{{ github_repo }}"
