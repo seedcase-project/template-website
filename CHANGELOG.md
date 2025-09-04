@@ -10,6 +10,12 @@ a day. It also means any individual release will not have many changes
 within it. Below is a list of releases along with what was changed
 within it.
 
+## 0.16.7 (2025-09-04)
+
+### Refactor
+
+- :fire: `update-from-template` workflow didn't work as expected (#91)
+
 ## 0.16.6 (2025-09-01)
 
 ### Refactor
