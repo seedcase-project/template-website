@@ -19,8 +19,6 @@ fi
 test_name="test-website-$hosting_provider"
 test_dir="$(pwd)/_temp/$is_seedcase_website/$test_name"
 template_dir="$(pwd)"
-# Use the latest commit for the template
-commit=$(git rev-parse HEAD)
 
 # Needs three arguments:
 #
@@ -28,9 +26,9 @@ commit=$(git rev-parse HEAD)
 # 2. Destination directory
 # 3. VCS ref (commit, branch, tag, etc.)
 copy () {
-  # vcs-ref means the current commit/head, not a tag.
+  # '-r HEAD' means use the HEAD, including uncommitted changes.
   uvx copier copy $1 $2 \
-    --vcs-ref=$3 \
+    -r HEAD \
     --defaults \
     --data is_seedcase_website=$is_seedcase_website \
     --data hosting_provider=$hosting_provider \
@@ -55,7 +53,7 @@ mkdir -p $test_dir
 echo "Testing copy for new projects when: 'is_seedcase_website'='$is_seedcase_website', 'hosting_provider'='$hosting_provider' -----------"
 (
   cd $test_dir &&
-    copy $template_dir $test_dir $commit &&
+    copy $template_dir $test_dir &&
     git init -b main &&
     git add . &&
     git commit --quiet -m "test: initial copy" &&
@@ -65,7 +63,7 @@ echo "Testing copy for new projects when: 'is_seedcase_website'='$is_seedcase_we
     git add . &&
     git commit --quiet -m "test: preparing to recopy from the template" &&
     uvx copier recopy \
-      --vcs-ref=$commit \
+      -r HEAD \
       --defaults \
       --overwrite \
       --skip-tasks \
@@ -75,7 +73,7 @@ echo "Testing copy for new projects when: 'is_seedcase_website'='$is_seedcase_we
     rm .cz.toml .copier-answers.yml &&
     git add . &&
     git commit --quiet -m "test: preparing to copy onto an existing website" &&
-    copy $template_dir $test_dir $commit &&
+    copy $template_dir $test_dir &&
     # Checks and builds -----
     just run-all
 )
