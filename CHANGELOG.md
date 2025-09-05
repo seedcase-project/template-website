@@ -10,6 +10,42 @@ a day. It also means any individual release will not have many changes
 within it. Below is a list of releases along with what was changed
 within it.
 
+## 0.16.12 (2025-09-05)
+
+### Refactor
+
+- :recycle: ignore other, non-relevant files when listing todos (#98)
+
+## 0.16.11 (2025-09-05)
+
+### Fix
+
+- :pencil2: value should be `isIdenticalTo` in `.zenodo.json` (#97)
+
+## 0.16.10 (2025-09-04)
+
+### Fix
+
+- :bug: `github_repo` needs to be a question to store properly (#92)
+
+## 0.16.9 (2025-09-04)
+
+### Refactor
+
+- :pushpin: update pre-commit hook versions (#94)
+
+## 0.16.8 (2025-09-04)
+
+### Refactor
+
+- :pencil2: simplify justfile recipe Jinja tags (#99)
+
+## 0.16.7 (2025-09-04)
+
+### Refactor
+
+- :fire: `update-from-template` workflow didn't work as expected (#91)
+
 ## 0.16.6 (2025-09-01)
 
 ### Refactor

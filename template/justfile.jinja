@@ -4,17 +4,21 @@
 @_checks: check-spelling check-commits
 @_builds: build-contributors build-readme build-website
 
-{% if is_seedcase_website -%}
 # Run all necessary build commands
+{%- if is_seedcase_website %}
 run-all: update-quarto-theme _checks _builds
-{%- else -%}
-# Run all necessary build commands
+{%- else %}
 run-all: _checks _builds
 {%- endif %}
 
 # List all TODO items in the repository
 list-todos:
-  grep -R -n --exclude="*.code-snippets" "TODO" *
+  grep -R -n \
+    --exclude="*.code-snippets" \
+    --exclude-dir=.quarto \
+    --exclude=justfile \
+    --exclude=_site \
+    "TODO" *
 
 {% if is_seedcase_website -%}
 # Update the Quarto seedcase-theme extension
