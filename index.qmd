@@ -68,7 +68,7 @@ share your ideas or contribute code. Your input makes us better!
 
 ### Contributors
 
-{{< include /_contributors.qmd >}}
+{{< include /docs/includes/_contributors.qmd >}}
 :::
 
 ## Licensing
