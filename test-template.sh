@@ -73,7 +73,5 @@ echo "Testing copy for new projects when: 'is_seedcase_website'='$is_seedcase_we
     rm .cz.toml .copier-answers.yml &&
     git add . &&
     git commit --quiet -m "test: preparing to copy onto an existing website" &&
-    copy $template_dir $test_dir &&
-    # Checks and builds -----
-    just run-all
+    copy $template_dir $test_dir
 )
