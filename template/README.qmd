@@ -62,6 +62,13 @@ Please note that this project is released with a [Contributor Code of
 Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree
 to abide by its terms.
 
+::: content-hidden
+<!-- TODO: Unhide when there are more contributors -->
+### Contributors
+
+{{< include /includes/_contributors.qmd >}}
+:::
+
 ## Licensing
 
 This project is licensed under the [CC-BY-4.0 License](LICENSE.md).

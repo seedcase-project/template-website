@@ -7,7 +7,7 @@ project:
     - "*.md"
 
 website:
-  title: "Template Website"
+  title: "`template-website`"
   site-url: "https://template-website.seedcase-project.org"
   repo-url: "https://github.com/seedcase-project/template-website"
   page-navigation: true
