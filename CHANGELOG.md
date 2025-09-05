@@ -10,6 +10,12 @@ a day. It also means any individual release will not have many changes
 within it. Below is a list of releases along with what was changed
 within it.
 
+## 0.16.12 (2025-09-05)
+
+### Refactor
+
+- :recycle: ignore other, non-relevant files when listing todos (#98)
+
 ## 0.16.11 (2025-09-05)
 
 ### Fix
