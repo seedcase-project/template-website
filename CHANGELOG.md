@@ -9,6 +9,12 @@ often, sometimes several in a day. It also means any individual release
 will not have many changes within it. Below is a list of releases along
 with what was changed within it.
 
+## 0.17.1 (2025-09-05)
+
+### Refactor
+
+- :hammer: use `update` theme to match name of recipe (#100)
+
 ## 0.17.0 (2025-09-05)
 
 ### Feat
