@@ -10,6 +10,12 @@ a day. It also means any individual release will not have many changes
 within it. Below is a list of releases along with what was changed
 within it.
 
+## 0.16.11 (2025-09-05)
+
+### Fix
+
+- :pencil2: value should be `isIdenticalTo` in `.zenodo.json` (#97)
+
 ## 0.16.10 (2025-09-04)
 
 ### Fix
