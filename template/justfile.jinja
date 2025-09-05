@@ -23,7 +23,8 @@ list-todos:
 {% if is_seedcase_website -%}
 # Update the Quarto seedcase-theme extension
 update-quarto-theme:
-  quarto add seedcase-project/seedcase-theme --no-prompt
+  # # Add theme if it doesn't exist, update if it does
+  quarto update seedcase-project/seedcase-theme --no-prompt
 {%- endif %}
 
 # Install the pre-commit hooks

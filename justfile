@@ -20,7 +20,8 @@ install-precommit:
 
 # Update the Quarto seedcase-theme extension
 update-quarto-theme:
-  quarto add seedcase-project/seedcase-theme --no-prompt
+  # Add theme if it doesn't exist, update if it does
+  quarto update seedcase-project/seedcase-theme --no-prompt
 
 # Update files in the template from the copier parent folder
 update-template:
