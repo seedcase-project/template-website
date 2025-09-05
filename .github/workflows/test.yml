@@ -21,9 +21,6 @@ jobs:
         with:
           enable-cache: true
 
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@9e48da27e184aa238fcb49f5db75469626d43adb # v2.1.9
-
       - name: Install justfile
         run: sudo apt install -y just
 
