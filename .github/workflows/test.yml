@@ -13,4 +13,4 @@ jobs:
   test-copier:
     uses: seedcase-project/.github/.github/workflows/reusable-test-copier.yml@main
     with:
-      test-script: "./test-template.sh"
+      test-recipe: "_tests"
