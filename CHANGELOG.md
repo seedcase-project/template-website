@@ -9,6 +9,13 @@ often, sometimes several in a day. It also means any individual release
 will not have many changes within it. Below is a list of releases along
 with what was changed within it.
 
+## 0.17.4 (2025-09-17)
+
+### Refactor
+
+- :pencil2: match workflow job name with filename (#112)
+- :technologist: simplify PR template even more (#116)
+
 ## 0.17.3 (2025-09-11)
 
 ### Refactor
