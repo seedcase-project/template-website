@@ -16,6 +16,7 @@ authors:
   - family-names: Vago
     given-names: Marton
     affiliation: "Steno Diabetes Center Aarhus"
+    orcid: "https://orcid.org/0009-0007-4628-655X"
 cff-version: 1.2.0
 doi: "10.5281/zenodo.16762059"
 date-released: 2025-08-07
