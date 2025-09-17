@@ -9,7 +9,7 @@ on:
 permissions: read-all
 
 jobs:
-  release-package:
+  release-project:
     # This job outputs env variables `previous_version` and `current_version`.
     # The workflow needs write permissions for `GITHUB_TOKEN` to create a release.
     permissions:
