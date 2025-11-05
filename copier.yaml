@@ -20,14 +20,19 @@ _message_after_copy: |
     cd {{ _copier_conf.dst_path | realpath }}
     ```
 
-  - Install the pre-commit hooks, add (called "update" here) the Quarto extension,
-     and build the README:
+  - Install the pre-commit hooks and build the README:
 
     ``` bash
-    just install-precommit update-quarto-theme build-readme
+    just install-precommit build-readme
     ```
 
   {%- if is_seedcase_website -%}
+  - Add (called "update" here) the Seedcase Quarto extension:
+
+    ``` bash
+    just update-quarto-theme
+    ```
+
   - Install [`spaid`](https://github.com/seedcase-project/spaid) and run these setup steps:
 
     ``` bash
