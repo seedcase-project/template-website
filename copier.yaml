@@ -27,7 +27,7 @@ _message_after_copy: |
     ```
 
   {%- if is_seedcase_website -%}
-  - Add (called "update" here) the Seedcase Quarto extension:
+  - Add the Seedcase Quarto extension (called "update" here) :
 
     ``` bash
     just update-quarto-theme
