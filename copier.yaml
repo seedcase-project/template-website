@@ -58,6 +58,8 @@ is_seedcase_website:
 github_user:
   type: str
   help: "What is the name of the GitHub user or organization where the website repository will be or is stored?"
+  default: >-
+    {{ "seedcase-project" if is_seedcase_website else "" }}
 
 github_repo:
   type: str
