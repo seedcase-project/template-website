@@ -14,20 +14,21 @@ _message_after_copy: |
   See the [guide](https://template-website.seedcase-project.org/docs/guide) for more detail
   on the next steps. Briefly:
 
-  1. Change directory to the project root:
+  - Change directory to the project root:
 
     ``` bash
     cd {{ _copier_conf.dst_path | realpath }}
     ```
 
-  2. Install the pre-commit hooks, add (called "update" here) the Quarto extension,
+  - Install the pre-commit hooks, add (called "update" here) the Quarto extension,
      and build the README:
 
     ``` bash
     just install-precommit update-quarto-theme build-readme
     ```
 
-  3. Install [`spaid`](https://github.com/seedcase-project/spaid) and run these setup steps:
+  {%- if is_seedcase_website -%}
+  - Install [`spaid`](https://github.com/seedcase-project/spaid) and run these setup steps:
 
     ``` bash
     spaid_gh_create_repo_from_local -h
@@ -35,15 +36,16 @@ _message_after_copy: |
     spaid_gh_ruleset_basic_protect_main -h
     ```
 
-  4. Configure GitHub following this
+  - Configure GitHub following this
     [guide](https://guidebook.seedcase-project.org/operations/security#using-github-apps-to-generate-tokens):
 
     - Install the [auto-release-token](https://github.com/apps/auto-release-token)
       and [add-to-board-token](https://github.com/apps/add-to-board-token) GitHub Apps
     - Create an `UPDATE_VERSION_TOKEN` and `ADD_TO_BOARD_TOKEN` secret for the GitHub Apps
     - Create an `UPDATE_VERSION_APP_ID` and `ADD_TO_BOARD_APP_ID` variable of the GitHub Apps' IDs
+  {%- endif %}
 
-  5. List and complete all TODO items in the repository:
+  - List and complete all TODO items in the repository:
 
     ``` bash
     just list-todos
