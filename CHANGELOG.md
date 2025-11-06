@@ -9,6 +9,12 @@ often, sometimes several in a day. It also means any individual release
 will not have many changes within it. Below is a list of releases along
 with what was changed within it.
 
+## 0.17.6 (2025-11-06)
+
+### Refactor
+
+- :recycle: hide Seedcase-specific post-copy message when not for Seedcase (#125)
+
 ## 0.17.5 (2025-11-05)
 
 ### Refactor
