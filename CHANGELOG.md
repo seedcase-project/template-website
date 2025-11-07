@@ -9,6 +9,12 @@ often, sometimes several in a day. It also means any individual release
 will not have many changes within it. Below is a list of releases along
 with what was changed within it.
 
+## 0.17.7 (2025-11-07)
+
+### Refactor
+
+- :pencil2: simplify PR template, use "thorough" and "quick" options (#129)
+
 ## 0.17.6 (2025-11-06)
 
 ### Refactor
