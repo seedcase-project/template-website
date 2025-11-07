@@ -76,6 +76,7 @@ defaults:
           font-size: 20px !important;
           font-weight: bold;
           padding: 5px 15px !important;
+          margin: 0px 10px 10px 10px;
       }
 
       .about-link:hover {
@@ -123,8 +124,8 @@ defaults:
           flex-direction: row;
       }
 
-      .hero-text>h2,
-      .landing-page-block>h2 {
+      .hero-text h2,
+      .landing-page-block h2 {
           margin-top: 0.5rem;
           border-bottom: none;
       }
@@ -150,4 +151,8 @@ defaults:
       /* Dropdown items on navbar default to 400 weight, but we want them to be lighter. */
       .dropdown-item {
           font-weight: 300 !important;
+      }
+
+      code {
+        color: $primary;
       }
