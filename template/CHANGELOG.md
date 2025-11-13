@@ -8,7 +8,7 @@ context of websites are simply snapshots in time of the website
 content. We use
 [Commitizen](https://decisions.seedcase-project.org/why-semantic-release-with-commitizen)
 to be able to automatically create these releases, which uses
-[SemVar](https://semverdoc.org) as the version numbering scheme.
+[SemVer](https://semverdoc.org) as the version numbering scheme.
 
 Because releases are created based on commit messages, we release quite
 often, sometimes several times in a day. This also means that any
