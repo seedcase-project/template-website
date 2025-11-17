@@ -15,6 +15,12 @@ that any individual release will not have many changes within it. Below
 is a list of the releases we've made so far, along with what was changed
 within each release.
 
+## 0.17.10 (2025-11-17)
+
+### Refactor
+
+- :memo: explain about release process more in CHANGELOG (#132)
+
 ## 0.17.9 (2025-11-07)
 
 ### Refactor
