@@ -165,3 +165,14 @@ defaults:
       :is(h3, h4, h5, h6, dt) code {
         font-weight: bold;
       }
+
+      // Color built-ins the same as regular variables
+      // since we sometimes use built-in names as parameter names
+      span.bu {
+        color: inherit !important
+      }
+      // Color terminal executables the same as regular variables
+      // since the default has low contrast and is hard to see
+      span.ex {
+        color: inherit !important
+      }

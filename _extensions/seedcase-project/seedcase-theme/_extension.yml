@@ -1,6 +1,16 @@
 title: seedcase-theme
-author: Luke W. Johnston
-version: 0.6.4
+authors:
+  - name: Luke W. Johnston
+    orcid: 0000-0003-4169-2616
+  - name: Signe Kirk Brødbæk
+    orcid: 0009-0000-2208-7088
+  - name: Marton Vago
+    orcid: 0009-0007-4628-655X
+  - name: Joel Ostblom
+    orcid: 0000-0003-0051-3239
+  - name: Kristiane Beicher
+    orcid: 0000-0001-7556-9566
+version: 0.7.1
 quarto-required: ">=1.7.0"
 contributes:
   formats:
