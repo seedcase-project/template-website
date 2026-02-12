@@ -15,13 +15,6 @@ exclude = [
 [MD004]
 style = "dash"
 
-# Spaces after a list `-`
-[MD030]
-ul-single = 3
-ol-single = 3
-ul-multi = 3
-ol-multi = 3
-
 # Wrap list items
 [MD032]
 allow-lazy-continuation = false
