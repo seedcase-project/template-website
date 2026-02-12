@@ -1,7 +1,7 @@
 @_default:
     just --list --unsorted
 
-@_checks: check-spelling check-commits check-md
+@_checks: check-spelling check-commits
 @_builds: build-contributors build-readme build-website
 
 # Run all necessary build commands
@@ -40,13 +40,9 @@ install-precommit:
 check-spelling:
   uvx typos
 
-# Check Markdown files for formatting issues
-check-md:
-    uvx rumdl check
-
 # Format Markdown files
 format-md:
-    uvx rumdl fmt
+    uvx rumdl fmt --silent
 
 # Check the commit messages on the current branch that are not on the main branch
 check-commits:

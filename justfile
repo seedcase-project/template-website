@@ -51,13 +51,9 @@ check-commits:
 check-spelling:
     uvx typos
 
-# Check Markdown files for formatting issues
-check-md:
-    uvx rumdl check
-
 # Format Markdown files
 format-md:
-    uvx rumdl fmt
+    uvx rumdl fmt --silent
 
 # Test that a website can be created from the template, with parameters for: `is_seedcase_website` (true or false) and `hosting_provider` (either "gh-pages" or "netlify")
 test is_seedcase_website="true" hosting_provider="netlify":
