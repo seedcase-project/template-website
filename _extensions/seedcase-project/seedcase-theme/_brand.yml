@@ -17,6 +17,7 @@ color:
     dark-green: "#196440"
     vibrant-green: "#48DC76"
     light-grey: "#F8F9FA"
+    code-bg: "#E9ECEFA6"
   primary: dark-green
   tertiary: vibrant-green
   light: light-grey
@@ -43,14 +44,18 @@ typography:
 defaults:
   bootstrap:
     defaults:
-      mermaid-edge-color: "#8B8B8B"
+      mermaid-edge-color: var(--quarto-scss-export-gray-800)
+      # Set code background colour variable so all inline code has the same colour
+      # including headers with inline code.
+      # This colour is the default background colour for inline code.
+      code-bg: var(--brand-code-bg)
     rules: |
       .cell-output pre code {
         white-space: pre-wrap;
       }
 
       .navbar {
-          border-bottom: rgba($toc-active-border, 0.3) 1px solid;
+        border-bottom: var(--quarto-scss-export-gray-300) 1px solid;
       }
 
       svg {
@@ -155,4 +160,19 @@ defaults:
 
       code {
         color: $primary;
+      }
+
+      :is(h3, h4, h5, h6, dt) code {
+        font-weight: bold;
+      }
+
+      // Color built-ins the same as regular variables
+      // since we sometimes use built-in names as parameter names
+      span.bu {
+        color: inherit !important
+      }
+      // Color terminal executables the same as regular variables
+      // since the default has low contrast and is hard to see
+      span.ex {
+        color: inherit !important
       }

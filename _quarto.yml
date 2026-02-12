@@ -12,7 +12,7 @@ website:
   repo-url: "https://github.com/seedcase-project/template-website"
   page-navigation: true
   navbar:
-    logo: _extensions/seedcase-project/seedcase-theme/logos/seedcase-logo.svg
+    logo: _extensions/seedcase-project/seedcase-theme/logos/seedcase/icon.svg
     logo-alt: "Seedcase Project logo: Main page"
     pinned: true
     left:
