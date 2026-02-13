@@ -25,7 +25,7 @@ websites. Along with the infrastructure for Quarto, this template also
 includes configurations and support files for developing and managing
 the website.
 
-Check out our [website](https://template-website.seedcase-project.org/)
+Check out our [website](https://template-website.seedcase-project.org)
 for more information, such as the features it provides and a
 [guide](https://template-website.seedcase-project.org/docs/guide/) to
 using the template. For a list of changes, see our
