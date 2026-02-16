@@ -11,6 +11,7 @@
     "pshaddel.conventional-branch",
     "EditorConfig.EditorConfig",
     "tekumara.typos-vscode",
+    "rvben.rumdl"
   ],
   "unwantedRecommendations": []
 }

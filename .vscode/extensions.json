@@ -11,7 +11,8 @@
     "pshaddel.conventional-branch",
     "tekumara.typos-vscode",
     "EditorConfig.EditorConfig",
-    "samuelcolvin.jinjahtml"
+    "samuelcolvin.jinjahtml",
+    "rvben.rumdl"
   ],
   "unwantedRecommendations": []
 }

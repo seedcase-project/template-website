@@ -1,6 +1,7 @@
 # Changelog
 
-Since we follow [Conventional
+Since we follow
+[Conventional
 Commits](https://decisions.seedcase-project.org/why-conventional-commits),
 we're able to automatically create formal "releases" of the website
 based on our commit messages. Releases in the context of websites are

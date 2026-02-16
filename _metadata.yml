@@ -6,3 +6,7 @@ gh:
 titles:
   full: "`template-website`: An opinionated setup for building and developing Quarto-based websites"
   short: "`template-website`"
+
+links:
+  github: "https://github.com/seedcase-project/template-website"
+  site: "https://template-website.seedcase-project.org"

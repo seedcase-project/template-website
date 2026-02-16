@@ -1,6 +1,7 @@
 # Changelog
 
-Since we follow [Conventional
+Since we follow
+[Conventional
 Commits](https://decisions.seedcase-project.org/why-conventional-commits),
 we're able to automatically create formal "releases" of the website
 based on our commit messages. Releases in the context of websites are
@@ -43,19 +44,22 @@ within each release.
 
 ### Refactor
 
-- :pencil2: simplify PR template, use "thorough" and "quick" options (#129)
+- :pencil2: simplify PR template, use "thorough" and "quick" options
+  (#129)
 
 ## 0.17.6 (2025-11-06)
 
 ### Refactor
 
-- :recycle: hide Seedcase-specific post-copy message when not for Seedcase (#125)
+- :recycle: hide Seedcase-specific post-copy message when not for
+  Seedcase (#125)
 
 ## 0.17.5 (2025-11-05)
 
 ### Refactor
 
-- :recycle: set `seedcase-project` as default GitHub user for Seedcase websites (#126)
+- :recycle: set `seedcase-project` as default GitHub user for Seedcase
+  websites (#126)
 
 ## 0.17.4 (2025-09-17)
 
@@ -74,7 +78,8 @@ within each release.
 
 ### Refactor
 
-- :recycle: generate `_contributors.yml` into the `includes/` folder (#90)
+- :recycle: generate `_contributors.yml` into the `includes/` folder
+  (#90)
 
 ## 0.17.1 (2025-09-05)
 
@@ -194,7 +199,8 @@ within each release.
 
 ### Fix
 
-- :pencil2: used the wrong echo text for the `check-commits` recipe (#53)
+- :pencil2: used the wrong echo text for the `check-commits` recipe
+  (#53)
 
 ## 0.15.4 (2025-08-07)
 
@@ -264,7 +270,8 @@ within each release.
 
 ### Feat
 
-- :sparkles: add `add-to-project` workflow, along with copier question (#18)
+- :sparkles: add `add-to-project` workflow, along with copier question
+  (#18)
 
 ## 0.9.0 (2025-08-06)
 
