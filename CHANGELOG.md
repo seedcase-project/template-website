@@ -16,6 +16,12 @@ that any individual release will not have many changes within it. Below
 is a list of the releases we've made so far, along with what was changed
 within each release.
 
+## 0.19.0 (2026-02-16)
+
+### Feat
+
+- ✨ add Markdown formatter to justfile (#152)
+
 ## 0.18.0 (2026-01-09)
 
 ### Feat
