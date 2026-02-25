@@ -14,7 +14,8 @@ contributors=$(gh api \
   --template '{{range .}} [\@{{.login}}]({{.html_url}}){{"\n"}}{{end}}' | \
   grep -v "\[bot\]" | \
   tr '\n' ', ' | \
-  sed -e 's/,$/\n/'
+  sed -e 's/,$/\n/' | \
+  sed -e 's/,/,\n/g'
 )
 
 echo "The following people have contributed to this project by submitting pull requests :tada:\n\n${contributors}"

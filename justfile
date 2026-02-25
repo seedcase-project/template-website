@@ -1,7 +1,7 @@
 @_default:
     just --list --unsorted
 
-@_checks: check-spelling check-commits
+@_checks: check-spelling check-urls check-commits
 
 @_builds: build-contributors build-website build-readme
 
@@ -50,6 +50,15 @@ check-commits:
 # Check for spelling errors in files
 check-spelling:
     uvx typos
+
+# Install lychee from https://lychee.cli.rs/guides/getting-started/
+
+# Check that URLs work
+check-urls:
+    lychee . \
+      --verbose \
+      --extensions md,qmd,jinja \
+      --exclude-path "_badges.qmd"
 
 # Format Markdown files
 format-md:
