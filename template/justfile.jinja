@@ -2,13 +2,14 @@
     just --list --unsorted
 
 @_checks: check-spelling check-commits
+
 @_builds: build-contributors build-readme build-website
 
 # Run all necessary build commands
 {%- if is_seedcase_website %}
 run-all: update-quarto-theme _checks format-md _builds
 {%- else %}
-run-all: _checks _builds
+run-all: _checks format-md _builds
 {%- endif %}
 
 # List all TODO items in the repository
