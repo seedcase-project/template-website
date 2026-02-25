@@ -179,6 +179,7 @@ use the following commands to run the next setup steps:
 spaid_gh_create_repo_from_local -h
 spaid_gh_set_repo_settings -h
 spaid_gh_ruleset_basic_protect_main -h
+spaid_gh_ruleset_require_pr -h
 ```
 
 Some configuration is needed after copying this template to a new
