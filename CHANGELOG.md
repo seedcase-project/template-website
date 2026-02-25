@@ -15,6 +15,18 @@ that any individual release will not have many changes within it. Below
 is a list of the releases we've made so far, along with what was changed
 within each release.
 
+## 0.20.0 (2026-02-25)
+
+### Feat
+
+- :hammer: add Lychee URL checker to justfile (#163)
+
+### Refactor
+
+- :memo: add note about using require PR command (#164)
+- :recycle: ignore HTML when running typos (#160)
+- :recycle: contributors listed on newlines (#159)
+
 ## 0.19.1 (2026-02-19)
 
 ### Fix
