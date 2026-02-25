@@ -176,3 +176,9 @@ defaults:
       span.ex {
         color: inherit !important
       }
+
+      // To have more separation between the description and the rest of the content.
+      .description {
+        border-bottom: 1px solid #dee2e6;
+        padding-bottom: .5rem;
+      }
