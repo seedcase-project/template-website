@@ -15,6 +15,17 @@ that any individual release will not have many changes within it. Below
 is a list of the releases we've made so far, along with what was changed
 within each release.
 
+## 0.20.1 (2026-02-26)
+
+### Fix
+
+- :pencil2: include `format-md` recipe in non-Seedcase websites (#165)
+
+### Refactor
+
+- :recycle: consistent use of `%-` in Jinja (#167)
+- :fire: don't indent by 4 in Markdown files (#169)
+
 ## 0.20.0 (2026-02-25)
 
 ### Feat
