@@ -1,8 +1,9 @@
 project:
   # TODO: Change to correct project type if using extensions
-  type: website
+  type: {{ website_format }}
 
-website:
+
+{{ website_format }}:
   # TODO: Set the title of the website
   title: ""
   {%- if hosting_provider == "gh-pages" %}
@@ -12,12 +13,45 @@ website:
   site-url: ""
   {%- endif %}
   repo-url: "https://github.com/{{ github_repo_spec }}"
+  {%- if website_format == "book" %}
+  author:
+    - name: "{{ author_given_name }} {{ author_family_name }}"
+      affiliation: "TODO: Fill in your affiliation"
+      orcid: "TODO: Fill in your ORCID"
+  {%- endif %}
   # TODO: Set favicon
   {%- if is_seedcase_website %}
   favicon: "_extensions/seedcase-project/seedcase-theme/logos/seedcase-logo.svg"
   {%- else %}
   # favicon: ""
   {%- endif %}
+  {%- if website_format == "book" %}
+  repo-branch: main
+  repo-actions: [issue, edit, source]
+  search:
+    location: navbar
+    type: textbox
+  chapters:
+    - index.qmd
+  #  - part: "Sections"
+  #    chapters:
+  #    - path/to/file.qmd
+  # appendices:
+  #  - path/to/file.qmd
+  tools:
+    - icon: github
+      href: "https://github.com/{{ github_repo_spec }}"
+      aria-label: "GitHub icon: Source repository"
+    {%- if is_seedcase_website %}
+    - icon: house
+      href: "https://seedcase-project.org"
+      aria-label: "House icon: Main website for the Seedcase Project"
+    {%- endif %}
+  page-footer:
+    center:
+      - text: "Licensed under CC BY 4.0"
+        href: "LICENSE.md"
+  {%- elif website_format == "website" %}
   navbar:
     {%- if is_seedcase_website %}
     logo: "_extensions/seedcase-project/seedcase-theme/logos/seedcase-logo.svg"
@@ -43,6 +77,7 @@ website:
   sidebar:
     contents:
       - index.qmd
+  {%- endif %}
 
 format:
   {%- if is_seedcase_website %}
