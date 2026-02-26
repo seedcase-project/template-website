@@ -19,11 +19,11 @@ status](https://results.pre-commit.ci/badge/github/seedcase-project/template-web
 state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
-This repository contains a [copier](https://copier.readthedocs.io/en/stable/)
-template for setting up a new repository for building Quarto-based
-websites. Along with the infrastructure for Quarto, this template also
-includes configurations and support files for developing and managing
-the website.
+This repository contains a
+[copier](https://copier.readthedocs.io/en/stable/) template for setting
+up a new repository for building Quarto-based websites. Along with the
+infrastructure for Quarto, this template also includes configurations
+and support files for developing and managing the website.
 
 Check out our [website](https://template-website.seedcase-project.org)
 for more information, such as the features it provides and a
