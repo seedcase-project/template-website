@@ -11,7 +11,7 @@ permissions: read-all
 jobs:
   build-website:
     uses: seedcase-project/.github/.github/workflows/reusable-build-docs.yml@main
-    {% if hosting_provider == 'gh-pages' -%}
+    {%- if hosting_provider == 'gh-pages' %}
     with:
       hosting-provider: gh-pages
     permissions:
@@ -19,8 +19,8 @@ jobs:
       pages: write
     {%- endif %}
     secrets:
-      {% if hosting_provider == 'gh-pages' -%}
+      {%- if hosting_provider == 'gh-pages' %}
       github-token: {{ '${{ secrets.GITHUB_TOKEN }}' }}
-      {%- elif hosting_provider == 'netlify' -%}
+      {%- elif hosting_provider == 'netlify' %}
       netlify-token: {{ '${{ secrets.NETLIFY_AUTH_TOKEN }}' }}
       {%- endif %}

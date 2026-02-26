@@ -21,7 +21,7 @@ list-todos:
     --exclude=_site \
     "TODO" *
 
-{% if is_seedcase_website -%}
+{%- if is_seedcase_website %}
 # Update the Quarto seedcase-theme extension
 update-quarto-theme:
   # # Add theme if it doesn't exist, update if it does
