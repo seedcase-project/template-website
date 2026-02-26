@@ -4,19 +4,21 @@
 #
 # 1. is_seedcase_website: true or false
 # 2. hosting_provider: e.g., "github", "gitlab", etc.
+# 3. website_format: "website" or "book"
 
 # Argument naming -----
 is_seedcase_website="${1}"
 hosting_provider="${2}"
+website_format="${3}"
 
-if [ -z "$is_seedcase_website" ] || [ -z "$hosting_provider" ]; then
-  echo "Usage: sh $0 <is_seedcase_website> <hosting_provider>"
-  echo "Example: sh $0 true netlify"
+if [ -z "$is_seedcase_website" ] || [ -z "$hosting_provider" ] || [ -z "$website_format" ]; then
+  echo "Usage: sh $0 <is_seedcase_website> <hosting_provider> <website_format>"
+  echo "Example: sh $0 true netlify website"
   exit 1
 fi
 
 # Set up variables and functions for the test -----
-test_name="test-website-$hosting_provider"
+test_name="test-$website_format-$hosting_provider"
 test_dir="$(pwd)/_temp/$is_seedcase_website/$test_name"
 template_dir="$(pwd)"
 
@@ -31,7 +33,9 @@ copy () {
     -r HEAD \
     --defaults \
     --data is_seedcase_website=$is_seedcase_website \
+    --data website_type=$hosting_provider \
     --data hosting_provider=$hosting_provider \
+    --data website_format=$website_format \
     --data github_user="fake" \
     --data review_team="@fake/team" \
     --data author_given_name="First" \

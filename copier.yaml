@@ -61,7 +61,14 @@ _message_after_copy: |
 is_seedcase_website:
   type: bool
   default: false
-  help: "Is this website part of the Seedcase Project? If not, the theme will not be applied."
+
+website_format:
+  type: str
+  help: "What style of Quarto website do you want?"
+  choices:
+    - website
+    - book
+  default: website
 
 github_user:
   type: str

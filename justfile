@@ -5,8 +5,12 @@
 
 @_builds: build-contributors build-website build-readme
 
-# Test if it is or isn't a Seedcase website and uses netlify or gh-pages
-@_tests: (test "true" "netlify") (test "false" "netlify") (test "true" "gh-pages") (test "false" "gh-pages")
+# Test if it is or isn't a Seedcase website and uses netlify or gh-pages and the website or book format
+@_test-seedcase-true: (test "true" "netlify" "website") (test "true" "netlify" "book") (test "true" "gh-pages" "website") (test "true" "gh-pages" "book")
+
+@_test-seedcase-false: (test "false" "netlify" "website") (test "false" "netlify" "book") (test "false" "gh-pages" "website") (test "false" "gh-pages" "book")
+
+@_tests: _test-seedcase-true _test-seedcase-false
 
 # Run all build-related recipes in the justfile
 run-all: update-quarto-theme update-template _checks _tests _builds
@@ -65,8 +69,8 @@ format-md:
     uvx rumdl fmt --silent
 
 # Test that a website can be created from the template, with parameters for: `is_seedcase_website` (true or false) and `hosting_provider` (either "gh-pages" or "netlify")
-test is_seedcase_website="true" hosting_provider="netlify":
-    sh ./test-template.sh {{ is_seedcase_website }} {{ hosting_provider }}
+test is_seedcase_website="true" hosting_provider="netlify" website_format="website":
+    sh ./test-template.sh {{ is_seedcase_website }} {{ hosting_provider }} {{ website_format }}
 
 # Test template creation through use of the question approach
 test-manual:
