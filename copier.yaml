@@ -26,7 +26,7 @@ _message_after_copy: |
     just install-precommit build-readme
     ```
 
-  {%- if is_seedcase_website -%}
+  {%- if is_seedcase_website %}
   - Add the Seedcase Quarto extension (called "update" here) :
 
     ``` bash
