@@ -61,6 +61,8 @@ developing and building the website easier.
 - Uses [rumdl](https://rumdl.dev) to format Markdown files, so that they
   are consistent across the repository and easier to read in the raw
   form.
+- Uses [lychee](https://lychee.cli.rs) to check for broken links in the
+  website files.
 
 ## Want to contribute?
 
