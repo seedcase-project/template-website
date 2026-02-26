@@ -11,27 +11,26 @@ metadata-files:
 
 {{< include /docs/includes/_badges.qmd >}}
 
-This repository contains a [copier](https://copier.readthedocs.io/)
-template for setting up a new repository for building Quarto-based
-websites. Along with the infrastructure for Quarto, this template also
-includes configurations and support files for developing and managing
-the website.
+This repository contains a
+[copier](https://copier.readthedocs.io/en/stable/) template for setting
+up a new repository for building Quarto-based websites. Along with the
+infrastructure for Quarto, this template also includes configurations
+and support files for developing and managing the website.
 
 Check out our [website]({{< meta links.site >}}) for more information,
 such as the features it provides and a
-[guide]({{< meta links.site >}}/docs/guide/) to using the template. For
+[guide]({{< meta links.site >}}/docs/guide) to using the template. For
 a list of changes, see our
-[changelog]({{< meta links.site >}}/docs/releases/) page.
+[changelog]({{< meta links.site >}}/changelog) page.
 
 ## Contributing
 
-Check out our [contributing page]({{< meta links.site >}}/contributing/)
+Check out our [contributing page]({{< meta links.site >}}/contributing)
 for information on how to contribute to the project, including how to
 set up your development environment.
 
 Please note that this project is released with a
-[Contributor Code of
-Conduct](https://github.com/seedcase-project/.github/blob/main/CODE_OF_CONDUCT.md).
+[Contributor Code of Conduct](https://github.com/seedcase-project/.github/blob/main/CODE_OF_CONDUCT.md).
 By participating in this project you agree to abide by its terms.
 
 ### Contributors

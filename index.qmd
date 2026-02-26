@@ -18,15 +18,14 @@ developing and building the website easier.
 - Uses [typos](https://github.com/crate-ci/typos) to check for common
   spelling mistakes.
 - Uses
-  [Commitizen](https://decisions.seedcase-project.org/why-changelog-with-commitizen)
+  [Commitizen](https://decisions.seedcase-project.org/why-changelog-with-commitizen/)
   to
   [check](https://decisions.seedcase-project.org/why-lint-with-commitizen/)
   commit messages and automatically create the changelog.
 - Automated Git tagging and GitHub releases with
   [commitizen](https://decisions.seedcase-project.org/why-semantic-release-with-commitizen/)
   that are based on messages following
-  [Conventional
-  Commits](https://decisions.seedcase-project.org/why-conventional-commits).
+  [Conventional Commits](https://decisions.seedcase-project.org/why-conventional-commits/).
 - Uses a [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/)
   license for the website content.
 - Run checks with [pre-commit](https://pre-commit.com/) hooks to ensure

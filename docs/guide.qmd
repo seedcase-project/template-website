@@ -14,7 +14,7 @@ In order to use this template, you need to install a few programs:
   itself (copier).
 - [Git](https://git-scm.com/): For version control and setting up Git to
   track the newly created data package.
-- [copier](https://copier.readthedocs.io/en/stable/#quick-start): A
+- [copier](https://copier.readthedocs.io/en/stable/): A
   template tool for making new projects in a standardised and structured
   way.
 - [uv](https://docs.astral.sh/uv/): A tool for managing Python
@@ -226,8 +226,7 @@ GitHub and Zenodo have an integration that, when set up, will
 automatically create a
 [Zenodo record](https://help.zenodo.org/docs/deposit/about-records/)
 from a
-[GitHub
-release](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases).
+[GitHub release](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases).
 This is useful if you want to create a DOI for your website, which will
 allow you to cite it in academic work as well as provide more exposure
 for your website. Connecting GitHub to Zenodo is very easy, check out
