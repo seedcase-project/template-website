@@ -15,6 +15,12 @@ that any individual release will not have many changes within it. Below
 is a list of the releases we've made so far, along with what was changed
 within each release.
 
+## 0.22.0 (2026-02-27)
+
+### Feat
+
+- :sparkles: include a simple template version (#174)
+
 ## 0.21.1 (2026-02-26)
 
 ### Fix
