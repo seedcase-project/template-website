@@ -1,0 +1,25 @@
+# Development files and folders
+_ignore
+bin/
+dev/
+_temp/
+
+# Temporary files
+*.tmp
+
+# Any IDE specific folders
+.idea
+
+# MacOS
+.DS_Store
+
+# Quarto
+/.quarto/
+docs/.quarto/
+**/*.quarto_ipynb
+
+# Website generation
+_site
+_book
+public
+site

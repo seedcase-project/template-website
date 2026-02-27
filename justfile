@@ -6,11 +6,13 @@
 @_builds: build-contributors build-website build-readme
 
 # Test if it is or isn't a Seedcase website and uses netlify or gh-pages and the website or book format
-@_test-seedcase-true: (test "true" "netlify" "website") (test "true" "netlify" "book") (test "true" "gh-pages" "website") (test "true" "gh-pages" "book")
+@_test-seedcase-true: (test "true" "netlify" "website" "complete") (test "true" "netlify" "book" "complete") (test "true" "gh-pages" "website" "complete") (test "true" "gh-pages" "book" "complete")
 
-@_test-seedcase-false: (test "false" "netlify" "website") (test "false" "netlify" "book") (test "false" "gh-pages" "website") (test "false" "gh-pages" "book")
+@_test-seedcase-false: (test "false" "netlify" "website" "complete") (test "false" "netlify" "book" "complete") (test "false" "gh-pages" "website" "complete") (test "false" "gh-pages" "book" "complete")
 
-@_tests: _test-seedcase-true _test-seedcase-false
+@_test-simple: (test "false" "netlify" "website" "simple") (test "false" "netlify" "book" "simple") (test "false" "gh-pages" "website" "simple") (test "false" "gh-pages" "book" "simple")
+
+@_tests: _test-seedcase-true _test-seedcase-false _test-simple
 
 # Run all build-related recipes in the justfile
 run-all: update-quarto-theme update-template _checks _tests _builds
@@ -31,12 +33,17 @@ update-quarto-theme:
 
 # Update files in the template from the copier parent folder
 update-template:
-    cp CODE_OF_CONDUCT.md .pre-commit-config.yaml .gitignore .typos.toml .editorconfig template/
-    mkdir -p template/tools
-    cp tools/get-contributors.sh template/tools/
-    cp .github/dependabot.yml .github/pull_request_template.md template/.github/
-    cp .github/workflows/release-project.yml .github/workflows/dependency-review.yml template/.github/workflows/
-    cp .rumdl.toml template/.rumdl.toml
+    cp -f CODE_OF_CONDUCT.md .pre-commit-config.yaml .gitignore .typos.toml .editorconfig .rumdl.toml \
+      template/complete/
+    cp -f .gitignore \
+      template/simple/
+    mkdir -p template/complete/tools
+    cp -f tools/get-contributors.sh \
+      template/complete/tools/
+    cp -f .github/dependabot.yml .github/pull_request_template.md \
+      template/complete/.github/
+    cp -f .github/workflows/release-project.yml .github/workflows/dependency-review.yml \
+      template/complete/.github/workflows/
 
 # Check the commit messages on the current branch that are not on the main branch
 check-commits:
@@ -69,8 +76,8 @@ format-md:
     uvx rumdl fmt --silent
 
 # Test that a website can be created from the template, with parameters for: `is_seedcase_website` (true or false) and `hosting_provider` (either "gh-pages" or "netlify")
-test is_seedcase_website="true" hosting_provider="netlify" website_format="website":
-    sh ./test-template.sh {{ is_seedcase_website }} {{ hosting_provider }} {{ website_format }}
+test is_seedcase_website="true" hosting_provider="netlify" website_format="website" template_type="complete":
+    sh ./test-template.sh {{ is_seedcase_website }} {{ hosting_provider }} {{ website_format }} {{ template_type }}
 
 # Test template creation through use of the question approach
 test-manual:

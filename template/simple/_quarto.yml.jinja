@@ -1,0 +1,68 @@
+project:
+  # TODO: Change to correct project type if using extensions
+  type: {{ website_format }}
+
+{{ website_format }}:
+  # TODO: Set the title of the website
+  title: ""
+  {%- if hosting_provider == "gh-pages" %}
+  site-url: "https://{{ github_user }}.github.io/{{ github_repo }}/"
+  {%- elif hosting_provider == "netlify" %}
+  # TODO: Set the Netlify custom domain URL
+  site-url: ""
+  {%- endif %}
+  repo-url: "https://github.com/{{ github_repo_spec }}"
+  {%- if website_format == "book" %}
+  author:
+    - name: "{{ author_given_name }} {{ author_family_name }}"
+      affiliation: "TODO: Fill in your affiliation"
+      orcid: "TODO: Fill in your ORCID"
+  {%- endif %}
+  # TODO: Set favicon if relevant.
+  # favicon: ""
+  {%- if website_format == "book" %}
+  repo-branch: main
+  repo-actions: [issue, edit, source]
+  search:
+    location: navbar
+    type: textbox
+  chapters:
+    - index.qmd
+  #  - part: "Sections"
+  #    chapters:
+  #    - path/to/file.qmd
+  # appendices:
+  #  - path/to/file.qmd
+  tools:
+    - icon: github
+      href: "https://github.com/{{ github_repo_spec }}"
+      aria-label: "GitHub icon: Source repository"
+  page-footer:
+    center:
+      - text: "Licensed under CC BY 4.0"
+        href: "LICENSE.md"
+  {%- elif website_format == "website" %}
+  navbar:
+    # TODO: Add logo and logo-alt if relevant.
+    logo: ""
+    logo-alt: ""
+    pinned: true
+    left:
+      - text: "Welcome"
+        href: index.qmd
+    tools:
+      - icon: github
+        href: "https://github.com/{{ github_repo_spec }}"
+        aria-label: "GitHub icon: Source repository"
+  sidebar:
+    contents:
+      - index.qmd
+  {%- endif %}
+
+format:
+  # TODO: Use Quarto extension if available
+  html:
+    theme:
+      # TODO: Choose a different theme if desired
+      - litera
+      - custom-styles.scss
