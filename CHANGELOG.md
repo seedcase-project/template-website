@@ -15,6 +15,12 @@ that any individual release will not have many changes within it. Below
 is a list of the releases we've made so far, along with what was changed
 within each release.
 
+## 0.22.1 (2026-02-27)
+
+### Fix
+
+- :pencil2: use GitHub Markdown for callout block (#175)
+
 ## 0.22.0 (2026-02-27)
 
 ### Feat
