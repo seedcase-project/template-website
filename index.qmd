@@ -11,6 +11,11 @@ developing and building the website easier.
 
 ## Features
 
+Has a "complete" (full-featured) or a "simple" (minimal to work) template types.
+
+::: panel-tabset
+### Complete template
+
 - Uses [Quarto](https://quarto.org/) Markdown for the website content,
   allowing for easy integration of code, text, and figures.
 - Includes a [justfile](https://just.systems/man/en/) for managing
@@ -36,7 +41,9 @@ developing and building the website easier.
   Quarto extension for a standard appearance across websites.
 - Includes [GitHub Actions](https://docs.github.com/en/actions) for
   continuous integration, testing, and delivery for running checks,
-  formatting, releasing, and building the website.
+  formatting, releasing, and building the website. It also includes
+  [Dependabot](https://docs.github.com/en/code-security/tutorials/secure-your-dependencies/dependabot-quickstart-guide)
+  for keeping GitHub Action dependencies up to date.
 - Choose between [Netlify](https://www.netlify.com/) or
   [GitHub Pages](https://pages.github.com/) for hosting the website. For
   dealing with custom domain names, Netlify is the better choice, as the
@@ -62,6 +69,20 @@ developing and building the website easier.
   form.
 - Uses [lychee](https://lychee.cli.rs) to check for broken links in the
   website files.
+
+### Simple template
+
+- Uses [Quarto](https://quarto.org/) Markdown for the website content,
+  allowing for easy integration of code, text, and figures.
+- Uses a [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/)
+  license for the website content.
+- Includes [GitHub Actions](https://docs.github.com/en/actions) to
+  build the website and send it to the hosting provider (see below).
+- Choose between [Netlify](https://www.netlify.com/) or
+  [GitHub Pages](https://pages.github.com/) for hosting the website. For
+  dealing with custom domain names, Netlify is the better choice, as the
+  configuration is very easy to set up.
+:::
 
 ## Want to contribute?
 

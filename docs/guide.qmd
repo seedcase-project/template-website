@@ -119,10 +119,19 @@ commands to work.
 
 ## Post-creation setup
 
+::: callout-important
+The below steps are mostly relevant to the complete template, though
+some steps could be done using the simple one as well. Read through
+and see if any might apply to your situation if you use the simple
+template.
+:::
+
+::: callout-important
 These steps are mainly for us in the Seedcase Project to set up the
 repository with the settings we use, but you can follow them if you want
 to set up your website in a similar way. They are also included in a
 message after you've copied the template.
+:::
 
 ### Setting up pre-commit hooks
 

@@ -1,4 +1,4 @@
-_subdirectory: template
+_subdirectory: "template/{{ template_type }}"
 
 # Post-copy commands:
 _tasks:
@@ -12,7 +12,7 @@ _message_after_copy: |
   Your project "{{ github_repo }}" has been created successfully!
 
   See the [guide](https://template-website.seedcase-project.org/docs/guide) for more detail
-  on the next steps. Briefly:
+  on the next steps. {% if template_type == "complete" %}Briefly:
 
   - Change directory to the project root:
 
@@ -56,11 +56,22 @@ _message_after_copy: |
     ``` bash
     just list-todos
     ```
+  {% endif %}
 
 # Questions
 is_seedcase_website:
   type: bool
   default: false
+  help: "Is this a Seedcase Project website?"
+
+template_type:
+  type: str
+  help: "Which website template do you want to use?"
+  choices:
+    - simple
+    - complete
+  default: complete
+  when: "{{ not is_seedcase_website }}"
 
 website_format:
   type: str
@@ -87,6 +98,8 @@ hosting_provider:
   choices:
     - netlify
     - gh-pages
+  default: >-
+    {{ "netlify" if is_seedcase_website else "gh-pages" }}
 
 author_given_name:
   type: str
@@ -101,14 +114,16 @@ github_board_number:
   help: "What is the GitHub project board number to add issues and pull requests to?"
   validator: |
     {% if github_board_number and not github_board_number.isdigit() %}
-    The board number must be an integer.
+    The GitHub board number must be an integer.
     {% endif %}
+  when: "{{ template_type == 'complete' }}"
 
 review_team:
   type: str
-  help: What GitHub team is responsible for reviewing pull requests?
+  help: "What GitHub team is responsible for reviewing pull requests?"
   default: >-
     {{ "@%s/developers" % github_user if github_user else "" }}
+  when: "{{ template_type == 'complete' }}"
 
 # Configurations not asked
 github_repo_spec:
