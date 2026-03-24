@@ -71,6 +71,10 @@ check-commits:
 build-website:
   quarto render
 
+# Preview the documentation website with automatic reload on changes
+preview-website:
+  quarto preview
+
 # Re-build the README file from the Quarto version
 build-readme:
   uvx --from quarto quarto render README.qmd --to gfm
