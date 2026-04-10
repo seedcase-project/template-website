@@ -42,7 +42,7 @@ update-template:
       template/complete/tools/
     cp -f .github/dependabot.yml .github/pull_request_template.md \
       template/complete/.github/
-    cp -f .github/workflows/release-project.yml .github/workflows/dependency-review.yml \
+    cp -f .github/workflows/dependency-review.yml \
       template/complete/.github/workflows/
 
 # Check the commit messages on the current branch that are not on the main branch
