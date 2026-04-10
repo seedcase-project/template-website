@@ -9,13 +9,64 @@ on:
 permissions: read-all
 
 jobs:
-  release-project:
-    # This job outputs env variables `previous_version` and `current_version`.
-    # The workflow needs write permissions for `GITHUB_TOKEN` to create a release.
-    permissions:
-      contents: write
-    uses: seedcase-project/.github/.github/workflows/reusable-release-project.yml@main
-    with:
-      app-id: ${{ vars.UPDATE_VERSION_APP_ID }}
-    secrets:
-      update-version-gh-token: ${{ secrets.UPDATE_VERSION_TOKEN }}
+  release:
+    if: "!startsWith(github.event.head_commit.message, 'build(version): ')"
+    runs-on: ubuntu-latest
+    # Can only release one version at a time, so need to stop any other jobs that
+    # are also trying to release, to prevent conflicts.
+    concurrency:
+      group: release-project-group
+      cancel-in-progress: true
+    # Outputs for potential next jobs.
+    outputs:
+      previous_version: ${{ steps.version-var.outputs.previous_version }}
+      current_version: ${{ steps.version-var.outputs.current_version }}
+    steps:
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@20cf305ff2072d973412fa9b1e3a4f227bda3c76 # v2.14.0
+        with:
+          egress-policy: audit
+
+      - uses: actions/create-github-app-token@29824e69f54612133e76f7eaac726eef6c875baf # v2.2.1
+        id: app-token
+        with:
+          app-id: ${{ vars.UPDATE_VERSION_APP_ID }}
+          private-key: ${{ secrets.UPDATE_VERSION_TOKEN }}
+
+      - name: Checkout
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+        with:
+          # Only need the last commit from the repo.
+          fetch-depth: 0
+          token: ${{ steps.app-token.outputs.token }}
+
+      - name: Set bot user
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      # This step outputs `REVISION` and `PREVIOUS_REVISION` env variables.
+      - id: cz
+        name: Update version and changelog
+        uses: commitizen-tools/commitizen-action@bb4f1df6601e2a1a891506581b0c53acdc88e07d # 0.26.0
+        with:
+          github_token: ${{ steps.app-token.outputs.token }}
+          changelog: true
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@a06a81a03ee405af7f2048a818ed3f03bbf83c7b # v2.5.0
+        if: ${{ env.PREVIOUS_REVISION != env.REVISION }}
+        with:
+          generate_release_notes: true
+          # env variable containing the new version, created by the Commitizen action
+          tag_name: ${{ env.REVISION }}
+          # To help with preventing random updates to existing releases.
+          overwrite_files: false
+          append_body: false
+
+      # Need to output this to tell any potential next job that a release was made.
+      - id: version-var
+        name: Output version variable
+        run: |
+          echo "previous_version=$PREVIOUS_REVISION" >> "$GITHUB_OUTPUT"
+          echo "current_version=$REVISION" >> "$GITHUB_OUTPUT"
