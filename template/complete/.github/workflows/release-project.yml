@@ -11,6 +11,9 @@ permissions: read-all
 jobs:
   release:
     if: "!startsWith(github.event.head_commit.message, 'build(version): ')"
+    # To generate release notes, this job needs write access to the repository contents.
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     # Can only release one version at a time, so need to stop any other jobs that
     # are also trying to release, to prevent conflicts.
