@@ -7,26 +7,26 @@ project:
     - "*.md"
 
 website:
-  title: "template-website"
+  title: "Template Website"
   site-url: "https://template-website.seedcase-project.org"
   repo-url: "https://github.com/seedcase-project/template-website"
-  page-navigation: true
+
   navbar:
-    logo: _extensions/seedcase-project/seedcase-theme/logos/seedcase/icon.svg
+    logo: "_extensions/seedcase-project/seedcase-theme/logos/seedcase/icon.svg"
     logo-alt: "Seedcase Project logo: Main page"
     pinned: true
     left:
       - text: "Overview"
         href: index.qmd
       - text: "Guide"
-        href: docs/guide.qmd
+        href: docs/guide/index.qmd
     tools:
       - icon: github
         href: "https://github.com/seedcase-project/template-website"
-        aria-label: "GitHub icon: Source code"
+        aria-label: "GitHub icon: Source repository"
       - icon: house
-        href: https://seedcase-project.org
-        aria-label: "House icon: Seedcase Project home page"
+        href: "https://seedcase-project.org"
+        aria-label: "House icon: Main website for the Seedcase Project"
   sidebar:
     - id: overview
       pinned: true
@@ -36,10 +36,18 @@ website:
           href: index.qmd
         - CHANGELOG.md
         - CONTRIBUTING.md
+    - id: guide
+      contents:
+        - section: "Guide"
+          href: docs/guide/index.qmd
+          contents:
+            - docs/guide/installing.qmd
+            - docs/guide/using.qmd
+            - docs/guide/updating.qmd
+            - docs/guide/next-steps.qmd
 
 format:
   seedcase-theme-html:
-    theme:
-      - brand
     include-before-body:
-    - "docs/includes/site-counter.html"
+      - "docs/includes/site-counter.html"
+
