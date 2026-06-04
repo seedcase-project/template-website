@@ -15,7 +15,6 @@ on:
 permissions: read-all
 
 env:
-  # TODO: Fill in with the correct board number for this repo.
   BOARD_NUMBER: "24"
 
 jobs:
