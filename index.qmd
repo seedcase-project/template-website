@@ -4,12 +4,10 @@ title: "{{< meta tagline >}}"
 
 {{< include /docs/includes/_badges.qmd >}}
 
-<!-- TODO: Fill in this description -->
-
-This is a template for creating a new repository for Quarto-based websites.Use
-this template to quickly get started with creating and developing a website as
-well as having the infrastructure configuration files to make developing and
-building the website easier.
+This is a template for creating a new repository for building Quarto-based
+websites. Use this template to quickly get started with making a website as well
+as having infrastructure configuration to make developing and building the
+website easier.
 
 ## Features
 

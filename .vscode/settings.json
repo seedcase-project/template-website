@@ -1,9 +1,5 @@
 {
-  "files.autoSave": "onFocusChange",
-  "editor.wordWrap": "off",
   "editor.formatOnSave": true,
-  "git.autofetch": false,
-  "editor.tabCompletion": "on",
   "editor.snippetSuggestions": "inline",
   "conventional-branch.type": [
     "build",
@@ -19,8 +15,8 @@
     "perf"
   ],
   "conventional-branch.format": "{Type}/{Branch}",
-  "[quarto][qmd][jinja]": {
-    "editor.formatOnSave": false
+  "[quarto][qmd][md][jinja]": {
+    "editor.defaultFormatter": "jolars.panache"
   },
   "files.associations": {
     "justfile.jinja": "plaintext",
@@ -29,5 +25,7 @@
     "*.toml.jinja": "jinja-toml",
     "*.qmd.jinja": "jinja-md"
   },
-  "files.insertFinalNewline": true
+  "files.insertFinalNewline": true,
+  "conventionalCommits.emojiFormat": "emoji",
+  "conventionalCommits.promptScopes": false
 }
