@@ -2,18 +2,17 @@
 
 Since we follow
 [Conventional Commits](https://decisions.seedcase-project.org/why-conventional-commits/),
-we're able to automatically create formal "releases" of the website
-based on our commit messages. Releases in the context of websites are
-simply snapshots in time of the website content. We use
+we're able to automatically create formal "releases" of the website based on our
+commit messages. Releases in the context of websites are simply snapshots in
+time of the website content. We use
 [Commitizen](https://decisions.seedcase-project.org/why-semantic-release-with-commitizen/)
-to automatically create these releases using
-[SemVer](https://semverdoc.org) as the version numbering scheme.
+to automatically create these releases using [SemVer](https://semverdoc.org) as
+the version numbering scheme.
 
-Because releases are created based on commit messages, a new release is
-created quite often---sometimes several times in a day. This also means
-that any individual release will not have many changes within it. Below
-is a list of the releases we've made so far, along with what was changed
-within each release.
+Because releases are created based on commit messages, a new release is created
+quite often---sometimes several times in a day. This also means that any
+individual release will not have many changes within it. Below is a list of the
+releases we've made so far, along with what was changed within each release.
 
 ## 0.27.0 (2026-06-04)
 
@@ -138,22 +137,21 @@ within each release.
 
 ### Refactor
 
-- :pencil2: simplify PR template, use "thorough" and "quick" options
-  (#129)
+- :pencil2: simplify PR template, use "thorough" and "quick" options (#129)
 
 ## 0.17.6 (2025-11-06)
 
 ### Refactor
 
-- :recycle: hide Seedcase-specific post-copy message when not for
-  Seedcase (#125)
+- :recycle: hide Seedcase-specific post-copy message when not for Seedcase
+  (#125)
 
 ## 0.17.5 (2025-11-05)
 
 ### Refactor
 
-- :recycle: set `seedcase-project` as default GitHub user for Seedcase
-  websites (#126)
+- :recycle: set `seedcase-project` as default GitHub user for Seedcase websites
+  (#126)
 
 ## 0.17.4 (2025-09-17)
 
@@ -172,8 +170,7 @@ within each release.
 
 ### Refactor
 
-- :recycle: generate `_contributors.yml` into the `includes/` folder
-  (#90)
+- :recycle: generate `_contributors.yml` into the `includes/` folder (#90)
 
 ## 0.17.1 (2025-09-05)
 
@@ -293,8 +290,7 @@ within each release.
 
 ### Fix
 
-- :pencil2: used the wrong echo text for the `check-commits` recipe
-  (#53)
+- :pencil2: used the wrong echo text for the `check-commits` recipe (#53)
 
 ## 0.15.4 (2025-08-07)
 
@@ -364,8 +360,7 @@ within each release.
 
 ### Feat
 
-- :sparkles: add `add-to-project` workflow, along with copier question
-  (#18)
+- :sparkles: add `add-to-project` workflow, along with copier question (#18)
 
 ## 0.9.0 (2025-08-06)
 
