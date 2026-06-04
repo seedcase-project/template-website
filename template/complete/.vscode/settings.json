@@ -16,4 +16,6 @@
   ],
   "conventional-branch.format": "{Type}/{Branch}",
   "files.insertFinalNewline": true,
+  "conventionalCommits.emojiFormat": "emoji",
+  "conventionalCommits.promptScopes": false
 }
