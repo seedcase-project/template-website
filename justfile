@@ -75,9 +75,9 @@ check-urls:
 format-md:
     uvx rumdl fmt --silent
 
-# Test that a website can be created from the template, with parameters for: `is_seedcase_website` (true or false) and `hosting_provider` (either "gh-pages" or "netlify")
-test is_seedcase_website="true" hosting_provider="netlify" website_format="website" template_type="complete":
-    sh ./test-template.sh {{ is_seedcase_website }} {{ hosting_provider }} {{ website_format }} {{ template_type }}
+# Test that a website can be created from the template, with parameters for: `for_seedcase` (true or false) and `hosting_provider` (either "gh-pages" or "netlify")
+test for_seedcase="true" hosting_provider="netlify" website_format="website" template_type="complete":
+    sh ./test-template.sh {{ for_seedcase }} {{ hosting_provider }} {{ website_format }} {{ template_type }}
 
 # Test template creation through use of the question approach
 test-manual:
