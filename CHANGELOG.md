@@ -21,6 +21,50 @@ releases we've made so far, along with what was changed within each release.
 Commits from bots, like `dependabot` or `pre-commit-ci`, are not included in the
 changelog.
 
+## [0.30.0](https://github.com/seedcase-project/template-website/compare/0.29.0..0.30.0) - 2026-06-04
+
+### ✨ Features
+
+- Add TODO files to created websites
+  [#232](https://github.com/seedcase-project/template-website/pull/232) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([daf7217](https://github.com/seedcase-project/template-website/commit/daf72171b603a20c6a643b2e5d42a00081543e41))
+
+### 🐛 Fixes
+
+- Small text fixes and edits to Quarto files
+  [#242](https://github.com/seedcase-project/template-website/pull/242) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([ca330ce](https://github.com/seedcase-project/template-website/commit/ca330ce5278bdd1d8d947739be4c0da2a30439bb))
+
+### ♻️ Refactor
+
+- Move description of files into CONTRIBUTING
+  [#243](https://github.com/seedcase-project/template-website/pull/243) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([a1f6039](https://github.com/seedcase-project/template-website/commit/a1f603916585a4bbbebf64ba0554a381dff9122c))
+
+### 📝 Documentation
+
+- Regenerate `README.md` from `README.qmd`
+  [#241](https://github.com/seedcase-project/template-website/pull/241) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([533fbd0](https://github.com/seedcase-project/template-website/commit/533fbd011980548de4cd75c6f804014876ff332c))
+
+### 💄 Styling
+
+- Update Quarto theme extension
+  [#240](https://github.com/seedcase-project/template-website/pull/240) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([941c930](https://github.com/seedcase-project/template-website/commit/941c9305758b017a4e9a01c77e308243853d5032))
+
+### 👩‍💻 Miscellaneous
+
+- Fix CHANGELOG generation spacing, from t-squared
+  [#244](https://github.com/seedcase-project/template-website/pull/244) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([0e2deb6](https://github.com/seedcase-project/template-website/commit/0e2deb684f10699b10b80ac4f3bc366f95f1ac9d))
+
 ## [0.29.0](https://github.com/seedcase-project/template-website/compare/0.28.0..0.29.0) - 2026-06-04
 
 ### ✨ Features
@@ -141,9 +185,9 @@ changelog.
 ### ❤️ New contributors
 
 - [`@DanMazJen`](https://github.com/DanMazJen) made their first contribution in
-  [#207](https://github.com/seedcase-project/template-website/pull/207) ##
-  [0.26.0](https://github.com/seedcase-project/template-website/compare/0.25.0..0.26.0) -
-  2026-05-18
+  [#207](https://github.com/seedcase-project/template-website/pull/207)
+
+## [0.26.0](https://github.com/seedcase-project/template-website/compare/0.25.0..0.26.0) - 2026-05-18
 
 ### ✨ Features
 
@@ -193,9 +237,9 @@ changelog.
 ### ❤️ New contributors
 
 - [`@joelostblom`](https://github.com/joelostblom) made their first contribution
-  in [#182](https://github.com/seedcase-project/template-website/pull/182) ##
-  [0.22.1](https://github.com/seedcase-project/template-website/compare/0.22.0..0.22.1) -
-  2026-02-27
+  in [#182](https://github.com/seedcase-project/template-website/pull/182)
+
+## [0.22.1](https://github.com/seedcase-project/template-website/compare/0.22.0..0.22.1) - 2026-02-27
 
 ### 🐛 Fixes
 
@@ -450,9 +494,9 @@ changelog.
 ### ❤️ New contributors
 
 - [`@signekb`](https://github.com/signekb) made their first contribution in
-  [#105](https://github.com/seedcase-project/template-website/pull/105) ##
-  [0.17.2](https://github.com/seedcase-project/template-website/compare/0.17.1..0.17.2) -
-  2025-09-05
+  [#105](https://github.com/seedcase-project/template-website/pull/105)
+
+## [0.17.2](https://github.com/seedcase-project/template-website/compare/0.17.1..0.17.2) - 2025-09-05
 
 ### ♻️ Refactor
 
@@ -652,9 +696,9 @@ changelog.
 
 - `@pre-commit-ci[bot]` started making automated contributions
 
-- `@dependabot[bot]` started making automated contributions ##
-  [0.15.9](https://github.com/seedcase-project/template-website/compare/0.15.7..0.15.9) -
-  2025-08-08
+- `@dependabot[bot]` started making automated contributions
+
+## [0.15.9](https://github.com/seedcase-project/template-website/compare/0.15.7..0.15.9) - 2025-08-08
 
 ### ♻️ Refactor
 
@@ -1009,8 +1053,9 @@ changelog.
 
 ### ❤️ New contributors
 
-- `@github-actions[bot]` started making automated contributions ## [0.1.0] -
-  2025-08-01
+- `@github-actions[bot]` started making automated contributions
+
+## [0.1.0] - 2025-08-01
 
 ### 👷 CI/CD
 
