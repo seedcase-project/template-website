@@ -19,6 +19,9 @@
     "perf"
   ],
   "conventional-branch.format": "{Type}/{Branch}",
+  "[quarto][qmd][md]": {
+    "editor.defaultFormatter": "jolars.panache"
+  },
   "files.insertFinalNewline": true,
   "conventionalCommits.emojiFormat": "emoji",
   "conventionalCommits.promptScopes": false
