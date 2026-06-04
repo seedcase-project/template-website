@@ -67,9 +67,9 @@ format-md:
   uvx rumdl fmt --silent **/*.qmd.jinja **/*.md.jinja
   uvx --from panache-cli panache format . --quiet
 
-# Test that a website can be created from the template, with parameters for: `is_seedcase_website` (true or false) and `hosting_provider` (either "gh-pages" or "netlify")
-test is_seedcase_website="true" hosting_provider="netlify" website_format="website" template_type="complete":
-    sh ./test-template.sh {{ is_seedcase_website }} {{ hosting_provider }} {{ website_format }} {{ template_type }}
+# Test that a website can be created from the template, with parameters for: `for_seedcase` (true or false) and `hosting_provider` (either "gh-pages" or "netlify")
+test for_seedcase="true" hosting_provider="netlify" website_format="website" template_type="complete":
+    sh ./test-template.sh {{ for_seedcase }} {{ hosting_provider }} {{ website_format }} {{ template_type }}
 
 @_test-seedcase-true: (test "true" "netlify" "website" "complete") (test "true" "netlify" "book" "complete") (test "true" "gh-pages" "website" "complete") (test "true" "gh-pages" "book" "complete")
 @_test-seedcase-false: (test "false" "netlify" "website" "complete") (test "false" "netlify" "book" "complete") (test "false" "gh-pages" "website" "complete") (test "false" "gh-pages" "book" "complete")
