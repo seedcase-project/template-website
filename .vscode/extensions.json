@@ -12,7 +12,8 @@
     "tekumara.typos-vscode",
     "EditorConfig.EditorConfig",
     "samuelcolvin.jinjahtml",
-    "rvben.rumdl"
+    "rvben.rumdl",
+    "jolars.panache"
   ],
   "unwantedRecommendations": []
 }
