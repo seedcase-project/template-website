@@ -1,0 +1,15 @@
+---
+title: "Guide"
+listing:
+  contents: .
+  type: grid
+  grid-columns: 1
+  sort: "order"
+  fields:
+    - title
+    - description
+---
+
+A guide to using this template to create a new website. It includes instructions
+for using the template, updating the repository with any changes from the
+template, as well as post-creation tasks.

@@ -25,14 +25,14 @@ It's easiest to install uv and justfile using
 [pipx](https://pipx.pypa.io/latest/), so install that first. Then, install uv
 and justfile by running:
 
-``` bash
+```bash
 pipx install uv rust-just
 ```
 
 We keep all our development workflows in the `justfile`, so you can explore it
 to see what commands are available. To see a list of commands available, run:
 
-``` bash
+```bash
 just
 ```
 
@@ -40,7 +40,7 @@ As you contribute, make sure your changes will pass our tests by opening a
 terminal so that the working directory is the root of this project
 (`template-website/`) and running:
 
-``` bash
+```bash
 just run-all
 ```
 
@@ -49,10 +49,10 @@ Meaning that if you make changes to the template and try to test it, it won't be
 able to test those changes. You have to commit the changes first in order for
 copier to use them.
 
-When committing changes, please try to follow
-[Conventional Commits](https://decisions.seedcase-project.org/why-conventional-commits/)
-as Git messages. Using this convention allows us to be able to automatically
-create a release based on the commit message by using
+When committing changes, please try to follow [Conventional
+Commits](https://decisions.seedcase-project.org/why-conventional-commits/) as
+Git messages. Using this convention allows us to be able to automatically create
+a release based on the commit message by using
 [Commitizen](https://decisions.seedcase-project.org/why-semantic-release-with-commitizen/).
 If you don't use Conventional Commits when making a commit, we will revise the
 pull request title to follow that format, as we use squash merges when merging
