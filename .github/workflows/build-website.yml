@@ -9,7 +9,7 @@ on:
 permissions: read-all
 
 jobs:
-  build-deploy:
+  build-website:
     runs-on: ubuntu-latest
     # Stop builds from running more than one at a time, to save resources and also
     # to limit conflicts when uploading to the hosting provider.
