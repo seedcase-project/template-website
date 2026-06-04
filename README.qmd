@@ -2,36 +2,41 @@
 format: gfm
 execute:
   echo: false
-jupyter: python3
 metadata-files:
   - _metadata.yml
 ---
 
-# {{< meta titles.full >}}
+# {{< meta tagline >}}
 
 {{< include /docs/includes/_badges.qmd >}}
 
-This repository contains a
-[copier](https://copier.readthedocs.io/en/stable/) template for setting
-up a new repository for building Quarto-based websites. Along with the
-infrastructure for Quarto, this template also includes configurations
-and support files for developing and managing the website.
+This repository contains a [Copier](https://copier.readthedocs.io/en/stable/)
+template for setting up a new repository for a Quarto-based website. We made
+becs template ause we manage and develop several websites in Seedcase, and this
+template is designed to make it easier to create, develop, and maintain those
+websites. The template includes a simple and complete setup for a Quarto-based
+website, with the complete setup containing everything you make the experience
+of developing and building a website easier.
 
-Check out our [website]({{< meta links.site >}}) for more information,
-such as the features it provides and a
-[guide]({{< meta links.site >}}/docs/guide) to using the template. For
-a list of changes, see our
-[changelog]({{< meta links.site >}}/changelog) page.
+Check out our [website]({{< meta links.site >}}) for more information, such as
+the features it provides and a [guide]({{< meta links.site >}}/docs/guide) to
+using the template. For a list of changes, see our [changelog](CHANGELOG.md)
+page.
+
+::: callout-tip
+This template repository was generated from the
+[t-squared](https://github.com/seedcase-project/t-squared) Seedcase template
+:tada:
+:::
 
 ## Contributing
 
-Check out our [contributing page]({{< meta links.site >}}/contributing)
-for information on how to contribute to the project, including how to
-set up your development environment.
+Check out our [contributing page](CONTRIBUTING.md) for information on how to
+contribute to the project, including how to set up your development environment.
 
-Please note that this project is released with a
-[Contributor Code of Conduct](https://github.com/seedcase-project/.github/blob/main/CODE_OF_CONDUCT.md).
-By participating in this project you agree to abide by its terms.
+Please note that this project is released with a [Contributor Code of
+Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to
+abide by its terms.
 
 ### Contributors
 
@@ -39,18 +44,15 @@ By participating in this project you agree to abide by its terms.
 
 ## Licensing
 
-This project is licensed under the
-[MIT License]({{< meta links.github >}}/blob/main/LICENSE.md).
+This project is licensed under the [MIT License](LICENSE.md).
 
 ## Citing
 
-This project is part of the Seedcase Project, which is a collaborative
-effort to create a framework for data management and analysis in
-research. If you use this project in your work, please cite it as
-follows:
+If you use this project in your work, please cite it as follows:
 
 ```{python}
 #| output: asis
+
 !uvx --quiet cffconvert --format apalike
 ```
 

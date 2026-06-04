@@ -1,0 +1,49 @@
+---
+title: "Using the template"
+description: |
+  A walk-through on how to use this template for creating a new repository for a
+  Quarto-based website or applying it to an existing website.
+order: 2
+---
+
+This guide walks through how to use this template to create a new repository for
+a Quarto-based website or apply it to an existing repository.
+
+## Creating a new website
+
+You can use this template to create a new website with a standard set of files
+and folders, as well as all the features and configurations to make it easier to
+build your website smoothly and effectively. First, open a terminal and run the
+following command:
+
+```bash {filename="Terminal"}
+uvx copier copy gh:seedcase-project/template-website path/to/PROJECT-NAME
+```
+
+The `copy` command uses the template on GitHub (`gh:`) at the
+`seedcase-project/template-website` location. The `path/to/` is the location
+where you'd like the new website project to be created and `PROJECT-NAME` is the
+name you want to give for the new website's directory and (ideally) the GitHub
+repository for the website. The name should be something short and meaningful,
+ideally lowercase, with `-` instead of spaces, and no special characters.
+
+## Applying to an existing website
+
+If you want to use this template on an existing repository for making a website,
+you can use the `copy` command of `copier` just like above to apply the template
+to the existing website project. This will add all the template's files and
+configurations to the existing website.
+
+```bash {filename="Terminal"}
+uvx copier copy gh:seedcase-project/template-website path/to/EXISTING-PROJECT
+```
+
+See the comment above in the "Creating a new website" section about the naming
+of the existing website directory. It will go through a series of prompts, as in
+the case of creating a new website repository, including asking if you want to
+overwrite existing files.
+
+::: callout-note
+To use the `copy` command, the existing website needs to be tracked by Git and
+in a clean state (no changes have been made in the working directory).
+:::

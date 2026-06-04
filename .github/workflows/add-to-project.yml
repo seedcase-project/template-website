@@ -15,8 +15,7 @@ on:
 permissions: read-all
 
 env:
-  ADD_TO_BOARD_APP_ID: ${{ vars.ADD_TO_BOARD_APP_ID }}
-  BOARD_NUMBER: 24
+  BOARD_NUMBER: "24"
 
 jobs:
   add-to-project:
@@ -24,22 +23,26 @@ jobs:
     permissions:
       pull-requests: write
     steps:
+      # This is a useful security step to check for unexpected outbound calls from the runner,
+      # which could indicate a compromised token or runner.
       - name: Harden the runner (Audit all outbound calls)
         uses: step-security/harden-runner@9af89fc71515a100421586dfdb3dc9c984fbf411 # v2.19.4
         with:
           egress-policy: audit
 
+      # Using this security pattern for GitHub Apps is recommended by GitHub and ensures that
+      # the token is only available for a short time and has limited permissions. Check out
+      # <https://guidebook.seedcase-project.org/operations/security> for more details.
       - uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
         id: app-token
         with:
-          app-id: ${{ env.ADD_TO_BOARD_APP_ID }}
-          # TODO: Confirm this is set up for the repo.
+          client-id: ${{ vars.ADD_TO_BOARD_APP_ID }}
           private-key: ${{ secrets.ADD_TO_BOARD }}
 
       - name: Add issue or PR to project board
-        uses: actions/add-to-project@5afcf98fcd03f1c2f92c3c83f58ae24323cc57fd # v2.0.0
+        uses: actions/add-to-project@244f685bbc3b7adfa8466e08b698b5577571133e # v1.0.2
         with:
-          project-url: https://github.com/orgs/${{ github.repository_owner }}/projects/${{ env.BOARD_NUMBER }}
+          project-url: "https://github.com/orgs/${{ github.repository_owner }}/projects/${{ env.BOARD_NUMBER }}"
           github-token: ${{ steps.app-token.outputs.token }}
 
       - name: Assign PR to creator
