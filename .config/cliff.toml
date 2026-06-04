@@ -40,7 +40,7 @@ body = """
   https://github.com/{{ remote.github.owner }}/{{ remote.github.repo }}
 {%- endmacro -%}
 
-{% macro print_commit(commit) -%}
+{%- macro print_commit(commit) -%}
     - {% if commit.scope %}*({{ commit.scope }})* {% endif %}\
         {% if commit.breaking %}**breaking**  {% endif %}\
         {{ commit.message | upper_first }} \
@@ -52,18 +52,18 @@ body = """
           {% endif %}\
         {% endif %} \
         ([{{ commit.id | truncate(length=7, end="") }}]({{ self::remote_url() }}/commit/{{ commit.id }}))\
-{% endmacro -%}
+{%- endmacro -%}
 
-{% if version %}\
-    {% if previous.version %}\
+{% if version %}
+    {% if previous.version %}
         ## [{{ version | trim_start_matches(pat="v") }}]\
           ({{ self::remote_url() }}/compare/{{ previous.version }}..{{ version }}) - {{ timestamp | date(format="%Y-%m-%d") }}
-    {% else %}\
+    {% else %}
         ## [{{ version | trim_start_matches(pat="v") }}] - {{ timestamp | date(format="%Y-%m-%d") }}
-    {% endif %}\
-{% else %}\
+    {% endif %}
+{% else %}
     ## [unreleased]
-{% endif %}\
+{% endif %}
 
 {% for group, commits in commits | group_by(attribute="group") %}
     ### {{ group | striptags | trim | upper_first }}
@@ -71,29 +71,29 @@ body = """
     | filter(attribute="scope")
     | sort(attribute="scope") %}
         {{ self::print_commit(commit=commit) }}
-    {%- endfor %}
+    {% endfor %}
     {% for commit in commits %}
-        {%- if not commit.scope -%}
+        {% if not commit.scope %}
             {{ self::print_commit(commit=commit) }}
-        {% endif -%}
-    {% endfor -%}
-{% endfor -%}
+        {% endif %}
+    {% endfor %}
+{% endfor %}
 
-{%- if github -%}
+{% if github %}
 {% if github.contributors | filter(attribute="is_first_time", value=true) | length != 0 %}
   ### ❤️ New contributors
-{% endif %}\
+{% endif %}
 {% for contributor in github.contributors | filter(attribute="is_first_time", value=true) %}
   {% if contributor.username is containing("[bot]") %}
   - `@{{ contributor.username }}` started making automated contributions\
-  {% else %}\
+  {% else %}
   - [`@{{ contributor.username }}`](https://github.com/{{ contributor.username }}) made their first contribution
-    {%- if contributor.pr_number %} in \
+    {% if contributor.pr_number %} in \
       [#{{ contributor.pr_number }}]({{ self::remote_url() }}/pull/{{ contributor.pr_number }})\
-    {%- endif %}
-  {%- endif %}\
-{%- endfor -%}
-{%- endif %}
+    {% endif %}
+  {% endif %}\
+{% endfor %}
+{% endif %}
 
 """
 
