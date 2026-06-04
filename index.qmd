@@ -48,7 +48,7 @@ Has a "complete" (full-featured) or a "simple" (minimal to work) template types.
   very easy to set up.
 - Includes an [EditorConfig](https://editorconfig.org/) file to ensure
   consistent formatting across different editors.
-- High level, system and program management with
+- High-level system and program management with
   [uv](https://decisions.seedcase-project.org/why-uv/).
 - GitHub workflows for automatically adding Pull Requests and Issues to a
   project board.
