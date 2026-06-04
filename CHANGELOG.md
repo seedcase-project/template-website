@@ -14,6 +14,12 @@ quite often---sometimes several times in a day. This also means that any
 individual release will not have many changes within it. Below is a list of the
 releases we've made so far, along with what was changed within each release.
 
+## 0.27.0 (2026-06-04)
+
+### Fix
+
+- 🐛 Windows OS compatible filenames (#207)
+
 ## 0.26.0 (2026-05-18)
 
 ### Feat
