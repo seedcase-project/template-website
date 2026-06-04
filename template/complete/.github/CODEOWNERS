@@ -1,0 +1,4 @@
+# Which team or person to inform for PRs that modify these files.
+# `*` means all files in the repository.
+# TODO: Add appropriate team or person as code owner
+*

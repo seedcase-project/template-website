@@ -1,68 +1,17 @@
 _subdirectory: "template/{{ template_type }}"
 
-# Post-copy commands:
-_tasks:
-  # Only run these commands when copying the template
-  - command: "git init -b main"
-    when: "{{ _copier_operation == 'copy'}}"
-
 # Message to show after generating or regenerating the project successfully
 _message_after_copy: |
 
-  Your project "{{ github_repo }}" has been created successfully!
-
-  See the [guide](https://template-website.seedcase-project.org/docs/guide) for more detail
-  on the next steps. {% if template_type == "complete" %}Briefly:
-
-  - Change directory to the project root:
-
-    ``` bash
-    cd {{ _copier_conf.dst_path | realpath }}
-    ```
-
-  - Install the pre-commit hooks and build the README:
-
-    ``` bash
-    just install-precommit build-readme
-    ```
-
-  {%- if is_seedcase_website %}
-  - Add the Seedcase Quarto extension (called "update" here) :
-
-    ``` bash
-    just update-quarto-theme
-    ```
-
-  - Install [`spaid`](https://github.com/seedcase-project/spaid) and run these setup steps:
-
-    ``` bash
-    spaid_gh_create_repo_from_local -h
-    spaid_gh_set_repo_settings -h
-    spaid_gh_ruleset_basic_protect_main -h
-    spaid_gh_ruleset_require_pr -h
-    ```
-
-  - Configure GitHub following this
-    [guide](https://guidebook.seedcase-project.org/operations/security#using-github-apps-to-generate-tokens):
-
-    - Install the [auto-release-token](https://github.com/apps/auto-release-token)
-      and [add-to-board-token](https://github.com/apps/add-to-board-token) GitHub Apps
-    - Create an `UPDATE_VERSION_TOKEN` and `ADD_TO_BOARD_TOKEN` secret for the GitHub Apps
-    - Create an `UPDATE_VERSION_APP_ID` and `ADD_TO_BOARD_APP_ID` variable of the GitHub Apps' IDs
-  {%- endif %}
-
-  - List and complete all TODO items in the repository:
-
-    ``` bash
-    just list-todos
-    ```
-  {% endif %}
+  Your project "{{ github_repo }}" has been created successfully!  See
+  the template's guide as well as the "TODO.md" file in the newly created
+  project for more details on the next steps.
 
 # Questions
-is_seedcase_website:
+for_seedcase:
   type: bool
+  help: "Is this (new or existing) website part of the Seedcase Project?"
   default: false
-  help: "Is this a Seedcase Project website?"
 
 template_type:
   type: str
@@ -71,7 +20,7 @@ template_type:
     - simple
     - complete
   default: complete
-  when: "{{ not is_seedcase_website }}"
+  when: "{{ not for_seedcase }}"
 
 website_format:
   type: str
@@ -83,50 +32,35 @@ website_format:
 
 github_user:
   type: str
-  help: "What is the name of the GitHub user or organization where the website repository will be or is stored?"
+  help: |
+    What is the name of the GitHub user or organization where the
+    template repository will be or is stored?
   default: >-
-    {{ "seedcase-project" if is_seedcase_website else "" }}
+    {{ "seedcase-project" if for_seedcase else "" }}
 
 github_repo:
   type: str
-  help: "What is the name of the GitHub repository where the website will be or is stored? We strongly recommend using the default given."
+  help: |
+    What is the name of the GitHub repository where the template will be or
+    is stored? We strongly recommend using the default given.
   default: "{{ _folder_name }}"
 
 hosting_provider:
   type: str
-  help: "What hosting provider will you use for the website?"
+  help: "What website hosting provider will you use for the template?"
   choices:
     - netlify
     - gh-pages
   default: >-
-    {{ "netlify" if is_seedcase_website else "gh-pages" }}
-
-author_given_name:
-  type: str
-  help: "What is your first/given name?"
-
-author_family_name:
-  type: str
-  help: "What is your last/family name?"
-
-github_board_number:
-  type: str
-  help: "What is the GitHub project board number to add issues and pull requests to?"
-  validator: |
-    {% if github_board_number and not github_board_number.isdigit() %}
-    The GitHub board number must be an integer.
-    {% endif %}
-  when: "{{ template_type == 'complete' }}"
-
-review_team:
-  type: str
-  help: "What GitHub team is responsible for reviewing pull requests?"
-  default: >-
-    {{ "@%s/developers" % github_user if github_user else "" }}
-  when: "{{ template_type == 'complete' }}"
+    {{ "netlify" if for_seedcase else "gh-pages" }}
 
 # Configurations not asked
 github_repo_spec:
   type: str
   default: "{{ github_user }}/{{ github_repo }}"
+  when: false
+
+copyright_year:
+  type: str
+  default: "{{ copyright_year | default('%Y' | strftime) }}"
   when: false
