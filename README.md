@@ -3,12 +3,12 @@
 # Template Website: An opinionated setup for building and developing Quarto-based websites
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16762059.svg)](https://doi.org/10.5281/zenodo.16762059)
-[![Copier](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/copier-org/copier/master/img/badge/badge-grayscale-inverted-border-teal.json?raw=true)](https://github.com/copier-org/copier)
+[![Copier](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/copier-org/copier/master/img/badge/badge-grayscale-inverted-border-teal.json?raw=true.svg)](https://github.com/copier-org/copier)
 [![GitHub
 License](https://img.shields.io/github/license/seedcase-project/template-website.svg)](https://github.com/seedcase-project/template-website/blob/main/LICENSE.md)
 [![GitHub
 Release](https://img.shields.io/github/v/release/seedcase-project/template-website.svg)](https://github.com/seedcase-project/template-website/releases/latest)
-[![Test](https://github.com/seedcase-project/template-website/actions/workflows/test.yml/badge.svg)](https://github.com/seedcase-project/template-website/actions/workflows/test.yml)
+[![Checks](https://github.com/seedcase-project/template-website/actions/workflows/checks.yml/badge.svg)](https://github.com/seedcase-project/template-website/actions/workflows/checks.yml)
 [![Build
 website](https://github.com/seedcase-project/template-website/actions/workflows/build-website.yml/badge.svg)](https://github.com/seedcase-project/template-website/actions/workflows/build-website.yml)
 [![CodeQL](https://github.com/seedcase-project/template-website/actions/workflows/github-code-scanning/codeql/badge.svg?branch=main)](https://github.com/seedcase-project/template-website/actions/workflows/github-code-scanning/codeql)
