@@ -1,0 +1,38 @@
+- Review the
+  [template guide](https://template-website.seedcase-project.org/docs/guide/) for more
+  information on how to use the template and the next steps after copying the
+  project.
+- Run `git init -b main` to create the project as a Git repository.
+- Run `just list-todos` and complete all the TODO items.
+- Run `just install-precommit` to install the pre-commit hooks.
+- Run `just build-readme` to build the Markdown version of the README. {%- if
+  for_seedcase %}
+- Run `just update-quarto-theme` to add the Seedcase Quarto extension.
+- Install the [`spaid`](https://github.com/seedcase-project/spaid) CLI tool and
+  run these setup steps:
+  - `spaid_gh_create_repo_from_local -h` to create a GitHub repository from the
+    local repository.
+  - `spaid_gh_set_repo_settings -h` to set the repository settings.
+  - `spaid_gh_ruleset_basic_protect_main -h` to protect the main branch.
+  - `spaid_gh_ruleset_require_pr -h` to require pull requests for changes to the
+    main branch.
+- Install or add the
+  [auto-release-token](https://github.com/apps/auto-release-token) and
+  [add-to-board-token](https://github.com/apps/add-to-board-token) GitHub Apps
+  - Create an `UPDATE_VERSION_TOKEN` and `ADD_TO_BOARD_TOKEN` secret for the
+    GitHub Apps if you haven't already and connect them to the repository.
+  - Create an `UPDATE_VERSION_APP_ID` and `ADD_TO_BOARD_APP_ID` variable of the
+    GitHub Apps' IDs if you haven't already and connect them to the repository.
+    {%- else -%}
+- Install the [gh CLI](https://cli.github.com/) to create the GitHub repository
+  from the command line by using
+  `gh repo create {{ github_repo_spec }} --source=. --public`. {%- endif %} {%-
+  if hosting_provider == "netlify" %}
+- Connect the repository to Netlify and turn off the builds on Netlify, since
+  you will be using GitHub Actions to build and deploy the website. {%- elif
+  hosting_provider == "gh-pages" %}
+- Run `quarto publish gh-pages` to setup and start publishing the website to
+  GitHub Pages. {%- endif %}
+- If relevant, connect [GoatCounter](https://www.goatcounter.com/).
+- If relevant, connect [pre-commit.ci](https://pre-commit.ci/) to the repository
+  and enable the pre-commit hooks.
