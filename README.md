@@ -1,5 +1,3 @@
-
-
 # `template-website`: An opinionated setup for building and developing Quarto-based websites
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16762059.svg)](https://doi.org/10.5281/zenodo.16762059)
@@ -15,29 +13,27 @@ website](https://github.com/seedcase-project/template-website/actions/workflows/
 [![pre-commit.ci
 status](https://results.pre-commit.ci/badge/github/seedcase-project/template-website/main.svg)](https://results.pre-commit.ci/latest/github/seedcase-project/template-website/main)
 [![lifecycle](https://lifecycle.r-lib.org/articles/figures/lifecycle-experimental.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-[![Project Status: Active – The project has reached a stable, usable
-state and is being actively
+[![Project Status: Active -- The project has reached a stable, usable state and
+is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
-This repository contains a
-[copier](https://copier.readthedocs.io/en/stable/) template for setting
-up a new repository for building Quarto-based websites. Along with the
-infrastructure for Quarto, this template also includes configurations
-and support files for developing and managing the website.
+This repository contains a [copier](https://copier.readthedocs.io/en/stable/)
+template for setting up a new repository for building Quarto-based websites.
+Along with the infrastructure for Quarto, this template also includes
+configurations and support files for developing and managing the website.
 
-Check out our [website](https://template-website.seedcase-project.org)
-for more information, such as the features it provides and a
-[guide](https://template-website.seedcase-project.org/docs/guide) to
-using the template. For a list of changes, see our
-[changelog](https://template-website.seedcase-project.org/changelog)
-page.
+Check out our [website](https://template-website.seedcase-project.org) for more
+information, such as the features it provides and a
+[guide](https://template-website.seedcase-project.org/docs/guide) to using the
+template. For a list of changes, see our
+[changelog](https://template-website.seedcase-project.org/changelog) page.
 
 ## Contributing
 
 Check out our [contributing
 page](https://template-website.seedcase-project.org/contributing) for
-information on how to contribute to the project, including how to set up
-your development environment.
+information on how to contribute to the project, including how to set up your
+development environment.
 
 Please note that this project is released with a [Contributor Code of
 Conduct](https://github.com/seedcase-project/.github/blob/main/CODE_OF_CONDUCT.md).
@@ -59,23 +55,23 @@ License](https://github.com/seedcase-project/template-website/blob/main/LICENSE.
 
 ## Citing
 
-This project is part of the Seedcase Project, which is a collaborative
-effort to create a framework for data management and analysis in
-research. If you use this project in your work, please cite it as
-follows:
+This project is part of the Seedcase Project, which is a collaborative effort to
+create a framework for data management and analysis in research. If you use this
+project in your work, please cite it as follows:
 
-Johnston L.W., Brødbæk S.K., Beicher K., Vago M. (2025).
-template-website: An opinionated setup for building and developing
-Quarto-based websites DOI: 10.5281/zenodo.16762059 URL:
-https://template-website.seedcase-project.org
+Johnston L.W., Brødbæk S.K., Beicher K., Vago M. (2025). template-website: An
+opinionated setup for building and developing Quarto-based websites DOI:
+10.5281/zenodo.16762059 URL: https://template-website.seedcase-project.org
 
 Or as a BibTeX entry:
 
-    @misc{YourReferenceHere,
-    author = {Johnston, Luke William and Brødbæk, Signe Kirk and Beicher, Kristiane and Vago, Marton},
-    doi = {10.5281/zenodo.16762059},
-    month = {8},
-    title = {template-website: An opinionated setup for building and developing Quarto-based websites},
-    url = {https://template-website.seedcase-project.org},
-    year = {2025}
-    }
+```
+@misc{YourReferenceHere,
+author = {Johnston, Luke William and Brødbæk, Signe Kirk and Beicher, Kristiane and Vago, Marton},
+doi = {10.5281/zenodo.16762059},
+month = {8},
+title = {template-website: An opinionated setup for building and developing Quarto-based websites},
+url = {https://template-website.seedcase-project.org},
+year = {2025}
+}
+```
