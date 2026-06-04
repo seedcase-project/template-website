@@ -2,175 +2,164 @@
 title: "Guide"
 ---
 
-This guide provides an overview of how to use this template for creating
-a new website. It includes instructions for using the template and
-post-creation tasks.
+This guide provides an overview of how to use this template for creating a new
+website. It includes instructions for using the template and post-creation
+tasks.
 
 ## Installing
 
 In order to use this template, you need to install a few programs:
 
-- [Python](https://www.python.org/): Required by the template tool
-  itself (copier).
-- [Git](https://git-scm.com/): For version control and setting up Git to
-  track the newly created data package.
-- [copier](https://copier.readthedocs.io/en/stable/): A
-  template tool for making new projects in a standardised and structured
-  way.
-- [uv](https://docs.astral.sh/uv/): A tool for managing Python
-  environments and running commands. Some post-copy steps of this
-  template use uv.
-- [just](https://just.systems/man/en/): A build management tool that
-  helps with running common build and check tasks.
+- [Python](https://www.python.org/): Required by the template tool itself
+  (copier).
+- [Git](https://git-scm.com/): For version control and setting up Git to track
+  the newly created data package.
+- [copier](https://copier.readthedocs.io/en/stable/): A template tool for making
+  new projects in a standardised and structured way.
+- [uv](https://docs.astral.sh/uv/): A tool for managing Python environments and
+  running commands. Some post-copy steps of this template use uv.
+- [just](https://just.systems/man/en/): A build management tool that helps with
+  running common build and check tasks.
 
-You will need to install Python and Git yourself, but the other tools
-can be installed using
-[`pipx`](https://pipxproject.github.io/pipx/)---which we strongly
-recommend---with the following command:
+You will need to install Python and Git yourself, but the other tools can be
+installed using [`pipx`](https://pipxproject.github.io/pipx/)---which we
+strongly recommend---with the following command:
 
-``` bash
+```bash
 pipx install copier uv rust-just
 ```
 
 ## Creating a new website
 
-You can use this template to create a new website with a standard set of
-files and folders, as well as all the features and configurations to
-make it easier to build your website smoothly and effectively. First,
-open a Terminal and move into the directory where you want to create the
-new website. Then run the following command:
+You can use this template to create a new website with a standard set of files
+and folders, as well as all the features and configurations to make it easier to
+build your website smoothly and effectively. First, open a Terminal and move
+into the directory where you want to create the new website. Then run the
+following command:
 
-``` bash
+```bash
 uvx copier copy --trust gh:seedcase-project/template-website new-website
 ```
 
 Where `new-website` the name of the new folder you will create from the
-template. The template assumes that the name of your new folder will
-also be the name of the GitHub repository for the website. So the new
-folder name should be short, lowercase name without spaces or special
-characters.
+template. The template assumes that the name of your new folder will also be the
+name of the GitHub repository for the website. So the new folder name should be
+short, lowercase name without spaces or special characters.
 
 ::: callout-caution
-This template runs some post-copy commands using your terminal. In order
-to run them, you need to use the `--trust` option. Review the
+This template runs some post-copy commands using your terminal. In order to run
+them, you need to use the `--trust` option. Review the
 [`copier.yml`](https://github.com/seedcase-project/template-website/blob/main/copier.yaml)
-file, under the `_tasks` key to see what commands will be run after
-copying the template, so you can know and trust what the commands are
-doing. Unfortunately, this template can't be used without the `--trust`
-option.
+file, under the `_tasks` key to see what commands will be run after copying the
+template, so you can know and trust what the commands are doing. Unfortunately,
+this template can't be used without the `--trust` option.
 :::
 
 ## Applying the template to an existing website
 
-If you want to use this template on an existing website, you can use the
-`copy` command of `copier` just like above to apply the template to the
-existing website. This will add all the template's files and
-configurations to the existing website.
+If you want to use this template on an existing website, you can use the `copy`
+command of `copier` just like above to apply the template to the existing
+website. This will add all the template's files and configurations to the
+existing website.
 
-``` bash
+```bash
 uvx copier copy --trust gh:seedcase-project/template-website new-website
 ```
 
-See the comment above in the "creating a new website" section about
-naming the new website folder. It will go through a series of prompts,
-as in the case of creating a new website, including asking if you want
-to overwrite existing files.
+See the comment above in the "creating a new website" section about naming the
+new website folder. It will go through a series of prompts, as in the case of
+creating a new website, including asking if you want to overwrite existing
+files.
 
 ::: callout-note
-To use the `copy` command, the website needs to be tracked by Git and in
-a clean state (no changes).
+To use the `copy` command, the website needs to be tracked by Git and in a clean
+state (no changes).
 :::
 
 ## Applying the latest template changes
 
-There are two ways to update an existing website with the latest changes
-from the template: `update` and `recopy`.
+There are two ways to update an existing website with the latest changes from
+the template: `update` and `recopy`.
 
-Use `update` to apply template updates to your project without
-overwriting local changes. `update` will compare the version of the
-template you used when you first copied the template with the current
-version of the template, and then apply the changes that are different.
-This also means it won't overwrite any changes you made to files in your
-current website, for example, if you deleted a file that was in the
-template, it won't be copied back.
+Use `update` to apply template updates to your project without overwriting local
+changes. `update` will compare the version of the template you used when you
+first copied the template with the current version of the template, and then
+apply the changes that are different. This also means it won't overwrite any
+changes you made to files in your current website, for example, if you deleted a
+file that was in the template, it won't be copied back.
 
-Use `recopy` if you want to reapply the template from scratch, which
-will overwrite any changes you made to the files that were copied from
-the template. This is useful if you want to reset the website to the
-state of the template. For example, if you deleted a file but want it
-back from the template or are simply curious to see if there are any new
-changes that you might want to use.
+Use `recopy` if you want to reapply the template from scratch, which will
+overwrite any changes you made to the files that were copied from the template.
+This is useful if you want to reset the website to the state of the template.
+For example, if you deleted a file but want it back from the template or are
+simply curious to see if there are any new changes that you might want to use.
 
-In both cases, the commands are very similar and also use many of the
-same options as the `copy` command. If you want to use the same answers
-as given when you first copied the template, you can use the
-`--defaults` option. Then it will only prompt you for the questions that
-have changed since the last time you copied the template.
+In both cases, the commands are very similar and also use many of the same
+options as the `copy` command. If you want to use the same answers as given when
+you first copied the template, you can use the `--defaults` option. Then it will
+only prompt you for the questions that have changed since the last time you
+copied the template.
 
-``` bash
+```bash
 uvx copier update --trust --defaults
 # Or
 uvx copier recopy --trust --defaults
 ```
 
-As with the `copy` command, the website needs to be tracked by Git and
-must be in a clean state (no changes) for the `update` and `recopy`
-commands to work.
+As with the `copy` command, the website needs to be tracked by Git and must be
+in a clean state (no changes) for the `update` and `recopy` commands to work.
 
 ## Post-creation setup
 
 ::: callout-important
-The below steps are mostly relevant to the complete template, though
-some steps could be done using the simple one as well. Read through
-and see if any might apply to your situation if you use the simple
-template.
+The below steps are mostly relevant to the complete template, though some steps
+could be done using the simple one as well. Read through and see if any might
+apply to your situation if you use the simple template.
 :::
 
 ::: callout-important
-These steps are mainly for us in the Seedcase Project to set up the
-repository with the settings we use, but you can follow them if you want
-to set up your website in a similar way. They are also included in a
-message after you've copied the template.
+These steps are mainly for us in the Seedcase Project to set up the repository
+with the settings we use, but you can follow them if you want to set up your
+website in a similar way. They are also included in a message after you've
+copied the template.
 :::
 
 ### Setting up pre-commit hooks
 
-After copying the template, while in the directory of the new website,
-run the following:
+After copying the template, while in the directory of the new website, run the
+following:
 
-``` bash
+```bash
 just install-precommit
 ```
 
-This sets up the pre-commit hooks to run standard checks on your
-repository whenever you commit files to the history. Using pre-commit
-hooks as part of your workflow is even better if you connect the
-continuous integration service to your repository. Go to the
-[pre-commit.ci](https://pre-commit.ci/) website and follow the
-instructions there to connect your repository to the service. This will
-run the pre-commit hooks on every commit you push to the repository,
-including pull requests, which will ensure that the code is checked for
-basic issues. It will also keep the pre-commit hooks updated by creating
-a pull request whenever newer versions of the hooks are available.
+This sets up the pre-commit hooks to run standard checks on your repository
+whenever you commit files to the history. Using pre-commit hooks as part of your
+workflow is even better if you connect the continuous integration service to
+your repository. Go to the [pre-commit.ci](https://pre-commit.ci/) website and
+follow the instructions there to connect your repository to the service. This
+will run the pre-commit hooks on every commit you push to the repository,
+including pull requests, which will ensure that the code is checked for basic
+issues. It will also keep the pre-commit hooks updated by creating a pull
+request whenever newer versions of the hooks are available.
 
 ### Adding the Quarto theme (if applicable)
 
-If you are using the template to create a website for the Seedcase
-Project, run:
+If you are using the template to create a website for the Seedcase Project, run:
 
-``` bash
+```bash
 just update-quarto-theme
 ```
 
-This adds the `seedcase-theme` Quarto theme to the website, which
-provides a consistent look and feel across all Seedcase Project
-websites. It's called `update-quarto-theme` here since you can use this
-command to keep the theme updated.
+This adds the `seedcase-theme` Quarto theme to the website, which provides a
+consistent look and feel across all Seedcase Project websites. It's called
+`update-quarto-theme` here since you can use this command to keep the theme
+updated.
 
-Then to use the theme, you need to update the `_quarto.yml` file by
-adding the following lines to the `project` and `format` sections:
+Then to use the theme, you need to update the `_quarto.yml` file by adding the
+following lines to the `project` and `format` sections:
 
-``` yaml
+```yaml
 project:
   type: seedcase-theme
 
@@ -181,75 +170,67 @@ format: seedcase-theme-html
 
 ### Setting up a GitHub repository
 
-Next, install [`spaid`](https://github.com/seedcase-project/spaid) and
-use the following commands to run the next setup steps:
+Next, install [`spaid`](https://github.com/seedcase-project/spaid) and use the
+following commands to run the next setup steps:
 
-``` bash
+```bash
 spaid_gh_create_repo_from_local -h
 spaid_gh_set_repo_settings -h
 spaid_gh_ruleset_basic_protect_main -h
 spaid_gh_ruleset_require_pr -h
 ```
 
-Some configuration is needed after copying this template to a new
-repository, including configuration external to the repository. Some
-GitHub workflows require installing GitHub Apps, for greater security
-purposes and easier administration when managing multiple repositories.
-The
-[security section](https://guidebook.seedcase-project.org/operations/security#using-github-apps-to-generate-tokens)
+Some configuration is needed after copying this template to a new repository,
+including configuration external to the repository. Some GitHub workflows
+require installing GitHub Apps, for greater security purposes and easier
+administration when managing multiple repositories. The [security
+section](https://guidebook.seedcase-project.org/operations/security#using-github-apps-to-generate-tokens)
 in our [Guidebook](https://guidebook.seedcase-project.org/) provides
-instructions on how to set up GitHub Apps, secrets, and variables.
-Ideally the secrets and variables should be set up in the organization
-settings. The specific workflows in this template that require this
-additional setup are:
+instructions on how to set up GitHub Apps, secrets, and variables. Ideally the
+secrets and variables should be set up in the organization settings. The
+specific workflows in this template that require this additional setup are:
 
 - The workflow `.github/workflows/release-package.yml` requires the
-  [auto-release-token](https://github.com/apps/auto-release-token)
-  GitHub App as well as a creating a GitHub secret called
-  `UPDATE_VERSION_TOKEN` and a variable called `UPDATE_VERSION_APP_ID`
-  that has the App ID.
+  [auto-release-token](https://github.com/apps/auto-release-token) GitHub App as
+  well as a creating a GitHub secret called `UPDATE_VERSION_TOKEN` and a
+  variable called `UPDATE_VERSION_APP_ID` that has the App ID.
 - The workflow `.github/workflows/add-to-project.yml` requires the
-  [add-to-board-token](https://github.com/apps/add-to-board-token)
-  GitHub App, along with the `ADD_TO_BOARD_TOKEN` secret and the
-  `ADD_TO_BOARD_APP_ID` variable of the GitHub App's ID.
+  [add-to-board-token](https://github.com/apps/add-to-board-token) GitHub App,
+  along with the `ADD_TO_BOARD_TOKEN` secret and the `ADD_TO_BOARD_APP_ID`
+  variable of the GitHub App's ID.
 
 ### Connecting to hosting services
 
 If you use this template to make a website hosted on
-[Netlify](https://www.netlify.com/), you need to connect the GitHub
-repository to Netlify. The Quarto documentation has an
-[excellent guide](https://quarto.org/docs/publishing/netlify.html) on
-how to do this. It includes configuring Netlify to host the website and
-adding the
+[Netlify](https://www.netlify.com/), you need to connect the GitHub repository
+to Netlify. The Quarto documentation has an [excellent
+guide](https://quarto.org/docs/publishing/netlify.html) on how to do this. It
+includes configuring Netlify to host the website and adding the
 [`NETLIFY_AUTH_TOKEN`](https://quarto.org/docs/publishing/netlify.html#netlify-credentials)
 secret to the GitHub repository (or ideally at the organization level).
 
-For hosting on [GitHub Pages](https://pages.github.com/), it's a bit
-easier to set up than Netlify. The Quarto documentation again has a
-[guide](https://quarto.org/docs/publishing/github-pages.html) on how to
-do this.
+For hosting on [GitHub Pages](https://pages.github.com/), it's a bit easier to
+set up than Netlify. The Quarto documentation again has a
+[guide](https://quarto.org/docs/publishing/github-pages.html) on how to do this.
 
 ### Auto-releasing to Zenodo
 
-GitHub and Zenodo have an integration that, when set up, will
-automatically create a
-[Zenodo record](https://help.zenodo.org/docs/deposit/about-records/)
-from a
-[GitHub release](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases).
-This is useful if you want to create a DOI for your website, which will
-allow you to cite it in academic work as well as provide more exposure
-for your website. Connecting GitHub to Zenodo is very easy, check out
-Zenodo's
-[guide](https://help.zenodo.org/docs/github/archive-software/github-upload/)
-on it.
+GitHub and Zenodo have an integration that, when set up, will automatically
+create a [Zenodo record](https://help.zenodo.org/docs/deposit/about-records/)
+from a [GitHub
+release](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases).
+This is useful if you want to create a DOI for your website, which will allow
+you to cite it in academic work as well as provide more exposure for your
+website. Connecting GitHub to Zenodo is very easy, check out Zenodo's
+[guide](https://help.zenodo.org/docs/github/archive-software/github-upload/) on
+it.
 
 ### Setting up GoatCounter
 
-If you want to use GoatCounter for website visitor tracking, you need to
-create a GoatCounter account and set up a new site for your website.
-Adding a new site is very easy. Go into the "Settings" after logging
-into your account. Under "Sites", click "Add new site" and fill in the
-form with your website's unique name. You can use the auto-filled name
-in the `includes/site-counter.html` file, which has the format of
-"orgname-reponame". For example, it would be
+If you want to use GoatCounter for website visitor tracking, you need to create
+a GoatCounter account and set up a new site for your website. Adding a new site
+is very easy. Go into the "Settings" after logging into your account. Under
+"Sites", click "Add new site" and fill in the form with your website's unique
+name. You can use the auto-filled name in the `includes/site-counter.html` file,
+which has the format of "orgname-reponame". For example, it would be
 `seedcase-project-template-website` for this repository.
