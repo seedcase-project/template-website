@@ -11,11 +11,12 @@ contributors=$(gh api \
   -H "Accept: application/vnd.github+json" \
   -H "X-GitHub-Api-Version: 2022-11-28" \
   /repos/$repo_spec/contributors \
-  --template '{{range .}} [\@{{.login}}]({{.html_url}}){{"\n"}}{{end}}' | \
+  --template '{{range .}}[\@{{.login}}]({{.html_url}}){{"\n"}}{{end}}' | \
   grep -v "\[bot\]" | \
+  sort | \
   tr '\n' ', ' | \
   sed -e 's/,$/\n/' | \
   sed -e 's/,/,\n/g'
 )
 
-echo "The following people have contributed to this project by submitting pull requests :tada:\n\n${contributors}"
+echo "The following people have contributed to this project by submitting pull\nrequests :tada:\n\n${contributors}"
