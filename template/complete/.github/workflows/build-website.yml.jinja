@@ -8,12 +8,8 @@ on:
 # Limit token permissions for security
 permissions: read-all
 
-env:
-  # TODO: Set to true if building a website with PDF rendering.
-  USE_TINYTEX: false
-
 jobs:
-  build-deploy:
+  build-website:
     runs-on: ubuntu-latest
     # Stop builds from running more than one at a time, to save resources and also
     # to limit conflicts when uploading to the hosting provider.
@@ -30,29 +26,15 @@ jobs:
       # This is a useful security step to check for unexpected outbound calls from the runner,
       # which could indicate a compromised token or runner.
       - name: Harden the runner (Audit all outbound calls)
-        uses: step-security/harden-runner@20cf305ff2072d973412fa9b1e3a4f227bda3c76 # v2.14.0
+        uses: step-security/harden-runner@9af89fc71515a100421586dfdb3dc9c984fbf411 # v2.19.4
         with:
           egress-policy: audit
 
       - name: Check out repository
-        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
-
-      - name: Spell check repo
-        uses: crate-ci/typos@2d0ce569feab1f8752f1dde43cc2f2aa53236e06 # v1.40.0
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@8a96df13519ee81fd526f2dfca5962811136661b # v2.2.0
-        # Use basic token to avoid rate limiting when downloading tinytex, which uses GitHub API.
-        env:
-          GH_TOKEN: {{ '${{ secrets.GITHUB_TOKEN }}' }}
-        with:
-          tinytex: {{ '${{ env.USE_TINYTEX }}' }}
-
-      - name: Install Chrome for PDF rendering
-        if: {{ '${{ env.USE_TINYTEX }}' }}
-        run: |
-          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-          sudo apt install ./google-chrome-stable_current_amd64.deb
 
       {% if hosting_provider == 'netlify' -%}
       - name: Render and publish to Netlify
