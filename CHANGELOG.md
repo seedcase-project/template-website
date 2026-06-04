@@ -21,6 +21,34 @@ releases we've made so far, along with what was changed within each release.
 Commits from bots, like `dependabot` or `pre-commit-ci`, are not included in the
 changelog.
 
+## [0.29.0](https://github.com/seedcase-project/template-website/compare/0.28.0..0.29.0) - 2026-06-04
+
+### ✨ Features
+
+- Use Panache Markdown formatter
+  [#230](https://github.com/seedcase-project/template-website/pull/230) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([c72d27a](https://github.com/seedcase-project/template-website/commit/c72d27a7aa5bffe6b2b945b1aae867a76b204ad3))
+- Add `tagline` to `_metadata.yml`, plus simplify it
+  [#239](https://github.com/seedcase-project/template-website/pull/239) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([553dcd6](https://github.com/seedcase-project/template-website/commit/553dcd65316ef7d635922890b456dfbf51f1c09b))
+
+### ♻️ Refactor
+
+- Rearrange and simplify justfile
+  [#235](https://github.com/seedcase-project/template-website/pull/235) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([295dcdf](https://github.com/seedcase-project/template-website/commit/295dcdfbfdba712e2137db2a1569ef77de9f6159))
+- Don't need to build to PDF in workflow (can use Typst)
+  [#231](https://github.com/seedcase-project/template-website/pull/231) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([9e91707](https://github.com/seedcase-project/template-website/commit/9e91707e38b19258a4437a2b6e0ae8a453c2629d))
+- Simplify VS Code settings, some not needed
+  [#238](https://github.com/seedcase-project/template-website/pull/238) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([f2ac77d](https://github.com/seedcase-project/template-website/commit/f2ac77de024a6723718c55b446f66a7945153147))
+
 ## [0.28.0](https://github.com/seedcase-project/template-website/compare/0.27.0..0.28.0) - 2026-06-04
 
 ### ✨ Features
