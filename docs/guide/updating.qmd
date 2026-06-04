@@ -1,0 +1,41 @@
+---
+title: "Updating a website"
+description: |
+  A guide on updating a website that uses this template with the latest changes
+  from the template.
+order: 3
+---
+
+One of the biggest strengths of Copier is that it allows you to easily update
+your website r wisitoryth any changes that have been made to the template since
+you first copied it. There are two ways to update (or sync) an existing website
+repository with the latest changes from the template: `update` and `recopy`.
+
+- Use `update` to apply template updates to your website without overwriting
+  local changes. `update` will compare the version of the template you used when
+  you first copied the template with the current version of the template, and
+  then apply the changes that are different. This also means it won't overwrite
+  any changes you made to files in your current website, for example, if you
+  deleted a file that was in the template, it won't be copied back.
+
+- Use `recopy` if you want to reapply the template from scratch, which will
+  overwrite any changes you made to the files that were copied from the
+  template. This is useful if you want to reset the website to the state of the
+  template. For example, if you deleted a file but want it back from the
+  template or are simply curious to see if there are any new changes that you
+  might want to use.
+
+In both cases, the commands are very similar and also use many of the same
+options as the `copy` command. If you want to use the same answers as given when
+you first copied the template, you can use the `--defaults` option. Then it will
+only prompt you for the questions that have changed since the last time you
+copied the template.
+
+```bash {filename="Terminal"}
+uvx copier update --defaults
+# Or
+uvx copier recopy --defaults
+```
+
+As with the `copy` command, the website needs to be tracked by Git and must be
+in a clean state (no changes) for the `update` and `recopy` commands to work.

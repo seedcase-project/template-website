@@ -1,5 +1,5 @@
 ---
-title: "{{< meta titles.full >}}"
+title: "{{< meta tagline >}}"
 ---
 
 {{< include /docs/includes/_badges.qmd >}}
@@ -23,11 +23,10 @@ Has a "complete" (full-featured) or a "simple" (minimal to work) template types.
 - Uses [typos](https://github.com/crate-ci/typos) to check for common spelling
   mistakes.
 - Uses
-  [Commitizen](https://decisions.seedcase-project.org/why-changelog-with-commitizen/)
-  to [check](https://decisions.seedcase-project.org/why-lint-with-commitizen/)
-  commit messages and automatically create the changelog.
-- Automated Git tagging and GitHub releases with
-  [commitizen](https://decisions.seedcase-project.org/why-semantic-release-with-commitizen/)
+  [git-cliff](https://decisions.seedcase-project.org/why-changelog-with-git-cliff/)
+  to automatically create the changelog.
+- Automates Git tagging and GitHub releases with
+  [Cocogitto](https://decisions.seedcase-project.org/why-semantic-release-with-cocogitto/)
   that are based on messages following [Conventional
   Commits](https://decisions.seedcase-project.org/why-conventional-commits/).
 - Uses a [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) license for
@@ -62,8 +61,9 @@ Has a "complete" (full-featured) or a "simple" (minimal to work) template types.
 - Includes a [GoatCounter](https://www.goatcounter.com/) file for website
   visitor tracking, which is privacy-friendly and does not use cookies. That
   means it doesn't need a GDPR notice as no personal data is collected.
-- Uses [rumdl](https://rumdl.dev) to format Markdown files, so that they are
-  consistent across the repository and easier to read in the raw form.
+- Uses [rumdl](https://rumdl.dev) and [Panache](https://panache.bz) to format
+  Markdown files, so that they are consistent across the repository and easier
+  to read in the raw form.
 - Uses [lychee](https://lychee.cli.rs) to check for broken links in the website
   files.
 
