@@ -1,0 +1,44 @@
+---
+title: "Installing"
+description: |
+  Instructions for installing the required (and optional) programs to use this
+  template and create a new Quarto-based website project from it.
+order: 1
+---
+
+There are a few programs that are required to use this template to create a
+website project:
+
+- [uv](https://docs.astral.sh/uv/): A tool for managing Python environments and
+  running commands.
+- [Python](https://www.python.org/): Required by Copier, the template tool.
+- [Copier](https://copier.readthedocs.io/en/stable/): A template tool for making
+  new projects in a standardised and structured way.
+- [just](https://just.systems/man/en/): A build and development management tool
+  that helps with running common build and check tasks.
+
+You can use uv to install these required programs, so
+[install](https://docs.astral.sh/uv/getting-started/installation/) that first.
+After you've installed uv, install the other programs using:
+
+```bash {filename="Terminal"}
+uv tool install copier rust-just
+```
+
+uv will also install Python for you when you install these tools.
+
+There are some optional, though **strongly recommended**, programs to install
+and use in any website project created with this template:
+
+- [Git](https://git-scm.com/): For version control and setting up Git to track
+  the newly created website project.
+- [Lychee](https://lychee.cli.rs/guides/getting-started/): A link checker that
+  we include in the `justfile` for checking for broken links in the files.
+- [Quarto](https://quarto.org/): A scientific and technical publishing system
+  built on Pandoc. The website built with this template is created with Quarto,
+  and the website project created from this template is also set up to use
+  Quarto too.
+- [gh cli](https://cli.github.com/): For managing GitHub repositories and
+  settings from the command line. There are some post-creation steps we've
+  included that use gh to simplify setting up a GitHub repository for the
+  website project.
