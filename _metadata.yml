@@ -1,11 +1,8 @@
-# Metadata for the website
 gh:
   org: "seedcase-project"
   repo: "template-website"
 
-titles:
-  full: "`template-website`: An opinionated setup for building and developing Quarto-based websites"
-  short: "`template-website`"
+tagline: "Template Website: An opinionated setup for building and developing Quarto-based websites"
 
 links:
   github: "https://github.com/seedcase-project/template-website"
