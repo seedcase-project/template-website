@@ -1,0 +1,7 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: 0.8.7
+_src_path: gh:seedcase-project/t-squared
+for_seedcase: true
+github_repo: template-website
+github_user: seedcase-project
+hosting_provider: netlify
