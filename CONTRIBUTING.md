@@ -60,8 +60,7 @@ one commit.
 
 ## :file_folder: Explanation of files and folders
 
-This list describes the default files that are included in the template as well
-as explains a bit more about them and what they are used for.
+This is a description of some of the files in this repository.
 
 - `.copier-answers.yml`: Contains the answers you gave when copying the project
   from the template. **You should not modify this file directly.**
