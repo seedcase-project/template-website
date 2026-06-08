@@ -21,6 +21,19 @@ releases we've made so far, along with what was changed within each release.
 Commits from bots, like `dependabot` or `pre-commit-ci`, are not included in the
 changelog.
 
+## [0.30.2](https://github.com/seedcase-project/template-website/compare/0.30.1..0.30.2) - 2026-06-08
+
+### 🐛 Fixes
+
+- Switch to single quotes, GitHub workflows can't use double
+  [#247](https://github.com/seedcase-project/template-website/pull/247) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([17d86de](https://github.com/seedcase-project/template-website/commit/17d86de6d0f2b40e293a1a79edf16424e9ec1df1))
+- Don't need references to Jinja in justfile
+  [#246](https://github.com/seedcase-project/template-website/pull/246) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([cad1537](https://github.com/seedcase-project/template-website/commit/cad15376637762c952317530e1fb182bb539fb45))
+
 ## [0.30.1](https://github.com/seedcase-project/template-website/compare/0.30.0..0.30.1) - 2026-06-08
 
 ### 🐛 Fixes
