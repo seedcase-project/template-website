@@ -39,15 +39,13 @@ check-spelling:
 check-urls:
   lychee . \
     --verbose \
-    --extensions md,qmd,jinja \
+    --extensions md,qmd \
     --exclude-path "_badges.qmd"
 
 # Format Markdown files
 format-md:
   # Use both rumdl and panache, for different purposes
   uvx rumdl fmt --silent
-  # `includes` option doesn't work with Jinja files, so do manually
-  uvx rumdl fmt --silent **/*.qmd.jinja **/*.md.jinja
   uvx --from panache-cli panache format . --quiet
 
 # Re-build the README file from the Quarto version
