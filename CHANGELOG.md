@@ -21,6 +21,15 @@ releases we've made so far, along with what was changed within each release.
 Commits from bots, like `dependabot` or `pre-commit-ci`, are not included in the
 changelog.
 
+## [0.30.1](https://github.com/seedcase-project/template-website/compare/0.30.0..0.30.1) - 2026-06-08
+
+### 🐛 Fixes
+
+- Resolve spacing issue with changelog generation
+  [#245](https://github.com/seedcase-project/template-website/pull/245) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([e6074fa](https://github.com/seedcase-project/template-website/commit/e6074facc2fb2a0665e95d84b5ecc63930c4026c))
+
 ## [0.30.0](https://github.com/seedcase-project/template-website/compare/0.29.0..0.30.0) - 2026-06-04
 
 ### ✨ Features
