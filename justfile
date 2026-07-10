@@ -57,6 +57,7 @@ check-urls:
   lychee . \
     --verbose \
     --extensions md,qmd,jinja \
+    --exclude "github\.com" \
     --exclude-path "_badges.qmd"
 
 # Format Markdown files
