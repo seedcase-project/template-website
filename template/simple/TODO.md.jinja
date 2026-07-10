@@ -1,5 +1,5 @@
-- Review the
-  [template guide](https://template-website.seedcase-project.org/docs/guide/) for more
+- Review the [template
+  guide](https://template-website.seedcase-project.org/docs/guide/) for more
   information on how to use the template and the next steps after copying the
   project.
 - Run `git init -b main` to create the project as a Git repository.
@@ -7,9 +7,9 @@
 - Install the [gh CLI](https://cli.github.com/) to create the GitHub repository
   from the command line by using
   `gh repo create {{ github_repo_spec }} --source=. --public`. Or do it manually
-  through Git. {%- if hosting_provider == "netlify" %}
+  through Git. {% if hosting_provider == "netlify" %}
 - Connect the repository to Netlify and turn off the builds on Netlify, since
-  you will be using GitHub Actions to build and deploy the website. {%- elif
-  hosting_provider == "gh-pages" %}
+  you will be using GitHub Actions to build and deploy the website.\
+  {%- elif hosting_provider == "gh-pages" -%}
 - Run `quarto publish gh-pages` to setup and start publishing the website to
   GitHub Pages. {%- endif %}

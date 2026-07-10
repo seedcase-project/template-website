@@ -1,5 +1,6 @@
 flavor = "quarto"
 exclude = [".git/", ".github/", "LICENSE.md", "README.md"]
+include = ["*.qmd", "*.md", "*.md.jinja", "*.qmd.jinja"]
 
 [format]
 tab-width = 2

@@ -1,12 +1,12 @@
-- Review the
-  [template guide](https://template-website.seedcase-project.org/docs/guide/) for more
+- Review the [template
+  guide](https://template-website.seedcase-project.org/docs/guide/) for more
   information on how to use the template and the next steps after copying the
   project.
 - Run `git init -b main` to create the project as a Git repository.
 - Run `just list-todos` and complete all the TODO items.
 - Run `just install-precommit` to install the pre-commit hooks.
-- Run `just build-readme` to build the Markdown version of the README. {%- if
-  for_seedcase %}
+- Run `just build-readme` to build the Markdown version of the README.\
+  {% if for_seedcase -%}
 - Run `just update-quarto-theme` to add the Seedcase Quarto extension.
 - Install the [`spaid`](https://github.com/seedcase-project/spaid) CLI tool and
   run these setup steps:
@@ -26,11 +26,11 @@
     {%- else -%}
 - Install the [gh CLI](https://cli.github.com/) to create the GitHub repository
   from the command line by using
-  `gh repo create {{ github_repo_spec }} --source=. --public`. {%- endif %} {%-
-  if hosting_provider == "netlify" %}
+  `gh repo create {{ github_repo_spec }} --source=. --public`. {%- endif %}\
+  {% if hosting_provider == "netlify" -%}
 - Connect the repository to Netlify and turn off the builds on Netlify, since
-  you will be using GitHub Actions to build and deploy the website. {%- elif
-  hosting_provider == "gh-pages" %}
+  you will be using GitHub Actions to build and deploy the website.\
+  {%- elif hosting_provider == "gh-pages" -%}
 - Run `quarto publish gh-pages` to setup and start publishing the website to
   GitHub Pages. {%- endif %}
 - If relevant, connect [GoatCounter](https://www.goatcounter.com/).
