@@ -27,6 +27,17 @@ uv tool install copier rust-just
 
 uv will also install Python for you when you install these tools.
 
+If you write any Python or R code in your website project, we recommend you
+install these programs as well to format and check your code inside your Quarto
+files:
+
+```bash {filename="Terminal"}
+# For R code
+uv tool install jarl-linter air-formatter
+# For Python code
+uv tool install ruff
+```
+
 There are some optional, though **strongly recommended**, programs to install
 and use in any website project created with this template:
 
