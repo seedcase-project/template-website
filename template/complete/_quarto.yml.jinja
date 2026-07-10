@@ -6,26 +6,26 @@ project:
 {{ website_format }}:
   # TODO: Set the title of the website
   title: ""
-  {%- if hosting_provider == "gh-pages" %}
+  {% if hosting_provider == "gh-pages" -%}
   site-url: "https://{{ github_user }}.github.io/{{ github_repo }}/"
-  {%- elif hosting_provider == "netlify" %}
+  {%- elif hosting_provider == "netlify" -%}
   # TODO: Set the Netlify custom domain URL
   site-url: ""
   {%- endif %}
   repo-url: "https://github.com/{{ github_repo_spec }}"
-  {%- if website_format == "book" %}
+  {% if website_format == "book" -%}
   author:
     - name: "TODO: Add author name, 'First Last' style"
       affiliation: "TODO: Fill in your affiliation"
       orcid: "TODO: Fill in your ORCID"
-  {%- endif %}
+  {%- endif -%}
   # TODO: Set favicon
-  {%- if for_seedcase %}
+  {% if for_seedcase -%}
   favicon: "_extensions/seedcase-project/seedcase-theme/logos/seedcase/icon.svg"
-  {%- else %}
+  {%- else -%}
   # favicon: ""
   {%- endif %}
-  {%- if website_format == "book" %}
+  {% if website_format == "book" -%}
   repo-branch: main
   repo-actions: [issue, edit, source]
   search:
@@ -42,7 +42,7 @@ project:
     - icon: github
       href: "https://github.com/{{ github_repo_spec }}"
       aria-label: "GitHub icon: Source repository"
-    {%- if for_seedcase %}
+    {% if for_seedcase -%}
     - icon: house
       href: "https://seedcase-project.org"
       aria-label: "House icon: Main website for the Seedcase Project"
@@ -51,12 +51,12 @@ project:
     center:
       - text: "Licensed under CC BY 4.0"
         href: "LICENSE.md"
-  {%- elif website_format == "website" %}
+  {%- elif website_format == "website" -%}
   navbar:
-    {%- if for_seedcase %}
+    {% if for_seedcase -%}
     logo: "_extensions/seedcase-project/seedcase-theme/logos/seedcase/icon.svg"
     logo-alt: "Seedcase Project logo: Main page"
-    {%- else %}
+    {%- else -%}
     # TODO: Add logo and logo-alt
     logo: ""
     logo-alt: ""
@@ -69,7 +69,7 @@ project:
       - icon: github
         href: "https://github.com/{{ github_repo_spec }}"
         aria-label: "GitHub icon: Source repository"
-      {%- if for_seedcase %}
+      {% if for_seedcase -%}
       - icon: house
         href: "https://seedcase-project.org"
         aria-label: "House icon: Main website for the Seedcase Project"
@@ -80,12 +80,12 @@ project:
   {%- endif %}
 
 format:
-  {%- if for_seedcase %}
+  {% if for_seedcase -%}
   seedcase-theme-html:
     theme:
       - brand
       - custom-styles.scss
-  {%- else %}
+  {%- else -%}
   # TODO: Use Quarto extension if available
   html:
     theme:

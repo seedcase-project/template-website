@@ -16,12 +16,12 @@ jobs:
     concurrency:
       group: build-website-group
       cancel-in-progress: true
-    {%- if hosting_provider == 'gh-pages' %}
+    {% if hosting_provider == 'gh-pages' -%}
     # Needs these permissions to publish to GitHub Pages.
     permissions:
       contents: write
       pages: write
-    {%- endif %}
+    {%- endif -%}
     steps:
       # This is a useful security step to check for unexpected outbound calls from the runner,
       # which could indicate a compromised token or runner.
