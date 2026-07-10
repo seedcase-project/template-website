@@ -40,7 +40,7 @@ sync-template-files:
     template/complete/
   cp -f .gitignore \
     template/simple/
-  cp -f .config/typos.toml .config/panache.toml .config/rumdl.toml \
+  cp -f .config/typos.toml \
     template/complete/.config/
   mkdir -p template/complete/tools
   cp -f tools/get-contributors.sh \
@@ -63,8 +63,6 @@ check-urls:
 format-md:
   # Use both rumdl and panache, for different purposes
   uvx rumdl fmt --silent
-  # `includes` option doesn't work with Jinja files, so do manually
-  uvx rumdl fmt --silent **/*.qmd.jinja **/*.md.jinja
   uvx --from panache-cli panache format . --quiet
 
 # Test that a website can be created from the template, with parameters for: `for_seedcase` (true or false) and `hosting_provider` (either "gh-pages" or "netlify")

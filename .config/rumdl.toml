@@ -7,6 +7,8 @@ exclude = [
   "**/README.md",
   # This has it's own structure
   "**/LICENSE.md",
+  # `_badges.qmd` gets mangled by rumdl.
+  "**/_badges.qmd",
 ]
 
 # List style: `-`

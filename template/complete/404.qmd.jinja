@@ -1,20 +1,21 @@
 ---
-{%- if for_seedcase %}
+{% if for_seedcase -%}
 title: "You've entered the garden of missing pages"
-{%- else %}
+{%- else -%}
 title: "The page you are looking for does not exist"
 {%- endif %}
 ---
 
-{%- if for_seedcase %}
-Let's get you back to greener grounds.
+{% if for_seedcase -%} Let's get you back to greener grounds.
 
 👉 Go to [homepage](/index.qmd).
 
-![](/_extensions/seedcase-project/seedcase-theme/images/404.svg){fig-alt="An illustration of the number 404 surrounded by trees and mountains"}
+![](/_extensions/seedcase-project/seedcase-theme/images/404.svg){fig-alt="An
+illustration of the number 404 surrounded by trees and mountains"}
 
 ## Illustration by [Storyset](https://storyset.com/online) {.appendix}
+
 {%- else %}
 
-This page does not exist, go back to the [homepage](/index.qmd) or check the URL for typos.
-{%- endif %}
+This page does not exist, go back to the [homepage](/index.qmd) or check the URL
+for typos. {%- endif %}

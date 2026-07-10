@@ -10,7 +10,6 @@ website:
   title: "Template Website"
   site-url: "https://template-website.seedcase-project.org"
   repo-url: "https://github.com/seedcase-project/template-website"
-
   navbar:
     logo: "_extensions/seedcase-project/seedcase-theme/logos/seedcase/icon.svg"
     logo-alt: "Seedcase Project logo: Main page"
