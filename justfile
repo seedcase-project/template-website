@@ -98,7 +98,7 @@ build-website:
 
 # Preview the website with automatic reload on changes
 preview-website:
-  quarto preview
+  uvx --from quarto quarto preview
 
 # Check for and apply updates from the template
 update-from-template:

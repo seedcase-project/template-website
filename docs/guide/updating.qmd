@@ -25,11 +25,11 @@ repository with the latest changes from the template: `update` and `recopy`.
   template or are simply curious to see if there are any new changes that you
   might want to use.
 
-In both cases, the commands are very similar and also use many of the same
-options as the `copy` command. If you want to use the same answers as given when
-you first copied the template, you can use the `--defaults` option. Then it will
-only prompt you for the questions that have changed since the last time you
-copied the template.
+In both cases, the commands are very similar and use many of the same options as
+the `copy` command. If you want to use the same answers as given when you first
+copied the template, you can use the `--defaults` option. Then it will only
+prompt you for the questions that have changed since the last time you copied
+the template.
 
 ```bash {filename="Terminal"}
 uvx copier update --defaults

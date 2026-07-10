@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 # Get a list of contributors to this repository and save it to
-# _contributors.qmd file (overwritten if it exists). It also:
+# `_contributors.qmd` file (overwritten if it exists). It also:
 #
-# - Formats users into Markdown links to their GitHub profiles.
+# - Formats users into Markdown list with links to their GitHub profiles.
 # - Removes any usernames with the word "bot" in them.
-# - Removes the trailing comma from the list.
+# - Sorts the list alphabetically.
 repo_spec=${1}
 contributors=$(gh api \
   -H "Accept: application/vnd.github+json" \
