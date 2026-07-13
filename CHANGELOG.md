@@ -21,6 +21,15 @@ releases we've made so far, along with what was changed within each release.
 Commits from bots, like `dependabot` or `pre-commit-ci`, are not included in the
 changelog.
 
+## [0.30.5](https://github.com/seedcase-project/template-website/compare/0.30.4..0.30.5) - 2026-07-13
+
+### 🐛 Fixes
+
+- Remove spaces in `{{}}` in `cog.toml`, it doesn't allow them
+  [#265](https://github.com/seedcase-project/template-website/pull/265) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([9845eb1](https://github.com/seedcase-project/template-website/commit/9845eb1323324ab57ea5e640ca85770b04ca667d))
+
 ## [0.30.4](https://github.com/seedcase-project/template-website/compare/0.30.3..0.30.4) - 2026-07-13
 
 ### 🐛 Fixes
