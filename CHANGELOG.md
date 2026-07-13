@@ -21,6 +21,29 @@ releases we've made so far, along with what was changed within each release.
 Commits from bots, like `dependabot` or `pre-commit-ci`, are not included in the
 changelog.
 
+## [0.30.4](https://github.com/seedcase-project/template-website/compare/0.30.3..0.30.4) - 2026-07-13
+
+### 🐛 Fixes
+
+- Escape `{{ version }}` tag in `cog.toml` so Jinja leaves it
+  [#264](https://github.com/seedcase-project/template-website/pull/264) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([6d4689f](https://github.com/seedcase-project/template-website/commit/6d4689f7ee146139ce1e039dee48c3733ca42a9e))
+
+### 💄 Styling
+
+- Small stylistic updates from t-squared
+  [#263](https://github.com/seedcase-project/template-website/pull/263) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([62eede4](https://github.com/seedcase-project/template-website/commit/62eede4ab07e12b6df1ea95a25833acf74d0039d))
+
+### 👩‍💻 Miscellaneous
+
+- Include Jinja files in Markdown formatters, plus reformat them
+  [#257](https://github.com/seedcase-project/template-website/pull/257) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([0cdaa15](https://github.com/seedcase-project/template-website/commit/0cdaa154c9beb685014f9980c0822a8d27101fca))
+
 ## [0.30.3](https://github.com/seedcase-project/template-website/compare/0.30.2..0.30.3) - 2026-07-10
 
 ### 🐛 Fixes
