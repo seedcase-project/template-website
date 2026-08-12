@@ -18,11 +18,13 @@ list-todos:
   grep -R -n \
   --exclude-dir=.quarto \
   --exclude-dir=template \
+  --exclude-dir=.git \
+  --exclude-dir=*_cache \
   --exclude-dir=_temp \
   --exclude-dir=_site \
   --exclude=justfile \
   --exclude=copier.yaml \
-  "TODO" *
+  "TODO" .
 
 # Install the pre-commit hooks
 install-precommit:
