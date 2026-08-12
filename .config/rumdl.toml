@@ -11,6 +11,8 @@ exclude = [
   "**/_badges.qmd",
 ]
 
+include = ["*.qmd", "*.md", "*.md.jinja", "*.qmd.jinja"]
+
 # List style: `-`
 [MD004]
 style = "dash"
