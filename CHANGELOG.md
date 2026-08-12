@@ -21,6 +21,30 @@ releases we've made so far, along with what was changed within each release.
 Commits from bots, like `dependabot` or `pre-commit-ci`, are not included in the
 changelog.
 
+## [0.30.6](https://github.com/seedcase-project/template-website/compare/0.30.5..0.30.6) - 2026-08-12
+
+### ♻️ Refactor
+
+- Include hidden files when listing TODOs
+  [#274](https://github.com/seedcase-project/template-website/pull/274) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([48070f9](https://github.com/seedcase-project/template-website/commit/48070f94f1d7c1a83b88f59e4b42093a6fc47b2d))
+- Include "a part of" logo in navbar of Seedcase websites
+  [#273](https://github.com/seedcase-project/template-website/pull/273) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([3947c48](https://github.com/seedcase-project/template-website/commit/3947c48539c491c2c074a77c6a187c95fd651e94))
+
+### 👩‍💻 Miscellaneous
+
+- Include Jinja files in rumdl, but recipe is commented as it doesn't work
+  [#276](https://github.com/seedcase-project/template-website/pull/276) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([973d5dc](https://github.com/seedcase-project/template-website/commit/973d5dccde2a8f9d62847843ee320f4d6c33c3cc))
+- Update pre-commit hook versions
+  [#275](https://github.com/seedcase-project/template-website/pull/275) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([321cc2b](https://github.com/seedcase-project/template-website/commit/321cc2b544b78c9305867bd5a47c87412fb11672))
+
 ## [0.30.5](https://github.com/seedcase-project/template-website/compare/0.30.4..0.30.5) - 2026-07-13
 
 ### 🐛 Fixes
