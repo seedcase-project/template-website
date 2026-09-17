@@ -42,8 +42,8 @@ website:
           contents:
             - docs/guide/installing.qmd
             - docs/guide/using.qmd
-            - docs/guide/updating.qmd
             - docs/guide/next-steps.qmd
+            - docs/guide/updating.qmd
 
 format:
   seedcase-theme-html:
