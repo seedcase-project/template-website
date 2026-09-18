@@ -82,6 +82,8 @@ This is a description of some of the files in this repository.
   project, such as:
   - `typos.toml`: [typos](https://github.com/crate-ci/typos) spell checker
     configuration file.
+  - `lychee.toml`: [Lychee](https://lychee.cli.rs) URL checker configuration
+    file.
   - `rumdl.toml` and `panache.toml`: [rumdl](https://rumdl.dev) and
     [Panache](https://panache.bz) configuration file for formatting Markdown
     files in the project.
