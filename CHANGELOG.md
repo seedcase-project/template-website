@@ -21,6 +21,47 @@ releases we've made so far, along with what was changed within each release.
 Commits from bots, like `dependabot` or `pre-commit-ci`, are not included in the
 changelog.
 
+## [0.31.0](https://github.com/seedcase-project/template-website/compare/0.30.6..0.31.0) - 2026-09-18
+
+### ✨ Features
+
+- Use `lychee.toml` to store config for URL checking
+  [#287](https://github.com/seedcase-project/template-website/pull/287) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([26074d2](https://github.com/seedcase-project/template-website/commit/26074d2cb131f4b75a31435a03273effb596bc49))
+
+### 🐛 Fixes
+
+- First release in CHANGELOG shouldn't use `[]` syntax
+  [#294](https://github.com/seedcase-project/template-website/pull/294) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([4df2ac9](https://github.com/seedcase-project/template-website/commit/4df2ac98e3843ceeff2f1ba047c895efe5838749))
+
+### ♻️ Refactor
+
+- Include release workflow files even in non-Seedcase projects
+  [#293](https://github.com/seedcase-project/template-website/pull/293) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([9943100](https://github.com/seedcase-project/template-website/commit/9943100001fe0bf90132b5d7cb7d9c20127a4296))
+- Update pre-commit hook versions
+  [#295](https://github.com/seedcase-project/template-website/pull/295) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([d650ccf](https://github.com/seedcase-project/template-website/commit/d650ccf0359b4740527aa50faf15dbb8cf74a25e))
+
+### 📝 Documentation
+
+- Update guide docs from t-squared
+  [#285](https://github.com/seedcase-project/template-website/pull/285) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([26fdf0f](https://github.com/seedcase-project/template-website/commit/26fdf0fd3410fc4af7dcb95a7c070d2ca1d2dfb5))
+
+### 👩‍💻 Miscellaneous
+
+- Minor updates to justfile from t-squared
+  [#286](https://github.com/seedcase-project/template-website/pull/286) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([d5e106d](https://github.com/seedcase-project/template-website/commit/d5e106d61e109860f880c020c511f40742656d0d))
+
 ## [0.30.6](https://github.com/seedcase-project/template-website/compare/0.30.5..0.30.6) - 2026-08-12
 
 ### ♻️ Refactor
@@ -1171,7 +1212,7 @@ changelog.
 
 - `@github-actions[bot]` started making automated contributions
 
-## [0.1.0] - 2025-08-01
+## 0.1.0 - 2025-08-01
 
 ### 👷 CI/CD
 
