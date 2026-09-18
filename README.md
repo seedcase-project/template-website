@@ -30,7 +30,7 @@ make the experience of developing and building a website easier.
 
 Check out our [website](https://template-website.seedcase-project.org)
 for more information, such as the features it provides and a
-[guide](https://template-website.seedcase-project.org/docs/guide) to
+[guide](https://template-website.seedcase-project.org/docs/guide/) to
 using the template. For a list of changes, see our
 [changelog](CHANGELOG.md) page.
 
