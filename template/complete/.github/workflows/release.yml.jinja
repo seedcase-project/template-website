@@ -1,3 +1,5 @@
+# TODO: Delete if not using continuous releases
+
 name: Release
 
 on:
@@ -28,6 +30,7 @@ jobs:
         with:
           egress-policy: audit
 
+      {% if for_seedcase -%}
       # Using this security pattern for GitHub Apps is recommended by GitHub and ensures that
       # the token is only available for a short time and has limited permissions. Check out
       # <https://guidebook.seedcase-project.org/operations/security> for more details.
@@ -38,14 +41,17 @@ jobs:
           client-id: {{ "${{ vars.UPDATE_VERSION_APP_ID }}" }}
           # TODO: Confirm this is set up for the repo.
           private-key: {{ "${{ secrets.UPDATE_VERSION_TOKEN }}" }}
+      {%- endif %}
 
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           # Only need the last commit from the repo.
           fetch-depth: 0
+          {% if for_seedcase -%}
           # Requires the token in order to push changes to the repo for the release.
           token: {{ "${{ steps.app-token.outputs.token }}" }}
+          {%- endif %}
 
       # Set this for the bot user who will make the release commit.
       - name: Set bot user
