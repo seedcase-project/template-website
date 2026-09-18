@@ -81,13 +81,11 @@ This is a description of some of the files in this repository.
   project, such as:
   - `typos.toml`: [typos](https://github.com/crate-ci/typos) spell checker
     configuration file.
+  - `lychee.toml`: [Lychee](https://lychee.cli.rs) URL checker configuration
+    file.
   - `rumdl.toml` and `panache.toml`: [rumdl](https://rumdl.dev) and
     [Panache](https://panache.bz) configuration file for formatting Markdown
-    files in the project. {% if for_seedcase -%}
-  - `cog.toml`: [Cocogitto](https://docs.cocogitto.io) configuration file for
-    managing versions.
-  - `cliff.toml`: [git-cliff](https://git-cliff.org) configuration file for
-    creating the changelog. {%- endif %}
+    files in the project.
 - `.editorconfig`: Editor configuration file for
   [EditorConfig](https://editorconfig.org/) to maintain consistent coding styles
   across different editors and IDEs.
@@ -98,3 +96,15 @@ This is a description of some of the files in this repository.
   scripting project tasks.
 - `CHANGELOG.md`: Changelog file for tracking changes in the project.
 - `CONTRIBUTING.md`: Guidelines for contributing to the project.
+
+{% if for_seedcase -%}
+
+If you use continuous release workflows, these other config files are included
+in `.config/`:
+
+- `cog.toml`: [Cocogitto](https://docs.cocogitto.io) configuration file for
+  managing versions.
+- `cliff.toml`: [git-cliff](https://git-cliff.org) configuration file for
+  creating the changelog.
+
+{%- endif %}
