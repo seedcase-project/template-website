@@ -21,6 +21,34 @@ releases we've made so far, along with what was changed within each release.
 Commits from bots, like `dependabot` or `pre-commit-ci`, are not included in the
 changelog.
 
+## [0.31.1](https://github.com/seedcase-project/template-website/compare/0.31.0..0.31.1) - 2026-09-18
+
+### 🐛 Fixes
+
+- Correct links from URL check warnings
+  [#289](https://github.com/seedcase-project/template-website/pull/289) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([90fe787](https://github.com/seedcase-project/template-website/commit/90fe787edb5c36fab73cc6428aa911f23f52eda6))
+
+### ♻️ Refactor
+
+- Ignore `CHANGELOG.md` in some checks, gives false positives
+  [#288](https://github.com/seedcase-project/template-website/pull/288) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([8ced7cb](https://github.com/seedcase-project/template-website/commit/8ced7cbc01f92d1fbab0094014e82638326b985b))
+- Expand on and improve the `TODO.md` files
+  [#290](https://github.com/seedcase-project/template-website/pull/290) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([7a40a7a](https://github.com/seedcase-project/template-website/commit/7a40a7a7aaf65a6567be7597d68f19dd1ab2c26b))
+- Include `update-quarto-theme`, even in non-Seedcase projects
+  [#291](https://github.com/seedcase-project/template-website/pull/291) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([4f450a9](https://github.com/seedcase-project/template-website/commit/4f450a938c39a0439795903de3dda43c5356332f))
+- Use GitHub App tokens for Seedcase only projects
+  [#296](https://github.com/seedcase-project/template-website/pull/296) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([94d4568](https://github.com/seedcase-project/template-website/commit/94d45682cd93951ab98985cba80ca0d014bbd750))
+
 ## [0.31.0](https://github.com/seedcase-project/template-website/compare/0.30.6..0.31.0) - 2026-09-18
 
 ### ✨ Features
