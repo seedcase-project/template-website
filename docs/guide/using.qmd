@@ -1,49 +1,64 @@
 ---
 title: "Using the template"
 description: |
-  A walk-through on how to use this template for creating a new repository for a
-  Quarto-based website or applying it to an existing website.
+  A walk-through on how to use this template for creating a new website project or
+  applying it to an existing website project.
 order: 2
 ---
 
-This guide walks through how to use this template to create a new repository for
-a Quarto-based website or apply it to an existing repository.
+This guide walks through how to use this template to create a new website
+project or apply it to an existing website project.
 
-## Creating a new website
+## Creating a new website project
 
-You can use this template to create a new website with a standard set of files
-and folders, as well as all the features and configurations to make it easier to
-build your website smoothly and effectively. First, open a terminal and run the
-following command:
+You can use this template to create a new website project with a standard set of
+files and folders, as well as all the features and configurations to make it
+easier to build your website project smoothly and effectively. First, open a
+terminal and change your working directory to a location you want to create the
+new website project in, e.g. `Documents/`:
 
 ```bash {filename="Terminal"}
-uvx copier copy gh:seedcase-project/template-website path/to/PROJECT-NAME
+cd Documents
+```
+
+Next, copy and paste the following command, replacing the `NAME` with the name
+you want for your new website project. The `NAME` is the name you want to give
+for the new website project's directory and (ideally) the GitHub repository for
+the website project. The name should be something short and meaningful, ideally
+lowercase, with `-` instead of spaces, and no special characters.
+
+```bash {filename="Terminal"}
+uvx copier copy gh:seedcase-project/template-website NAME
 ```
 
 The `copy` command uses the template on GitHub (`gh:`) at the
-`seedcase-project/template-website` location. The `path/to/` is the location
-where you'd like the new website project to be created and `PROJECT-NAME` is the
-name you want to give for the new website's directory and (ideally) the GitHub
-repository for the website. The name should be something short and meaningful,
-ideally lowercase, with `-` instead of spaces, and no special characters.
+`seedcase-project/template-website` location.
 
-## Applying to an existing website
+## Applying to an existing website project
 
-If you want to use this template on an existing repository for making a website,
-you can use the `copy` command of `copier` just like above to apply the template
-to the existing website project. This will add all the template's files and
-configurations to the existing website.
+If you want to use this template on an existing website project, you can use the
+`copy` command of `copier` just like above to apply the template to the existing
+website project. This will add all the template's files and configurations to
+the existing website project. First, open a terminal and move your working
+directory to the existing website project's directory:
 
 ```bash {filename="Terminal"}
-uvx copier copy gh:seedcase-project/template-website path/to/EXISTING-PROJECT
+cd Documents/EXISTING-WEBSITE
 ```
 
-See the comment above in the "Creating a new website" section about the naming
-of the existing website directory. It will go through a series of prompts, as in
-the case of creating a new website repository, including asking if you want to
-overwrite existing files.
+Next, copy and paste the command below. The `.` means "use the template in the
+current directory":
+
+```bash {filename="Terminal"}
+uvx copier copy gh:seedcase-project/template-website .
+```
+
+See the comment above in the "Creating a new website project" section about the
+naming of the existing website project directory. It will go through a series of
+prompts, as in the case of creating a new website project, including asking if
+you want to overwrite existing files.
 
 ::: callout-note
-To use the `copy` command, the existing website needs to be tracked by Git and
-in a clean state (no changes have been made in the working directory).
+To use the `copy` command, the existing website project needs to be tracked by
+Git and in a clean state (no changes have been made in the working directory).
 :::
