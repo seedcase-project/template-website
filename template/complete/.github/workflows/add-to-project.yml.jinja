@@ -50,7 +50,7 @@ jobs:
           project-url: https://github.com/orgs/{{ '${{ github.repository_owner }}' }}/projects/{{ '${{ env.BOARD_NUMBER }}' }}
           {% if for_seedcase -%}
           github-token: {{ '${{ steps.app-token.outputs.token }}' }}
-          {%- elif -%}
+          {%- else -%}
           # TODO: Create a token with the correct permissions
           # https://github.com/actions/add-to-project#creating-a-pat-and-adding-it-to-your-repository
           github-token: {{ '${{ secrets.ADD_TO_BOARD_TOKEN }}' }}
