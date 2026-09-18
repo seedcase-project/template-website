@@ -1,15 +1,39 @@
-- Review the [template
-  guide](https://template-website.seedcase-project.org/docs/guide/) for more
-  information on how to use the template and the next steps after copying the
-  project.
-- Run `git init -b main` to create the project as a Git repository.
-- Check the files for any TODO items and complete them.
-- Install the [gh CLI](https://cli.github.com/) to create the GitHub repository
-  from the command line by using
-  `gh repo create {{ github_repo_spec }} --source=. --public`. Or do it manually
-  through Git. {% if hosting_provider == "netlify" %}
-- Connect the repository to Netlify and turn off the builds on Netlify, since
-  you will be using GitHub Actions to build and deploy the website.\
-  {%- elif hosting_provider == "gh-pages" -%}
-- Run `quarto publish gh-pages` to setup and start publishing the website to
-  GitHub Pages. {%- endif %}
+Review the [template
+guide](https://template-website.seedcase-project.org/docs/guide/next-steps) for
+more information on how to use the template and the next steps after copying the
+project.
+
+Next, run these commands in the terminal while inside of the project's
+directory. Either use your system's terminal or use the built-in terminal in
+your editor of choice:
+
+- `git init -b main` to create the project as a Git repository.
+
+Ideally you should go through all the TODO items and complete theme. After that
+you need to add and commit the files into the Git history. You can also add and
+commit everything without doing the TODO items.
+
+- `git add .` to stage all files into Git.
+- `git commit -m "start of project"` to commit the files into the Git history.
+
+To get the repository up on GitHub use the [gh CLI](https://cli.github.com/) to
+create the GitHub repository from the terminal with:
+
+```text
+gh repo create {{ github_repo_spec }} --source=. --public --push
+```
+
+{% if hosting_provider == "netlify" -%}
+
+If you use [Netlify](https://netlify.com), connect the repository to Netlify and
+turn off the builds on Netlify, since you will be using GitHub Actions to build
+and deploy the website. The
+[guide](https://t-squared.seedcase-project.org/docs/guide/next-steps) describes
+this in more detail.
+
+{%- elif hosting_provider == "gh-pages" %}
+
+If you will be using GitHub pages, run `quarto publish gh-pages` to setup and
+start publishing the website to GitHub Pages.
+
+{%- endif %}
