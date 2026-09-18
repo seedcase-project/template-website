@@ -1,0 +1,11 @@
+# Uncomment if needing more details
+# verbose = "info"
+require_https = true
+exclude = ["github\\.com"]
+extensions = ["md", "qmd"]
+exclude_path = [
+  "_badges.qmd",
+  # If using continuous release and a changelog,
+  # otherwise this can be removed.
+  "CHANGELOG.md",
+]
