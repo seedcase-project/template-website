@@ -58,11 +58,7 @@ check-spelling:
 
 # Check that URLs work
 check-urls:
-  lychee . \
-    --verbose \
-    --extensions md,qmd,jinja \
-    --exclude "github\.com" \
-    --exclude-path "_badges.qmd"
+  lychee . --config .config/lychee.toml
 
 # Format Markdown files
 format-md:
