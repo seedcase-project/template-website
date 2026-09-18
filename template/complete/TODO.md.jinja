@@ -1,38 +1,58 @@
-- Review the [template
-  guide](https://template-website.seedcase-project.org/docs/guide/) for more
-  information on how to use the template and the next steps after copying the
-  project.
-- Run `git init -b main` to create the project as a Git repository.
-- Run `just list-todos` and complete all the TODO items.
-- Run `just install-precommit` to install the pre-commit hooks.
-- Run `just build-readme` to build the Markdown version of the README.\
-  {% if for_seedcase -%}
-- Run `just update-quarto-theme` to add the Seedcase Quarto extension.
-- Install the [`spaid`](https://github.com/seedcase-project/spaid) CLI tool and
-  run these setup steps:
-  - `spaid_gh_create_repo_from_local -h` to create a GitHub repository from the
-    local repository.
-  - `spaid_gh_set_repo_settings -h` to set the repository settings.
-  - `spaid_gh_ruleset_basic_protect_main -h` to protect the main branch.
-  - `spaid_gh_ruleset_require_pr -h` to require pull requests for changes to the
-    main branch.
-- Install or add the
-  [auto-release-token](https://github.com/apps/auto-release-token) and
-  [add-to-board-token](https://github.com/apps/add-to-board-token) GitHub Apps
-  - Create an `UPDATE_VERSION_TOKEN` and `ADD_TO_BOARD_TOKEN` secret for the
-    GitHub Apps if you haven't already and connect them to the repository.
-  - Create an `UPDATE_VERSION_APP_ID` and `ADD_TO_BOARD_APP_ID` variable of the
-    GitHub Apps' IDs if you haven't already and connect them to the repository.
-    {%- else -%}
-- Install the [gh CLI](https://cli.github.com/) to create the GitHub repository
-  from the command line by using
-  `gh repo create {{ github_repo_spec }} --source=. --public`. {%- endif %}\
-  {% if hosting_provider == "netlify" -%}
-- Connect the repository to Netlify and turn off the builds on Netlify, since
-  you will be using GitHub Actions to build and deploy the website.\
-  {%- elif hosting_provider == "gh-pages" -%}
-- Run `quarto publish gh-pages` to setup and start publishing the website to
-  GitHub Pages. {%- endif %}
+Review the [template
+guide](https://template-website.seedcase-project.org/docs/guide/next-steps) for
+more information on how to use the template and the next steps after copying the
+project.
+
+Next, run these commands in the terminal while inside of the project's
+directory. Either use your system's terminal or use the built-in terminal in
+your editor of choice:
+
+- `git init -b main` to create the project as a Git repository.
+
+If you installed just, than do:
+
+- `just list-todos` and complete all the TODO items.
+- `just update-quarto-theme` to add your Quarto extension theme (if you filled
+  in the `update-quarto-theme` recipe).
+- `just build-readme` to build the Markdown version of the README from the
+  Quarto version.
+
+After going through all the TODO items and doing these tasks, add and commit the
+files into the Git history.
+
+- `git add .` to add the files to Git's staging.
+- `git commit -m "chore: :tada: start of project"`, using a Conventional Commit
+  style message, to commit the changes.
+
+If you use GitHub project boards, you can automatically add any PRs and issues
+to the board with the `.github/workflows/add-to-project.yml`. Complete the TODO
+items in that file.
+
+To get the repository up on GitHub use the [gh CLI](https://cli.github.com/) to
+create the GitHub repository from the terminal with:
+
+```text
+gh repo create {{ github_repo_spec }} --source=. --public --push
+```
+
+{% if hosting_provider == "netlify" -%}
+
+If you use [Netlify](https://netlify.com), connect the repository to Netlify and
+turn off the builds on Netlify, since you will be using GitHub Actions to build
+and deploy the website. The
+[guide](https://t-squared.seedcase-project.org/docs/guide/next-steps) describes
+this in more detail.
+
+{%- elif hosting_provider == "gh-pages" %}
+
+If you will be using GitHub pages, run `quarto publish gh-pages` to setup and
+start publishing the website to GitHub Pages.
+
+{%- endif %}
+
+Finally, some optional tasks:
+
+- `just install-precommit` to install the pre-commit hooks.
 - If relevant, connect [GoatCounter](https://www.goatcounter.com/).
 - If relevant, connect [pre-commit.ci](https://pre-commit.ci/) to the repository
   and enable the pre-commit hooks.
