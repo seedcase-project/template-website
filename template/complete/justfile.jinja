@@ -2,7 +2,7 @@
   just --list --unsorted
 
 # Run all build-related recipes in the justfile
-run-all: {{ 'update-quarto-theme' if for_seedcase }} check-all format-md build-all
+run-all: update-quarto-theme check-all format-md build-all
 
 # Run all check-related recipes
 check-all: check-spelling check-urls
@@ -30,11 +30,10 @@ install-precommit:
   uvx pre-commit autoupdate
   uvx pre-commit run --all-files
 
-{% if for_seedcase -%}
-# Update (or add if not present) the Quarto seedcase-theme extension
+# Update (or add if not present) the Quarto theme extension
 update-quarto-theme:
-  quarto update seedcase-project/seedcase-theme --no-prompt
-{%- endif %}
+  echo "TODO: Add Quarto theme to update. Or delete this recipe if you aren't using a theme."
+  # quarto update GITHUB_USER/REPO --no-prompt
 
 # Check for spelling errors in files
 check-spelling:
