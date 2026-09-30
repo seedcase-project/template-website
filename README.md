@@ -68,7 +68,7 @@ This project is licensed under the [MIT License](LICENSE.md).
 
 If you use this project in your work, please cite it as follows:
 
-Johnston L.W., Brødbæk S.K., Beicher K., Vago M. (2025). Template
+Johnston L.W., Brødbæk S.K., Beicher K., Vago F. (2025). Template
 Website: An opinionated setup for building and developing Quarto-based
 websites DOI: 10.5281/zenodo.16762059 URL:
 https://template-website.seedcase-project.org
@@ -76,7 +76,7 @@ https://template-website.seedcase-project.org
 Or as a BibTeX entry:
 
     @misc{YourReferenceHere,
-    author = {Johnston, Luke William and Brødbæk, Signe Kirk and Beicher, Kristiane and Vago, Marton},
+    author = {Johnston, Luke William and Brødbæk, Signe Kirk and Beicher, Kristiane and Vago, Fruzsina},
     doi = {10.5281/zenodo.16762059},
     month = {8},
     title = {Template Website: An opinionated setup for building and developing Quarto-based websites},
