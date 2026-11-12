@@ -3,6 +3,7 @@
 ci:
   autofix_commit_msg: "chore: ✏️ automatic pre-commit hook fixes"
   autoupdate_commit_msg: "ci: 👷 update pre-commit CI version"
+  autoupdate_schedule: "quarterly"
 
 repos:
   - repo: https://github.com/gitleaks/gitleaks
