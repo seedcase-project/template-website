@@ -21,6 +21,44 @@ releases we've made so far, along with what was changed within each release.
 Commits from bots, like `dependabot` or `pre-commit-ci`, are not included in the
 changelog.
 
+## [0.31.2](https://github.com/seedcase-project/template-website/compare/0.31.1..0.31.2) - 2026-11-12
+
+### 🐛 Fixes
+
+- Use correct `%}` Jinja `endif`
+  [#313](https://github.com/seedcase-project/template-website/pull/313) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([568e9a9](https://github.com/seedcase-project/template-website/commit/568e9a954f58e658d1cd7f0cf0381edf395328e6))
+- Correct broken links in LICENSE, plus reformat
+  [#314](https://github.com/seedcase-project/template-website/pull/314) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([f3c4545](https://github.com/seedcase-project/template-website/commit/f3c45455996331c89d5dc7619cc147de58a7a0d5))
+
+### ♻️ Refactor
+
+- Update pre-commit and Dependabot quarterly
+  [#312](https://github.com/seedcase-project/template-website/pull/312) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([19393bf](https://github.com/seedcase-project/template-website/commit/19393bf80f9c30265df7eb36fc4ccf8f03d74b20))
+- Update pre-commit hook versions
+  [#316](https://github.com/seedcase-project/template-website/pull/316) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([7c9edfc](https://github.com/seedcase-project/template-website/commit/7c9edfca89ceed4ac16d5182da5ebcae91cb0661))
+
+### 📝 Documentation
+
+- Switch to Fru's name
+  [#299](https://github.com/seedcase-project/template-website/pull/299) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([e7713c9](https://github.com/seedcase-project/template-website/commit/e7713c94cb9dc93505d870880afcd9f641b95d4f))
+
+### 💄 Styling
+
+- Update Quarto theme
+  [#315](https://github.com/seedcase-project/template-website/pull/315) by
+  [`@lwjohnst86`](https://github.com/lwjohnst86)
+  ([2c5b30c](https://github.com/seedcase-project/template-website/commit/2c5b30cd2efc4a75d26c8e0346aabb34c4bd5066))
+
 ## [0.31.1](https://github.com/seedcase-project/template-website/compare/0.31.0..0.31.1) - 2026-09-18
 
 ### 🐛 Fixes
